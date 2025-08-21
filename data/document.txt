@@ -1,0 +1,32 @@
+# Personal Information
+
+## About Me
+I am a passionate developer with expertise in modern web technologies. I love building innovative solutions and learning new technologies.
+
+## Skills
+- Frontend: React, Next.js, TypeScript, Tailwind CSS
+- Backend: Node.js, Express, Python
+- Database: PostgreSQL, MongoDB
+- Cloud: AWS, Vercel, Docker
+- AI/ML: Experience with various AI APIs and machine learning concepts
+
+## Experience
+- Senior Software Engineer at Tech Company (2022-Present)
+- Full Stack Developer at Startup (2020-2022)
+- Junior Developer at Agency (2018-2020)
+
+## Projects
+- E-commerce Platform: Built a full-stack e-commerce solution using Next.js and Node.js
+- AI Chatbot: Developed an intelligent chatbot using natural language processing
+- Portfolio Website: Created a responsive portfolio website with modern design
+- Mobile App: Built a cross-platform mobile application using React Native
+
+## Education
+- Bachelor's in Computer Science from University Name
+- Various online certifications in web development and AI
+
+## Interests
+- Artificial Intelligence and Machine Learning
+- Web Development and Design
+- Open Source Contribution
+- Reading tech blogs and staying updated with latest trends
