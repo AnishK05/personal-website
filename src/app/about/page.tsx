@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">About Me</h1>
+                 <h1 className="text-3xl font-bold mb-8">About Anish</h1>
         
         <div className="space-y-8">
           {/* Personal Info */}
@@ -13,7 +13,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <p className="text-gray-400 text-sm mb-1">Name</p>
-                <p className="text-gray-200">Your Full Name</p>
+                <p className="text-gray-200">Anish</p>
               </div>
               <div>
                 <p className="text-gray-400 text-sm mb-1">Location</p>
@@ -90,14 +90,14 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-8">
-          <a 
-            href="/" 
-            className="inline-flex items-center text-gray-400 hover:text-gray-200 transition-colors"
-          >
-            ← Back to Chat
-          </a>
-        </div>
+                   <div className="mt-8">
+             <a 
+               href="/" 
+               className="inline-flex items-center text-gray-400 hover:text-gray-200 transition-colors"
+             >
+               ← Back to Chat with Anish
+             </a>
+           </div>
       </div>
     </div>
   );

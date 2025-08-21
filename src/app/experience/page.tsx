@@ -4,7 +4,7 @@ export default function ExperiencePage() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Work Experience</h1>
+                 <h1 className="text-3xl font-bold mb-8">My Work Experience</h1>
         
         <div className="space-y-8">
           {/* Experience 1 */}
@@ -62,14 +62,14 @@ export default function ExperiencePage() {
           </div>
         </div>
 
-        <div className="mt-8">
-          <a 
-            href="/" 
-            className="inline-flex items-center text-gray-400 hover:text-gray-200 transition-colors"
-          >
-            ← Back to Chat
-          </a>
-        </div>
+                   <div className="mt-8">
+             <a 
+               href="/" 
+               className="inline-flex items-center text-gray-400 hover:text-gray-200 transition-colors"
+             >
+               ← Back to Chat with Anish
+             </a>
+           </div>
       </div>
     </div>
   );

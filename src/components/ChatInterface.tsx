@@ -105,12 +105,13 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </div>
-          <h1 className="text-2xl font-semibold text-gray-100 mb-2">
-            How can I help you today?
-          </h1>
-          <p className="text-gray-400 mb-8 max-w-md">
-            I&apos;m your AI assistant. Ask me about my background, skills, experience, or projects.
-          </p>
+                     <h1 className="text-2xl font-semibold text-gray-100 mb-2">
+             Hi, I&apos;m Anish! 👋
+           </h1>
+           <p className="text-gray-400 mb-8 max-w-md">
+             I&apos;m a software developer, and this is my personal website. Ask me anything about my background, 
+             skills, experience, or projects - I&apos;d love to tell you more about myself!
+           </p>
           
           {/* Quick Action Buttons - Centered */}
           <div className="flex flex-wrap gap-3 justify-center max-w-lg mb-8">
