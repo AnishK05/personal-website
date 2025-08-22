@@ -25,8 +25,8 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   const router = useRouter();
 
   const quickActions = [
-    { label: 'Projects', path: '/projects' },
     { label: 'Experience', path: '/experience' },
+    { label: 'Projects', path: '/projects' },
     { label: 'Skills', path: '/skills' },
     { label: 'About', path: '/about' },
   ];
