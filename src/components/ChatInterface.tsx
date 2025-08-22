@@ -95,6 +95,11 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     }
   };
 
+  const handleClearChat = () => {
+    setMessages([]);
+    setInputValue('');
+  };
+
     if (messages.length === 0) {
     // Initial state - chat input centered on screen
     return (
@@ -151,8 +156,8 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   return (
     <div className="flex flex-col h-full max-w-4xl mx-auto">
       {/* Scrollable Chat Messages */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="px-4 py-6 space-y-6">
+             <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500">
+         <div className="px-4 py-6 space-y-6 pr-2">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -214,6 +219,17 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               className="bg-gray-600 hover:bg-gray-700 text-white px-6 rounded-xl transition-colors"
             >
               Send
+            </Button>
+            <Button
+              onClick={handleClearChat}
+              disabled={isLoading}
+              variant="outline"
+              className="border-gray-600 text-gray-300 hover:bg-gray-700 hover:border-gray-500 hover:text-gray-100 px-4 rounded-xl transition-colors"
+              title="Clear chat"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
             </Button>
           </div>
         </div>
