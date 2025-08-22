@@ -117,6 +117,29 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+
+        {/* Awards Section */}
+        <div className="mt-12">
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Awards</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-3 h-3 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <p className="text-gray-200 font-semibold">Guinness World Record Holder</p>
+                  <p className="text-gray-400 text-sm">Recognized as 1/1,000 authors published in the largest book ever, &quot;I am Texas&quot;  (11 feet, 496 pounds)</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-3 h-3 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <p className="text-gray-200 font-semibold">Pitch Competitions</p>
+                  <p className="text-gray-400 text-sm">Secured $15,000+ in pitch competition winnings; currently a finalist in a $100k national competition</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
