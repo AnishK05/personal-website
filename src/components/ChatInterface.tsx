@@ -100,17 +100,11 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     return (
       <div className="flex flex-col h-full">
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4">
-          <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mb-6">
-            <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
-          </div>
-                     <h1 className="text-2xl font-semibold text-gray-100 mb-2">
+          <h1 className="text-2xl font-semibold text-gray-100 mb-2">
              Hi, I&apos;m Anish! 👋
            </h1>
            <p className="text-gray-400 mb-8 max-w-md">
-             I&apos;m a software developer, and this is my personal website. Ask me anything about my background, 
-             skills, experience, or projects - I&apos;d love to tell you more about myself!
+             I’m a Computer Science and Business student at UT Austin. I’m interested in software engineering, AI/ML, agentic AI, and startups. Feel free to chat with me about my projects, experience, skills, or anything else!
            </p>
           
           {/* Quick Action Buttons - Centered */}
@@ -135,7 +129,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Message..."
+                placeholder="Ask me anything about myself..."
                 className="flex-1 bg-gray-800 border-gray-600 text-gray-100 placeholder-gray-400 focus:border-gray-500 focus:ring-gray-500/20 rounded-xl"
                 disabled={isLoading}
               />
@@ -165,11 +159,11 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
             >
               <div className={`flex items-start gap-3 max-w-[85%] ${message.isUser ? 'flex-row-reverse' : 'flex-row'}`}>
-                <Avatar className="w-8 h-8 flex-shrink-0">
-                  <AvatarFallback className={message.isUser ? "bg-gray-600 text-white" : "bg-gray-700 text-white"}>
-                    {message.isUser ? 'U' : 'AI'}
-                  </AvatarFallback>
-                </Avatar>
+                                 <Avatar className="w-8 h-8 flex-shrink-0">
+                   <AvatarFallback className={message.isUser ? "bg-gray-600 text-white" : "bg-gray-700 text-white"}>
+                     {message.isUser ? 'U' : 'A'}
+                   </AvatarFallback>
+                 </Avatar>
                 <div className={`px-4 py-3 rounded-2xl ${
                   message.isUser 
                     ? 'bg-gray-600 text-white' 
@@ -185,9 +179,9 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
           {isLoading && (
             <div className="flex justify-start">
               <div className="flex items-start gap-3">
-                <Avatar className="w-8 h-8 flex-shrink-0">
-                  <AvatarFallback className="bg-gray-700 text-white">AI</AvatarFallback>
-                </Avatar>
+                                 <Avatar className="w-8 h-8 flex-shrink-0">
+                   <AvatarFallback className="bg-gray-700 text-white">A</AvatarFallback>
+                 </Avatar>
                 <div className="px-4 py-3 rounded-2xl bg-gray-700">
                   <div className="flex space-x-1">
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
@@ -206,14 +200,14 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       <div className="border-t border-gray-700 bg-gray-900/50 backdrop-blur-sm">
         <div className="p-4">
           <div className="flex gap-3">
-            <Input
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="Message..."
-              className="flex-1 bg-gray-800 border-gray-600 text-gray-100 placeholder-gray-400 focus:border-gray-500 focus:ring-gray-500/20 rounded-xl"
-              disabled={isLoading}
-            />
+                                <Input
+                      value={inputValue}
+                      onChange={(e) => setInputValue(e.target.value)}
+                      onKeyPress={handleKeyPress}
+                      placeholder="Ask me anything about myself..."
+                      className="flex-1 bg-gray-800 border-gray-600 text-gray-100 placeholder-gray-400 focus:border-gray-500 focus:ring-gray-500/20 rounded-xl"
+                      disabled={isLoading}
+                    />
             <Button
               onClick={handleSendMessage}
               disabled={!inputValue.trim() || isLoading}
