@@ -1,103 +1,122 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
+
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
       <div className="max-w-4xl mx-auto">
-                 <h1 className="text-3xl font-bold mb-8">About Anish</h1>
-        
-        <div className="space-y-8">
-          {/* Personal Info */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Personal Information</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <p className="text-gray-400 text-sm mb-1">Name</p>
-                <p className="text-gray-200">Anish</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm mb-1">Location</p>
-                <p className="text-gray-200">City, Country</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm mb-1">Email</p>
-                <p className="text-gray-200">your.email@example.com</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm mb-1">LinkedIn</p>
-                <p className="text-gray-200">linkedin.com/in/yourprofile</p>
-              </div>
-            </div>
-          </div>
 
-          {/* Bio */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Bio</h3>
-            <p className="text-gray-300 leading-relaxed">
-              I am a passionate and experienced software developer with a strong foundation in modern web technologies. 
-              I love building innovative solutions that solve real-world problems and continuously learning new technologies 
-              to stay at the forefront of software development.
-            </p>
-            <p className="text-gray-300 leading-relaxed mt-4">
-              With several years of experience in both frontend and backend development, I specialize in creating 
-              scalable, user-friendly applications using cutting-edge technologies. I enjoy collaborating with teams, 
-              mentoring junior developers, and contributing to open-source projects.
-            </p>
-          </div>
-
-          {/* Education */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Education</h3>
-            <div className="space-y-4">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+        <div className="mt-8 mb-8">
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-gray-400 hover:text-gray-200 transition-colors"
+          >
+            ← Back to Chat with Anish
+          </Link>
+        </div>
+  
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Contact Information Box */}
+          <div className="lg:col-span-1">
+            <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg">
+              <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Contact</h3>
+              <div className="space-y-3">
                 <div>
-                  <h4 className="text-lg font-medium text-gray-200">Bachelor of Computer Science</h4>
-                  <p className="text-gray-400">University Name</p>
+                  <p className="text-gray-400 text-sm mb-1">Name</p>
+                  <p className="text-gray-200 font-medium">Anish Kalra</p>
                 </div>
-                <span className="text-gray-400 text-sm">2018 - 2022</span>
-              </div>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h4 className="text-lg font-medium text-gray-200">High School Diploma</h4>
-                  <p className="text-gray-400">High School Name</p>
+                  <p className="text-gray-400 text-sm mb-1">Email</p>
+                  <a 
+                    href="mailto:anishkalra05@gmail.com" 
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    anishkalra05@gmail.com
+                  </a>
                 </div>
-                <span className="text-gray-400 text-sm">2014 - 2018</span>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">LinkedIn</p>
+                  <a 
+                    href="https://www.linkedin.com/in/kalra-anish/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    linkedin.com/in/kalra-anish
+                  </a>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">GitHub</p>
+                  <a 
+                    href="https://github.com/AnishK05" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    github.com/AnishK05
+                  </a>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">Phone</p>
+                  <p className="text-gray-200">+1 (214) 903-2916</p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Interests */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Interests & Hobbies</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <span className="px-3 py-2 bg-gray-700 text-gray-300 rounded-lg text-center">Technology</span>
-              <span className="px-3 py-2 bg-gray-700 text-gray-300 rounded-lg text-center">Open Source</span>
-              <span className="px-3 py-2 bg-gray-700 text-gray-300 rounded-lg text-center">Reading</span>
-              <span className="px-3 py-2 bg-gray-700 text-gray-300 rounded-lg text-center">Travel</span>
-              <span className="px-3 py-2 bg-gray-700 text-gray-300 rounded-lg text-center">Photography</span>
-              <span className="px-3 py-2 bg-gray-700 text-gray-300 rounded-lg text-center">Music</span>
+                                           {/* Photo Area */}
+            <div className="lg:col-span-1">
+              <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg h-full flex items-center justify-center overflow-hidden">
+                <img 
+                   src="/AnishKalra.jpg" 
+                   alt="Anish Kalra" 
+                   className="w-full h-full object-cover rounded-lg"
+                   style={{ objectPosition: '40% 50%' }}
+                 />
+              </div>
             </div>
-          </div>
 
-          {/* Goals */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Career Goals</h3>
-            <p className="text-gray-300 leading-relaxed">
-              I am passionate about advancing my career in software development and technology leadership. 
-              My goals include becoming a technical architect, contributing to innovative projects that make 
-              a positive impact, and helping to mentor the next generation of developers.
-            </p>
+          {/* Interests & Hobbies */}
+          <div className="lg:col-span-1">
+            <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg h-full">
+              <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Interests</h3>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span className="text-gray-200">Software Engineering</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span className="text-gray-200">AI/ML & Agentic AI</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <span className="text-gray-200">Startups</span>
+                </div>
+              </div>
+              
+              <div className="border-t border-gray-600 pt-4">
+                <h4 className="text-lg font-semibold mb-3 text-gray-200">Hobbies</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                    <span className="text-gray-200">Hiking & Outdoors</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                    <span className="text-gray-200">Basketball & Pickleball</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <span className="text-gray-200">Food</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-                   <div className="mt-8">
-             <a 
-               href="/" 
-               className="inline-flex items-center text-gray-400 hover:text-gray-200 transition-colors"
-             >
-               ← Back to Chat with Anish
-             </a>
-           </div>
       </div>
     </div>
   );
