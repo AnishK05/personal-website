@@ -1,145 +1,102 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function SkillsPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
-                 <h1 className="text-3xl font-bold mb-8">My Technical Skills</h1>
+      <div className="max-w-6xl mx-auto">
+
+        <div className="mt-8 mb-8">
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-gray-400 hover:text-gray-200 transition-colors"
+          >
+            ← Back to Chat with Anish
+          </Link>
+        </div>
         
-        <div className="space-y-8">
-          {/* Frontend Skills */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Frontend Development</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">React</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">Next.js</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">TypeScript</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">Tailwind CSS</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Vue.js</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Angular</span>
-              </div>
+        <div className="grid grid-cols-3 gap-6">
+          {/* Languages */}
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Languages</h3>
+            <div className="flex flex-wrap gap-2 text-sm">
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Python</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Java</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">TypeScript</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">JavaScript</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">SQL</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Swift</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">C</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">HTML5</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">SCSS</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">CSS3</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">MATLAB</span>
             </div>
           </div>
 
-          {/* Backend Skills */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Backend Development</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">Node.js</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">Express.js</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">Python</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Django</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Flask</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Java</span>
-              </div>
+          {/* Frameworks and Libraries */}
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Frameworks & Libraries</h3>
+            <div className="flex flex-wrap gap-2 text-sm">
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">React.js</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">React Native</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Next.js</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">FastAPI</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Flask</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Spring Boot</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Django REST</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Jupyter</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Tailwind CSS</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">jQuery</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Docker</span>
             </div>
           </div>
 
-          {/* Database Skills */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Databases & Cloud</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">PostgreSQL</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">MongoDB</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">AWS</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Docker</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Kubernetes</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Firebase</span>
-              </div>
+          {/* Database & Cloud */}
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Database & Cloud</h3>
+            <div className="flex flex-wrap gap-2 text-sm">
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">PostgreSQL</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Supabase</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Firebase</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Amazon Web Services</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Google Cloud Platform</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Vercel</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Render</span>
             </div>
           </div>
 
-          {/* Other Skills */}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4 text-gray-200">Other Skills</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">Git</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-300">CI/CD</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Machine Learning</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Mobile Development</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">UI/UX Design</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">Agile/Scrum</span>
-              </div>
+          {/* AI & ML */}
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">AI & ML</h3>
+            <div className="flex flex-wrap gap-2 text-sm">
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">TensorFlow</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Keras</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">OpenCV</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Scikit Learn</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">NLTK</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Selenium</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Beautiful Soup</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">NumPy</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Pandas</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Google Gemini API</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">OpenAI API</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Claude</span>
+            </div>
+          </div>
+
+          {/* Development Tools */}
+          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Development Tools</h3>
+            <div className="flex flex-wrap gap-2 text-sm">
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Git</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Linux</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">Ubuntu</span>
+              <span className="bg-gray-700 text-gray-200 px-3 py-1 rounded-full border border-gray-600">PostHog</span>
             </div>
           </div>
         </div>
-
-                   <div className="mt-8">
-             <a 
-               href="/" 
-               className="inline-flex items-center text-gray-400 hover:text-gray-200 transition-colors"
-             >
-               ← Back to Chat with Anish
-             </a>
-           </div>
       </div>
     </div>
   );
