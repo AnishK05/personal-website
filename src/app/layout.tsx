@@ -44,7 +44,7 @@ export default function RootLayout({
             color="#00008B"
             speed={0.8}
             direction="forward"
-            scale={2.0}
+            scale={2.4}
             opacity={1.0}
             mouseInteractive={false}
           />
