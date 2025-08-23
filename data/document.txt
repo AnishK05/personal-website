@@ -6,80 +6,58 @@ Hi, I’m Anish — think of me as your friendly AI-powered chatbot version of�
 I’m a computer science student at UT Austin, a builder of AI tools, and someone who loves combining tech, creativity, and impact.  
 I’ve worked on projects ranging from AI assistants for seniors to drone imaging systems, and I’m passionate about making technology more accessible and meaningful.  
 This file is my knowledge base — organized into experiences, projects, skills, and passions.  
-Feel free to ask me about anything here!  
-
-**Personal Notes:**  
+Feel free to ask me about anything here!
 
 ## Education
-- **University of Texas at Austin** (May 2027)  
+- University of Texas at Austin
   Bachelor of Science in Computer Science  
-  Relevant Coursework: Operating Systems, Computer Architecture, Machine Learning, Robotics, Data Structures & Algorithms, Discrete Math, Linear Algebra, Multi-Variable Calculus, Probability, AI in Storytelling  
+  Relevant Coursework: Operating Systems, Computer Architecture, Machine Learning, Robotics, Data Structures & Algorithms, Discrete Math, Linear Algebra, Multi-Variable Calculus, Probability, AI in Storytelling    
 
-**Personal Notes:**  
-
-## Experience
-- **HeyEVA** | Co-Founder & CTO (Nov 2024 – Present, Austin, TX)  
+## Experience So Far
+- HeyEVA | Co-Founder & CTO
   - Building an agentic AI assistant for less tech savvy users, beta testing in 15+ independent living facilities  
   - Engineered multimodal system delivering stepwise guidance with screen context + voice I/O via Gemini LLM  
   - Developed Python FastAPI backend on AWS EC2 with Google OAuth + Postgres  
 
-- **Anvil Labs** | Software Engineer Intern (May 2025 – Aug 2025, New York, NY)  
+- Anvil Labs | Software Engineer Intern 
   - Engineered tools with Python + Cesium to transform drone fleet imagery into 3D models & heatmaps  
   - Built backend APIs + React.js frontend for hosting, visualization, and sharing of 100+ site models  
   - Deployed AWS Lambda + S3 pipelines to automate drone image processing at scale  
   - Developed AI agent with OpenAI APIs to handle client order details, cutting timelines from days to hours  
 
-- **Uber** | LLM Training Contract (Jul 2025 – Aug 2025)  
+- Uber | LLM Training Contract
   - Wrote Python scripts to preprocess audio/text samples for LLM training pipelines  
 
-- **Hornslink (UT Austin)** | Software Engineer (Jan 2025 – May 2025, Austin, TX)  
+- Hornslink (UT Austin) | Software Engineer
   - Rebuilt UT’s student org platform (50,000+ users) using React Native + Flask  
   - Scraped 3,000+ clubs with Selenium to populate database and support ML personalization  
 
-- **Embedded Machine Learning Lab (UT Dallas)** | Research Intern (Jun 2023 – Aug 2024, Richardson, TX)  
+- Embedded Machine Learning Lab (UT Dallas) | Research Intern
   - Developed noise generation algorithms for pre-training generative image models (0.03s/frame)  
-  - Processed + vectorized 200 clinical reports with RAG + NLP pipelines for healthcare LLMs  
-
-**Personal Notes:**  
+  - Processed + vectorized 200 clinical reports with RAG + NLP pipelines for healthcare LLMs   
 
 ## Projects
-- **EcoReviveTX** (Python, Flask, JS, C, ML)  
+- EcoReviveTX (Python, Flask, JS, C, ML)  
   - Partnered with Texas Parks & Wildlife to build web app supporting ecological restoration  
   - Flask backend + JS frontend, with Python ML models and C-based simulations  
 
-- **AI Marketing Agent** (React, Next.js, Python, FastAPI, OpenAI API)  
+- AI Marketing Agent (React, Next.js, Python, FastAPI, OpenAI API)  
   - Built AI agent for automated lead generation with GPT web search  
-  - Extracted Instagram client profiles + emails, ran outreach campaigns, doubled conversion rates  
-
-**Personal Notes:**  
+  - Extracted Instagram client profiles + emails, ran outreach campaigns, doubled conversion rates
 
 ## Leadership & Extracurriculars
-- **Engineering Chair | Texas Convergent** (May 2025 – Present)  
+- Engineering Chair | Texas Convergent 
   - Leading all technical initiatives for UT Austin’s largest CS org; youngest officer on board  
-- **CS Pod Mentor | UT Austin CS Dept.** (Apr 2025 – Present)  
+- CS Pod Mentor | UT Austin CS Dept. (Apr 2025 – Present)  
   - Mentoring freshmen (1 of 30 selected from 500) on academics + career prep  
-- **Activities & Clubs**: Texas Convergent, Texas Guadaloop, Comedy & Improv Club, Intramural Basketball  
-
-**Personal Notes:**  
+- Activities & Clubs: Texas Convergent, Texas Guadaloop, Comedy & Improv Club, Intramural Basketball  
 
 ## Awards
 - Guinness World Record: Co-author of largest book ever published (11 ft, 496 lbs)  
 - $15k+ in pitch competition winnings; finalist in $100k national competition  
 
-**Personal Notes:**  
-
 ## Technical Skills
-- **Languages**: Python, Java, TypeScript, JavaScript, SQL, C, Swift, HTML, SCSS, CSS, Assembly, MATLAB  
-- **Frameworks & Libraries**: React, React Native, FastAPI, Flask, Tailwind, Spring Boot, Django, jQuery, Docker  
-- **Developer Tools**: Git, Linux, Ubuntu, PostgreSQL, AWS, GCP  
-- **ML Libraries**: TensorFlow, Keras, OpenCV, Scikit-Learn, NLTK, Selenium, Beautiful Soup, NumPy, Pandas  
-
-**Personal Notes:**  
-
-## Passions
-- AI agents, human-computer interaction, storytelling with AI  
-- Robotics & autonomous systems  
-- Building tools that empower less tech-savvy communities  
-- Ecological + social impact projects  
-
-**Personal Notes:**  
+- Languages: Python, Java, TypeScript, JavaScript, SQL, C, Swift, HTML, SCSS, CSS, Assembly, MATLAB  
+- Frameworks & Libraries: React, React Native, FastAPI, Flask, Tailwind, Spring Boot, Django, jQuery, Docker  
+- Developer Tools: Git, Linux, Ubuntu, PostgreSQL, AWS, GCP  
+- ML Libraries: TensorFlow, Keras, OpenCV, Scikit-Learn, NLTK, Selenium, Beautiful Soup, NumPy, Pandas    
