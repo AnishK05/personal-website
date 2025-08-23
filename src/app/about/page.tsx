@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
+    <div className="min-h-screen text-gray-100 p-8">
       <div className="max-w-4xl mx-auto">
 
         <div className="mt-8 mb-8">
@@ -20,8 +20,8 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information Box */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg">
-              <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Contact</h3>
+            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg">
+              <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Contact</h3>
               <div className="space-y-3">
                 <div>
                   <p className="text-gray-400 text-sm mb-1">Name</p>
@@ -68,7 +68,7 @@ export default function AboutPage() {
 
                                            {/* Photo Area */}
             <div className="lg:col-span-1">
-              <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg h-full flex items-center justify-center overflow-hidden">
+              <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg h-full flex items-center justify-center overflow-hidden">
                 <img 
                    src="/AnishKalra.jpg" 
                    alt="Anish Kalra" 
@@ -80,8 +80,8 @@ export default function AboutPage() {
 
           {/* Interests & Hobbies */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg h-full">
-              <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Interests</h3>
+            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg h-full">
+              <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Interests</h3>
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 </div>
               </div>
               
-              <div className="border-t border-gray-600 pt-4">
+              <div className="border-t border-gray-600/70 pt-4">
                 <h4 className="text-lg font-semibold mb-3 text-gray-200">Hobbies</h4>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-2">
@@ -120,8 +120,8 @@ export default function AboutPage() {
 
         {/* Awards Section */}
         <div className="mt-12">
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-lg">
-            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600 pb-2">Awards</h3>
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Awards</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>

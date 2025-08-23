@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
+    <div className="min-h-screen text-gray-100 p-8">
       <div className="max-w-4xl mx-auto">
 
         <div className="mt-8 mb-8">
@@ -18,7 +18,7 @@ export default function ExperiencePage() {
         
         <div className="space-y-8">
           {/* Experience*/}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">Co-Founder and Chief Technology Officer</h3>
               <span className="text-gray-400 text-sm">Nov 2024 - Present</span>
@@ -38,15 +38,15 @@ export default function ExperiencePage() {
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Agentic AI</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">AI</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Software Project Management</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Mobile Development</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Software Project Management</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Mobile Development</span>
             </div>
           </div>
 
           {/* Experience*/}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">Software Engineer Intern</h3>
               <span className="text-gray-400 text-sm">May 2025 - Aug 2025</span>
@@ -58,7 +58,7 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Engineered tools with Python, GDAL, and Cesium to transform imagery from Anvil Labs’ autonomous drone fleet into 3D models for construction and defense site monitoring</span>
+                 <span>Engineered tools with Python, GDAL, and Cesium to transform imagery from Anvil Labs' autonomous drone fleet into 3D models for construction and defense site monitoring</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
@@ -74,17 +74,17 @@ export default function ExperiencePage() {
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Django REST Framework</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">React.js</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">OpenAI API</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Amazon Web Services (AWS)</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">API Development</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Django REST Framework</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React.js</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">OpenAI API</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Amazon Web Services (AWS)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">API Development</span>
             </div>
           </div>
 
           {/* Experience*/}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">LLM Training (Contract)</h3>
               <span className="text-gray-400 text-sm">Jul 2025 - Aug 2025</span>
@@ -100,16 +100,16 @@ export default function ExperiencePage() {
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Natural Language Processing (NLP)</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Pandas</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Large Language Models (LLMs)</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Natural Language Processing (NLP)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Pandas</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
             </div>
           </div>
 
           {/* Experience*/}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">Software Engineer</h3>
               <span className="text-gray-400 text-sm">Jan 2025 - May 2025</span>
@@ -121,7 +121,7 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Rebuilt Hornslink, UT’s premier student org platform, from scratch using React Native and Flask for 50,000+ students</span>
+                 <span>Rebuilt Hornslink, UT's premier student org platform, from scratch using React Native and Flask for 50,000+ students</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
@@ -129,15 +129,15 @@ export default function ExperiencePage() {
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Typescript</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Flask</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">React Native</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Mobile Development</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Typescript</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Mobile Development</span>
             </div>
           </div>
 
           {/* Experience*/}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">Software Engineer</h3>
               <span className="text-gray-400 text-sm">Sep 2024 - May 2025</span>
@@ -153,13 +153,13 @@ export default function ExperiencePage() {
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Retrieval Augmented Generation (RAG)</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Large Language Models (LLMs)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Retrieval Augmented Generation (RAG)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
             </div>
           </div>
 
           {/* Experience*/}
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">Research Intern</h3>
               <span className="text-gray-400 text-sm">Jun 2023 - Aug 2024</span>
@@ -183,12 +183,12 @@ export default function ExperiencePage() {
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Machine Learning</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Retrival Augmented Generation (RAG)</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Natural Language Processing (NLP)</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Large Language Models (LLMs)</span>
-              <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Computer Vision</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Machine Learning</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Retrival Augmented Generation (RAG)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Natural Language Processing (NLP)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Computer Vision</span>
             </div>
           </div>
 

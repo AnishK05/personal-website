@@ -118,7 +118,30 @@
   }
   body {
     @apply bg-background text-foreground;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
+  
+  html {
+    overflow-x: hidden;
+  }
+}
+
+/* Plasma background styles */
+.plasma-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure content has proper contrast against animated background */
+.content-layer {
+  position: relative;
+  z-index: 10;
 }
 
 /* Custom scrollbar styles */
