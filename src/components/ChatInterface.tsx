@@ -109,7 +109,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
              Hi, I&apos;m Anish! 👋
            </h1>
            <p className="text-gray-400 mb-8 max-w-md">
-             I&apos;m a Computer Science and Business student at UT Austin. I&apos;m interested in software engineering, AI/ML, agentic AI, and startups. Feel free to chat with me about my projects, experience, skills, or anything else!
+             I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, AI/ML, agentic AI, and startups. Feel free to chat with me about my projects, experience, skills, or anything else!
            </p>
           
           {/* Social Media Links */}
