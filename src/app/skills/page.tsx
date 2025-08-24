@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function SkillsPage() {
   return (
-    <div className="min-h-screen text-gray-100 p-8">
+    <div className="min-h-screen text-gray-100 p-4 sm:p-8">
       <div className="max-w-6xl mx-auto">
 
         <div className="mt-8 mb-8">
@@ -16,10 +16,10 @@ export default function SkillsPage() {
           </Link>
         </div>
         
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Languages */}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
-            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Languages</h3>
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-4 sm:p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Languages</h3>
             <div className="flex flex-wrap gap-2 text-sm">
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Python</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Java</span>
@@ -36,8 +36,8 @@ export default function SkillsPage() {
           </div>
 
           {/* Frameworks and Libraries */}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
-            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Frameworks & Libraries</h3>
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-4 sm:p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Frameworks & Libraries</h3>
             <div className="flex flex-wrap gap-2 text-sm">
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Next.js</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">React.js</span>
@@ -54,8 +54,8 @@ export default function SkillsPage() {
           </div>
 
           {/* Database & Cloud */}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
-            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Database & Cloud</h3>
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-4 sm:p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Database & Cloud</h3>
             <div className="flex flex-wrap gap-2 text-sm">
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">PostgreSQL</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Supabase</span>
@@ -68,8 +68,8 @@ export default function SkillsPage() {
           </div>
 
           {/* AI + Analytics */}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
-            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">AI + Analytics</h3>
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-4 sm:p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">AI + Analytics</h3>
             <div className="flex flex-wrap gap-2 text-sm">
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Google Gemini & OpenAI APIs</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Claude</span>
@@ -82,8 +82,8 @@ export default function SkillsPage() {
           </div>
 
           {/* Machine Learning */}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
-            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Machine Learning</h3>
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-4 sm:p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Machine Learning</h3>
             <div className="flex flex-wrap gap-2 text-sm">
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">TensorFlow</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Keras</span>
@@ -98,8 +98,8 @@ export default function SkillsPage() {
           </div>
 
           {/* Development Tools */}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
-            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Development Tools</h3>
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-4 sm:p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Development Tools</h3>
             <div className="flex flex-wrap gap-2 text-sm">
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Git</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Linux</span>
