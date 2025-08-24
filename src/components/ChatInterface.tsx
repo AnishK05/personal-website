@@ -22,6 +22,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
   const quickActions = [
@@ -34,6 +35,20 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Auto-focus input when in chat mode
+  useEffect(() => {
+    if (messages.length > 0 && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [messages.length]);
+
+  // Auto-focus input after sending message
+  useEffect(() => {
+    if (!isLoading && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isLoading]);
 
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
@@ -163,6 +178,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                 placeholder="Ask me anything about myself..."
                 className="flex-1 bg-gray-800/70 border-gray-600/70 text-gray-100 placeholder-gray-400 focus:border-gray-500 focus:ring-gray-500/20 rounded-xl backdrop-blur-sm"
                 disabled={isLoading}
+                ref={inputRef}
               />
               <Button
                 onClick={handleSendMessage}
@@ -238,6 +254,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                       placeholder="Ask me anything about myself..."
                       className="flex-1 bg-gray-800/70 border-gray-600/70 text-gray-100 placeholder-gray-400 focus:border-gray-500 focus:ring-gray-500/20 rounded-xl backdrop-blur-sm"
                       disabled={isLoading}
+                      ref={inputRef}
                     />
             <Button
               onClick={handleSendMessage}
