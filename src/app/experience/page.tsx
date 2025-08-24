@@ -58,7 +58,7 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Engineered tools with Python, GDAL, and Cesium to transform imagery from Anvil Labs' autonomous drone fleet into 3D models for construction and defense site monitoring</span>
+                 <span>Engineered tools with Python, GDAL, and Cesium to transform imagery from Anvil Labs&apos; autonomous drone fleet into 3D models for construction and defense site monitoring</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
@@ -121,7 +121,7 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Rebuilt Hornslink, UT's premier student org platform, from scratch using React Native and Flask for 50,000+ students</span>
+                 <span>Rebuilt Hornslink, UT&apos;s premier student org platform, from scratch using React Native and Flask for 50,000+ students</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
