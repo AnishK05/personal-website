@@ -21,6 +21,9 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [typingMessage, setTypingMessage] = useState<string>('');
+  const [isTyping, setIsTyping] = useState(false);
+  const [currentTypingLength, setCurrentTypingLength] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
@@ -35,6 +38,26 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Typing animation effect
+  useEffect(() => {
+    if (isTyping && typingMessage) {
+      const targetLength = typingMessage.length;
+      
+      const interval = setInterval(() => {
+        setCurrentTypingLength(prev => {
+          if (prev >= targetLength) {
+            setIsTyping(false);
+            clearInterval(interval);
+            return targetLength;
+          }
+          return prev + 1;
+        });
+      }, 9); // Adjust speed here (lower = faster)
+      
+      return () => clearInterval(interval);
+    }
+  }, [isTyping, typingMessage]);
 
   // Auto-focus input when in chat mode
   useEffect(() => {
@@ -83,6 +106,11 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
           timestamp: new Date(),
         };
         setMessages(prev => [...prev, aiMessage]);
+        
+        // Start typing animation
+        setTypingMessage(data.response);
+        setCurrentTypingLength(0);
+        setIsTyping(true);
       } else {
         throw new Error(data.error || 'Failed to get response');
       }
@@ -170,7 +198,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
 
           {/* Centered Input */}
           <div className="w-full max-w-2xl">
-            <div className="flex gap-3">
+            <div className="flex gap-3 items-center">
               <Input
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
@@ -180,13 +208,21 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                 disabled={isLoading}
                 ref={inputRef}
               />
-              <Button
-                onClick={handleSendMessage}
-                disabled={!inputValue.trim() || isLoading}
-                className="bg-gray-600/80 hover:bg-gray-700/80 text-white px-6 rounded-xl transition-colors backdrop-blur-sm"
-              >
-                Send
-              </Button>
+              <div className="flex items-center gap-2">
+                <Button
+                  onClick={handleSendMessage}
+                  disabled={!inputValue.trim() || isLoading}
+                  className="bg-gray-600/80 hover:bg-gray-700/80 text-white px-6 rounded-xl transition-colors backdrop-blur-sm"
+                >
+                  Send
+                </Button>
+                <div className="group relative">
+                  <span className="text-lg cursor-help">😊</span>
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-gray-200 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                    In an effort to keep this free, responses might be a little slow, sorry!!
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -217,7 +253,16 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                     : 'bg-gray-700/80 text-gray-100'
                 }`}>
                   <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                    {message.content}
+                    {message.isUser ? message.content : (
+                      isTyping && message.id === messages[messages.length - 1]?.id
+                        ? (
+                          <>
+                            {typingMessage.slice(0, currentTypingLength)}
+                            <span className="inline-block w-0.5 h-4 bg-gray-400 ml-1 animate-pulse"></span>
+                          </>
+                        )
+                        : message.content
+                    )}
                   </p>
                 </div>
               </div>
@@ -246,7 +291,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       {/* Fixed Input at Bottom */}
       <div className="border-t border-gray-700/50 bg-gray-900/30 backdrop-blur-md">
         <div className="p-4">
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
                                 <Input
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
@@ -256,13 +301,21 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                       disabled={isLoading}
                       ref={inputRef}
                     />
-            <Button
-              onClick={handleSendMessage}
-              disabled={!inputValue.trim() || isLoading}
-              className="bg-gray-600/80 hover:bg-gray-700/80 text-white px-6 rounded-xl transition-colors backdrop-blur-sm"
-            >
-              Send
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                onClick={handleSendMessage}
+                disabled={!inputValue.trim() || isLoading}
+                className="bg-gray-600/80 hover:bg-gray-700/80 text-white px-6 rounded-xl transition-colors backdrop-blur-sm"
+              >
+                Send
+              </Button>
+              <div className="group relative">
+                <span className="text-lg cursor-help">😊</span>
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-gray-200 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                  In an effort to keep this free, responses might be a little slow, sorry!!
+                </div>
+              </div>
+            </div>
             <Button
               onClick={handleClearChat}
               disabled={isLoading}
