@@ -1,84 +1,8 @@
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI, createUserContent, createPartFromUri } from '@google/genai';
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
 import path from 'path';
 
-const genAI = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY! });
-
-// Improved RAG implementation with better chunking and semantic search
-function getRelevantContext(query: string, documentContent: string): string {
-  // Split document into meaningful chunks
-  const sections = documentContent.split('\n## ');
-  const chunks: string[] = [];
-  
-  // Create chunks from each section
-  for (const section of sections) {
-    if (section.trim()) {
-      const lines = section.split('\n').filter(line => line.trim());
-      if (lines.length > 0) {
-        // Create chunks of 3-5 lines for better context
-        for (let i = 0; i < lines.length; i += 4) {
-          const chunk = lines.slice(i, i + 4).join('\n');
-          if (chunk.trim()) {
-            chunks.push(chunk);
-          }
-        }
-      }
-    }
-  }
-
-  // Enhanced relevance scoring
-  const queryLower = query.toLowerCase();
-  const queryWords = queryLower.split(/\s+/).filter(word => word.length > 2);
-  
-  const scoredChunks = chunks.map(chunk => {
-    let score = 0;
-    const chunkLower = chunk.toLowerCase();
-    
-    // Exact phrase matching (highest priority)
-    if (chunkLower.includes(queryLower)) {
-      score += 100;
-    }
-    
-    // Word matching with proximity bonus
-    queryWords.forEach(word => {
-      if (chunkLower.includes(word)) {
-        score += 10;
-        
-        // Bonus for multiple word matches
-        const wordCount = (chunkLower.match(new RegExp(word, 'g')) || []).length;
-        score += wordCount * 2;
-      }
-    });
-    
-    // Section header matching (bonus for relevant sections)
-    const sectionHeaders = ['education', 'experience', 'skills', 'projects', 'leadership', 'awards'];
-    sectionHeaders.forEach(header => {
-      if (chunkLower.includes(header) && queryWords.some(word => header.includes(word))) {
-        score += 15;
-      }
-    });
-    
-    // Technical term matching
-    const techTerms = ['python', 'react', 'ai', 'ml', 'machine learning', 'fastapi', 'aws', 'docker'];
-    techTerms.forEach(term => {
-      if (chunkLower.includes(term) && queryWords.some(word => term.includes(word))) {
-        score += 8;
-      }
-    });
-    
-    return { chunk, score };
-  });
-  
-  // Sort by score and return top relevant chunks
-  scoredChunks.sort((a, b) => b.score - a.score);
-  const relevantChunks = scoredChunks
-    .filter(item => item.score > 0)
-    .slice(0, 6) // Return top 6 most relevant chunks
-    .map(item => item.chunk);
-  
-  return relevantChunks.join('\n\n');
-}
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
 
 export async function POST(request: NextRequest) {
   try {
@@ -88,29 +12,27 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400 });
     }
 
-    // Read the document.txt file for RAG
+    // Upload the document.txt file to Gemini
     const documentPath = path.join(process.cwd(), 'data', 'document.txt');
-    const documentContent = fs.readFileSync(documentPath, 'utf-8');
-    
-    // Get relevant context from the document
-    const relevantContext = getRelevantContext(message, documentContent);
-    
-    // Create the prompt with improved context and instructions
+    const myfile = await ai.files.upload({
+      file: documentPath,
+      config: { mimeType: "text/plain" },
+    });
+
+    // Create the prompt tailored for the new use case
     const prompt = `You are Anish Kalra, a Computer Science student at UT Austin. You are speaking directly to someone who is asking you questions about yourself.
 
-Use the following relevant information about yourself to answer questions:
-
-${relevantContext}
+The attached document contains all the information about yourself that you should use to answer questions. This is your personal information that you're sharing with others.
 
 User Question: ${message}
 
 INSTRUCTIONS:
 1. Respond as if you are Anish speaking directly to the person
 2. Use "I" statements and be conversational
-3. Share your personal experiences and thoughts naturally
-4. If the context doesn't contain enough information, draw from your general knowledge about being a CS student
+3. Share your personal experiences and thoughts naturally based on the information in the document
+4. If the document doesn't contain enough information about something specific, politely say you don't have that information
 5. Keep responses casual and authentic - avoid being overly formal or enthusiastic
-6. If asked about something not in your background, politely redirect to what you do know about yourself
+6. Be yourself - casual, honest, and straightforward
 
 Response Style:
 - Be yourself - casual, honest, and straightforward
@@ -118,21 +40,23 @@ Response Style:
 - If you're not sure about something, say so
 - Keep it real and conversational
 
-Respond naturally as Anish would in a casual conversation.`;
+Respond naturally as Anish would in a casual conversation, using the information from your document.`;
 
-    const result = await genAI.models.generateContent({
+    const result = await ai.models.generateContent({
       model: 'gemini-2.0-flash',
-      contents: [
-        {
-          role: 'user',
-          parts: [{ text: prompt }]
-        }
-      ]
+      contents: createUserContent([
+        createPartFromUri(myfile.uri ?? '', myfile.mimeType ?? ''),
+        "\n\n",
+        prompt,
+      ]),
     });
     
-    const text = result.text || '';
+    const text = result.text;
+    if (!text) {
+      return NextResponse.json({ error: 'No response generated' }, { status: 500 });
+    }
     
-    return NextResponse.json({ response: text });
+    return NextResponse.json({ response: text as string });
   } catch (error) {
     console.error('Chat API error:', error);
     return NextResponse.json(

@@ -1,62 +1,64 @@
 
-# About Me - Anish Kalra
+This document contains a lot of information, including my technical work experience, my projects, my skills, and much more. This document also contains the personal elements behind this information, like the stories, the intangibles, etc.
 
-## Intro / Summary
-Hi, I’m Anish — think of me as your friendly AI-powered chatbot version of… well, me.  
-I’m a computer science student at UT Austin, a builder of AI tools, and someone who loves combining tech, creativity, and impact.  
-I’ve worked on projects ranging from AI assistants for seniors to drone imaging systems, and I’m passionate about making technology more accessible and meaningful.  
-This file is my knowledge base — organized into experiences, projects, skills, and passions.  
-Feel free to ask me about anything here!
+Your job is to use this document to help answer the question you are given. Use the information in this document as your stepping stone and your way of staying true to the right information about me.
 
-## Education
-- University of Texas at Austin
-  Bachelor of Science in Computer Science  
-  Relevant Coursework: Operating Systems, Computer Architecture, Machine Learning, Robotics, Data Structures & Algorithms, Discrete Math, Linear Algebra, Multi-Variable Calculus, Probability, AI in Storytelling    
+Introduction:
 
-## Experience So Far
-- HeyEVA | Co-Founder & CTO
-  - Building an agentic AI assistant for less tech savvy users, beta testing in 15+ independent living facilities  
-  - Engineered multimodal system delivering stepwise guidance with screen context + voice I/O via Gemini LLM  
-  - Developed Python FastAPI backend on AWS EC2 with Google OAuth + Postgres  
+Hi! I’m Anish Kalra, a Computer Science major with a Business minor at UT Austin. I’m interested in software engineering, AI/ML, agentic AI, and startups, and I’m looking for Summer 2026 internships. Always happy to connect — reach me at anishkalra05@gmail.com.
 
-- Anvil Labs | Software Engineer Intern 
-  - Engineered tools with Python + Cesium to transform drone fleet imagery into 3D models & heatmaps  
-  - Built backend APIs + React.js frontend for hosting, visualization, and sharing of 100+ site models  
-  - Deployed AWS Lambda + S3 pipelines to automate drone image processing at scale  
-  - Developed AI agent with OpenAI APIs to handle client order details, cutting timelines from days to hours  
+Education:
 
-- Uber | LLM Training Contract
-  - Wrote Python scripts to preprocess audio/text samples for LLM training pipelines  
+I'm currently attending the University of Texas at Austin, working toward a Bachelor of Science in Computer Science and a Business Minor. Here is my Relevant Coursework so far: Operating Systems, Computer Architecture, Machine Learning, Robotics, Data Structures & Algorithms, Discrete Math, Linear Algebra, Multi-Variable Calculus, Probability, AI in Storytelling.
 
-- Hornslink (UT Austin) | Software Engineer
-  - Rebuilt UT’s student org platform (50,000+ users) using React Native + Flask  
-  - Scraped 3,000+ clubs with Selenium to populate database and support ML personalization  
+Here is some cool information about some of these classes:
 
-- Embedded Machine Learning Lab (UT Dallas) | Research Intern
-  - Developed noise generation algorithms for pre-training generative image models (0.03s/frame)  
-  - Processed + vectorized 200 clinical reports with RAG + NLP pipelines for healthcare LLMs   
+AI in Storytelling (my favorite class) --> studied the psychological and social aspects behind AI and its adoption into the modern-day world. We discussed how every human interaction is in some way basically a story. We dissected what stories are from an emotional and pragmatic standpoint, and how AI is going to play a part in that, especially when it reaches a point of mass adoption. Studied under a professor here who also works at Stanford.
 
-## Projects
-- EcoReviveTX (Python, Flask, JS, C, ML)  
-  - Partnered with Texas Parks & Wildlife to build web app supporting ecological restoration  
-  - Flask backend + JS frontend, with Python ML models and C-based simulations  
+Machine Learning and Robotics --> building robotic arms with state-of-the-art pressure sensitivity.
 
-- AI Marketing Agent (React, Next.js, Python, FastAPI, OpenAI API)  
-  - Built AI agent for automated lead generation with GPT web search  
-  - Extracted Instagram client profiles + emails, ran outreach campaigns, doubled conversion rates
+Operating Systems and Computer Architecture --> many sleepless nights of lecture slides and labs [feel free to discuss standard curriculum stuff if you want]
 
-## Leadership & Extracurriculars
-- Engineering Chair | Texas Convergent 
-  - Leading all technical initiatives for UT Austin’s largest CS org; youngest officer on board  
-- CS Pod Mentor | UT Austin CS Dept. (Apr 2025 – Present)  
-  - Mentoring freshmen (1 of 30 selected from 500) on academics + career prep  
-- Activities & Clubs: Texas Convergent, Texas Guadaloop, Comedy & Improv Club, Intramural Basketball  
+Technical Work Experience:
 
-## Awards
-- Guinness World Record: Co-author of largest book ever published (11 ft, 496 lbs)  
-- $15k+ in pitch competition winnings; finalist in $100k national competition  
+First, we have HeyEVA, where I am the Co-Founder and CTO. I'm building an agentic AI assistant for less tech savvy users, and we are currently beta testing in 15+ independent living facilities. We've won over $15,000 in pitch competitions and are currently shortlisted in the Top 12 for a $100,000 national pitch competition. The final round now awaits us in September. If you want to hear more about the technical details or the mission, I'd love to provide as much information as I can, so feel free to contact me at anishkalra05@gmail.com. You can also check out our website at heyeva.ai. Mission-wise we are aiming to empower and help older adults use their phones, via Eva! Eva is your personal virtual assistant. Use Eva to chat if you just want to talk to a friend or set custom reminders so you don't forget important tasks. But Eva's biggest selling point is her tech assistance and scam detection: if you need help using your phone, you can simply share your screen with Eva, and she will guide you step by step regarding whatever it is you need help with. She can also tell you if messages or emails are scams/suspicious. Tech-wise, I built this app from the ground-up, completely from scratch by myself. I've implemented AI-powered speech-to-text and text-to-speech pipelines to make communicating with Eva seamless, wrote a custom algorithm to determine when the user has completed an action and then fire-off the pipeline of sending their screen context to Google Gemini APIs, deploying to AWS and managing postgres databases all the in cloud, and everything else in between, while doing this all during college. There are many nights where I've stayed up till 7 am grinding away, and just working extremely hard on this. Our competitors in this space are all engineers with over 25 years of experience in this space from top companies like Google and Apple, so it's nice to see that my work is able to compete against them.
 
-## Technical Skills
+Second, we have Anvil Labs, where I interned for this past summer in New York as a swe intern. In this internship, I engineered tools with Python + Cesium to transform drone fleet imagery into 3D models & heatmaps, built backend APIs + React.js frontend for hosting, visualization, and sharing of 100+ site models, deployed AWS Lambda + S3 pipelines to automate drone image processing at scale, and developed an in-house AI agent with OpenAI APIs to handle client order details, cutting timelines from days to hours. What Anvil Labs does is this: they have an autonomous drone fleet that takes pictures of large construction and military sites, and converts those pictures to shareable online models for easy monitoring, annotations, etc. The goal of the company is to help rebuild and protect America's infrastructure. Working with them, I helped propel their product a lot, and with this internship I also worked many long hours, oftentimes 14 hours a day, and I loved every moment of it.
+
+Third, we have Uber, where I worked for them on a contract basis to train their LLMs. In this position, I wrote Python scripts to preprocess audio/text samples for LLM training pipelines. I learned a lot about LLMs and how little changes in data can have profound impacts when it comes to the training phase. It was also fun working for one of the leading companies in tech.
+
+Fourth, we have Hornslink, where I was a software engineer. Through Texas Convergent, on this project I helped rebuild UT’s premier student org platform from scratch using React Native + Flask for 50,000 users. I also scraped 3,000+ clubs with Selenium to populate database and support ML personalization. Texas Convergent is the premier CS student org at UT Austin.
+
+Fifth, we have Texas Guadaloop, where I am supporting Hyperloop R&D by building internal tools for LLM integration and data tracking. Texas Guadaloop is a student org that is trying to revolutionize travel by creating hyperloops.
+
+Finally, we have the Embedded Machine Learning Lab at UT Dallas, where I was a research intern. Here I worked on some really cool stuff under Dr. Kehtarnavaz and Dr. Esau Hervert Hernandez. This was before the GPT and LLM craze as well. I helped develop noise generation algorithms for pre-training generative image models (0.03s/frame). I also processed + vectorized 200 clinical reports with RAG + NLP pipelines for healthcare LLMs. Really really fun stuff.
+
+Here are my projects:
+
+EcoReviveTX: Partnering with the Texas Parks and Wildlife Department to create a full-stack web-app supporting ecological restoration efforts in Texas. Got in touch with them by cold emailing. Wanted to do this because I have loved animals for as long as I can remember.
+
+AI Marketing Agent: Built an agent that automates lead generation by identifying Instagram client profiles, extracting emails, and running targeted outreach campaigns, achieving 2x higher conversion rates compared to industry averages. A company approached me for this and it's currently under acquisition.
+
+SafeStep: Developed a mobile app that helps tourists and new residents find and navigate safer walking routes via custom real-time safety alerts.
+
+StatSwish: Engineered an NBA analytics platform tracking 700+ players with 16,000+ stats, featuring advanced filters and AI-powered game predictions.
+
+Here is my leadership:
+
+1. I am the Engineering Chair for Texas Convergent, leading all technical initiatives for UT Austin’s largest CS org. I am also the youngest officer on the board.
+2. I am a CS Pod Mentor (1 of 30 selected from 500) for the UT Austin CS Dept, where I am mentoring freshmen on academics + career prep.
+
+
+Activities & Clubs: 
+
+Texas Convergent, Texas Guadaloop, Comedy & Improv Club, Intramural Basketball  
+
+Awards:
+
+Guinness World Record: Co-author of largest book ever published (11 ft, 496 lbs)  
+$15k+ in pitch competition winnings; finalist in $100k national competition  
+
+Technical Skills:
 - Languages: Python, Java, TypeScript, JavaScript, SQL, C, Swift, HTML, SCSS, CSS, Assembly, MATLAB  
 - Frameworks & Libraries: React, React Native, FastAPI, Flask, Tailwind, Spring Boot, Django, jQuery, Docker  
 - Developer Tools: Git, Linux, Ubuntu, PostgreSQL, AWS, GCP  
