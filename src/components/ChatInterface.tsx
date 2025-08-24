@@ -217,7 +217,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                   Send
                 </Button>
                 <div className="group relative">
-                  <span className="text-lg cursor-help">😊</span>
+                  <img src="/icon.svg" alt="Wolf icon" className="w-6 h-6 cursor-help" />
                   <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-gray-200 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
                     In an effort to keep this free, responses might be a little slow, sorry!!
                   </div>
@@ -301,21 +301,21 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                       disabled={isLoading}
                       ref={inputRef}
                     />
-            <div className="flex items-center gap-2">
-              <Button
-                onClick={handleSendMessage}
-                disabled={!inputValue.trim() || isLoading}
-                className="bg-gray-600/80 hover:bg-gray-700/80 text-white px-6 rounded-xl transition-colors backdrop-blur-sm"
-              >
-                Send
-              </Button>
-              <div className="group relative">
-                <span className="text-lg cursor-help">😊</span>
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-gray-200 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
-                  In an effort to keep this free, responses might be a little slow, sorry!!
+                          <div className="flex items-center gap-2">
+                <Button
+                  onClick={handleSendMessage}
+                  disabled={!inputValue.trim() || isLoading}
+                  className="bg-gray-600/80 hover:bg-gray-700/80 text-white px-6 rounded-xl transition-colors backdrop-blur-sm"
+                >
+                  Send
+                </Button>
+                <div className="group relative">
+                  <img src="/icon.svg" alt="Wolf icon" className="w-6 h-6 cursor-help" />
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-gray-200 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                    In an effort to keep this free, responses might be a little slow, sorry!!
+                  </div>
                 </div>
               </div>
-            </div>
             <Button
               onClick={handleClearChat}
               disabled={isLoading}

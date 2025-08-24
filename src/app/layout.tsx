@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anish's Personal Website",
+  title: "Anish Kalra",
   description: "Have a conversation with Anish! Ask me anything about my background, skills, experience, projects, and interests. I'm a UT Austin Computer Science student passionate about AI/ML and startups.",
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
