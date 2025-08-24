@@ -119,11 +119,121 @@
   body {
     @apply bg-background text-foreground;
     min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
     overflow-x: hidden;
+    /* Mobile-specific fixes */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
   }
   
   html {
     overflow-x: hidden;
+    /* Prevent zoom on input focus on iOS */
+    -webkit-text-size-adjust: 100%;
+    /* Mobile viewport fixes */
+    height: 100%;
+    height: 100dvh;
+  }
+}
+
+/* Mobile-specific viewport fixes */
+@supports (height: 100dvh) {
+  body {
+    min-height: 100dvh;
+  }
+  
+  html {
+    height: 100dvh;
+  }
+}
+
+/* Fix for intermittent mobile viewport issues - ONLY for main chat interface */
+@supports (height: 100dvh) {
+  /* Only target the main chat page, not other pages */
+  main.min-h-screen,
+  .min-h-screen.h-full {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+  
+  /* Ensure flex containers work properly with dynamic viewport - ONLY for chat */
+  .flex.flex-col.h-full:has(.ChatInterface) {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+}
+
+/* Additional mobile viewport fixes - ONLY for main page */
+@media screen and (max-width: 768px) {
+  html, body {
+    height: 100%;
+    height: 100dvh;
+    overflow-x: hidden;
+  }
+  
+  /* Only apply to main page, not other pages */
+  main.min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Don't add top padding - let content stay centered */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Ensure proper scrolling on mobile - ONLY for chat interface */
+  .overflow-y-auto.scrollbar-thin {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Fix for mobile browser UI changes - ONLY for chat flex containers */
+  .flex.flex-col.h-full .flex-1 {
+    flex: 1 1 0%;
+    /* Ensure proper flex behavior on mobile */
+    min-height: 0;
+  }
+}
+
+/* Safe area insets for mobile devices - ONLY for main page */
+@supports (padding: max(0px)) {
+  /* Only apply safe area padding to the main page, not globally */
+  main.min-h-screen {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Custom safe area utility classes */
+.pt-safe-top {
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+}
+
+.pb-safe-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.pl-safe-left {
+  padding-left: max(1rem, env(safe-area-inset-left));
+}
+
+.pr-safe-right {
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* Mobile-specific input fixes - ONLY for chat interface */
+@media (max-width: 768px) {
+  /* Only target inputs in the chat interface */
+  .ChatInterface input, 
+  .ChatInterface textarea {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+  
+  /* Ensure proper touch targets - ONLY for chat buttons */
+  .ChatInterface button, 
+  .ChatInterface [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
@@ -134,6 +244,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height */
   z-index: -1;
   pointer-events: none;
 }
@@ -142,6 +253,23 @@
 .content-layer {
   position: relative;
   z-index: 10;
+}
+
+/* Mobile scrollbar fixes - ONLY for chat interface */
+@media (max-width: 768px) {
+  .ChatInterface .scrollbar-thin::-webkit-scrollbar {
+    width: 4px; /* Thinner scrollbar on mobile */
+  }
+  
+  /* Hide scrollbar on mobile but keep functionality - ONLY for chat */
+  .ChatInterface .scrollbar-thin {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .ChatInterface .scrollbar-thin::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Custom scrollbar styles */

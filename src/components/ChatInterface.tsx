@@ -147,7 +147,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     // Initial state - chat input centered on screen
     return (
       <div className="flex flex-col h-full">
-        <div className="flex-1 flex flex-col items-center justify-center text-center px-4">
+        <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pb-safe-bottom">
           <h1 className="text-2xl font-semibold text-gray-100 mb-2">
              Hi, I&apos;m Anish! 👋
            </h1>
@@ -289,7 +289,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       </div>
 
       {/* Fixed Input at Bottom */}
-      <div className="border-t border-gray-700/50 bg-gray-900/30 backdrop-blur-md">
+      <div className="border-t border-gray-700/50 bg-gray-900/30 backdrop-blur-md pb-safe-bottom">
         <div className="p-4">
           <div className="flex gap-3 items-center">
                                 <Input
