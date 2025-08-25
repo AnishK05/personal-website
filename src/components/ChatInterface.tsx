@@ -149,7 +149,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       <div className="flex flex-col h-full">
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pb-safe-bottom">
           <h1 className="text-2xl font-semibold text-gray-100 mb-2">
-             Hi, I&apos;m Anish! 👋
+             Hi, I&apos;m Anish! <span className="inline-block animate-[wave_1s_ease-in-out_infinite]">👋</span>
            </h1>
            <p className="text-gray-400 mb-8 max-w-md">
              I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, AI/ML, agentic AI, and startups. Feel free to chat with me about my projects, experience, skills, or anything else!

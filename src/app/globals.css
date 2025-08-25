@@ -297,3 +297,16 @@
   scrollbar-width: thin;
   scrollbar-color: rgb(75 85 99) rgb(31 41 55);
 }
+
+/* Custom wave animation for hand emoji */
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+}
