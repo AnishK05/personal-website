@@ -196,6 +196,34 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
             ))}
           </div>
 
+          {/* Quick Facts Section */}
+          <div className="max-w-lg mb-8">
+            <div className="bg-gray-800/40 border border-gray-600/50 rounded-xl p-4 backdrop-blur-sm">
+              <h3 className="text-sm font-medium text-gray-300 mb-3 text-center">Quick Facts</h3>
+              <div className="space-y-2 text-xs text-gray-400">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                  <span>Prev SWE Intern @ Anvil Labs</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
+                  <span>Currently Co-Founder and CTO at HeyEVA</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
+                  <span>Engineering Chair at Texas Convergent</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
+                  <span>Guinness World Record Holder</span>
+                </div>
+              </div>
+              <div className="mt-3 text-center">
+                <span className="text-xs text-gray-500 italic">Type below to learn more</span>
+              </div>
+            </div>
+          </div>
+
           {/* Centered Input */}
           <div className="w-full max-w-2xl">
             <div className="flex gap-3 items-center">
