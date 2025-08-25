@@ -66,7 +66,7 @@ export default function ExperiencePage() {
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Deployed AWS Lambda and S3 pipelines to automate drone image processing, scaling to thousands of files per client</span>
+                 <span>Deployed AWS Lambda and S3 pipelines to automate drone image processing, scaling to millions of files per client</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
@@ -96,7 +96,7 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Developed Python scripts to preprocess audio/text samples, cleaning and formatting inputs for LLM training pipelines</span>
+                 <span>Developed Python scripts to preprocess and format audio/text data for LLM training pipelines</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
