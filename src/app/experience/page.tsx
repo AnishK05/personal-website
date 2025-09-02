@@ -20,7 +20,7 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Co-Founder and Chief Technology Officer</h3>
+              <h3 className="text-xl font-semibold text-gray-200">Co-Founder & Chief Technology Officer</h3>
               <span className="text-gray-400 text-sm">Nov 2024 - Present</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -34,14 +34,13 @@ export default function ExperiencePage() {
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Over $15,000 awarded in pitch competitions, with 15+ enterprise partners</span>
+                 <span>Over $250,000 awarded in data credits, $15,000 won in pitch competitions, and 15 enterprise partners</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Software Project Management</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Mobile Development</span>
             </div>
           </div>
 
@@ -96,7 +95,11 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Developed Python scripts to preprocess and format audio/text data for LLM training pipelines</span>
+                 <span>Developed Python scripts to preprocess, normalize, and format audio/text data into scalable LLM datasets</span>
+               </li>
+               <li className="flex items-start">
+                <span className="text-gray-500 mr-2">•</span>
+                <span>Designed validation scripts with regex and schema checks to enforce data integrity and training pipeline compatibility</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">

@@ -134,7 +134,7 @@ export default function AboutPage() {
                 <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
                   <p className="text-gray-200 font-semibold">Pitch Competitions</p>
-                  <p className="text-gray-400 text-sm">Secured $15,000+ in pitch competition winnings; currently a finalist in a $100k national competition</p>
+                  <p className="text-gray-400 text-sm">Awarded $250,000 in data credits; secured $15,000+ in pitch competitions; currently a finalist in a $100,000 national challenge</p>
                 </div>
               </div>
             </div>
