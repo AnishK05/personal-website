@@ -44,6 +44,7 @@ export default function SkillsPage() {
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">React Native</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">FastAPI</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Flask</span>
+              <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Node.js</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Django REST</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Spring Boot</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Tailwind CSS</span>
