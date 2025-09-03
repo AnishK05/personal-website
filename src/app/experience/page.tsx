@@ -99,7 +99,7 @@ export default function ExperiencePage() {
                </li>
                <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Designed validation scripts with regex and schema checks to enforce data integrity and training pipeline compatibility</span>
+                <span>Implemented validation routines using regex and schema checks to enforce data integrity and training pipeline compatibility</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
