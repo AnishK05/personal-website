@@ -140,6 +140,29 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+
+        {/* Leadership Section */}
+        <div className="mt-8">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Leadership</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-3 h-3 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <p className="text-gray-200 font-semibold">Engineering Chair and Forge Tech Leadfor Texas Convergent</p>
+                  <p className="text-gray-400 text-sm">Leading all technical initiatives for Texas Convergent, UT Austin’s largest CS student org; youngest on the officer board</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-3 h-3 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <p className="text-gray-200 font-semibold">CS Pod Mentor (Teaching Assistant for CS 109)</p>
+                  <p className="text-gray-400 text-sm">Mentoring CS freshman on academics, career prep, and university transition</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
