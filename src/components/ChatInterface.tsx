@@ -152,7 +152,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
              Hi, I&apos;m Anish! <span className="inline-block animate-[wave_1s_ease-in-out_infinite]">👋</span>
            </h1>
            <p className="text-gray-400 mb-8 max-w-md">
-             I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, AI/ML, agentic AI, and startups. Feel free to chat with me about my projects, experience, skills, or anything else!
+             I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, AI/ML, agentic AI, and robotics. Feel free to chat with me about my projects, experience, skills, or anything else!
            </p>
           
           {/* Social Media Links */}
