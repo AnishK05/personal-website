@@ -47,6 +47,7 @@ export default function SkillsPage() {
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Node.js</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Django REST</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Spring Boot</span>
+              <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">ROS</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Tailwind CSS</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">jQuery</span>
               <span className="bg-gray-700/70 text-gray-200 px-3 py-1 rounded-full border border-gray-600/70 backdrop-blur-sm">Jupyter</span>

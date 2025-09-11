@@ -47,6 +47,35 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 className="text-xl font-semibold text-gray-200">ML + Robotics Researcher (Undergraduate)</h3>
+              <span className="text-gray-400 text-sm">Jan 2025 - Present</span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <p className="text-gray-300 font-medium">RobIn Robot Interactive Intelligence Lab</p>
+              <span className="text-gray-400 text-sm">Austin, TX</span>
+            </div>
+              <ul className="text-gray-400 mb-4 space-y-1">
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Developing LLM-based control system where robotic arms autonomously generate code to perform novel real-time tasks</span>
+               </li>
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Designing containerized execution layer with ROS/MoveIt and Docker to safely deploy autonomous robot programs</span>
+               </li>
+             </ul>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robot Operating System (ROS)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robotics</span>
+            </div>
+          </div>
+
+          {/* Experience*/}
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">Software Engineer Intern</h3>
               <span className="text-gray-400 text-sm">May 2025 - Aug 2025</span>
             </div>
@@ -136,28 +165,6 @@ export default function ExperiencePage() {
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Mobile Development</span>
-            </div>
-          </div>
-
-          {/* Experience*/}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Software Engineer</h3>
-              <span className="text-gray-400 text-sm">Sep 2024 - May 2025</span>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Texas Guadaloop</p>
-              <span className="text-gray-400 text-sm">Austin, TX</span>
-            </div>
-              <ul className="text-gray-400 mb-4 space-y-1">
-               <li className="flex items-start">
-                 <span className="text-gray-500 mr-2">•</span>
-                 <span>Supporting Hyperloop R&D by building internal tools for LLM integration and data tracking</span>
-               </li>
-             </ul>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Retrieval Augmented Generation (RAG)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
             </div>
           </div>
 

@@ -19,7 +19,10 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <h3 className="text-xl font-semibold mb-3 text-gray-200">EcoReviveTX</h3>
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-xl font-semibold text-gray-200">EcoReviveTX</h3>
+              <div className="text-sm text-gray-500">May 2024 - Dec 2024</div>
+            </div>
             <p className="text-gray-400 mb-4">
               Partnering with the Texas Parks and Wildlife Department to create a full-stack web-app supporting ecological restoration efforts in Texas.
             </p>
@@ -48,7 +51,10 @@ export default function ProjectsPage() {
 
           {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <h3 className="text-xl font-semibold mb-3 text-gray-200">AI Marketing Agent</h3>
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-xl font-semibold text-gray-200">AI Marketing Agent</h3>
+              <div className="text-sm text-gray-500">Feb 2025 - Jun 2025</div>
+            </div>
             <p className="text-gray-400 mb-4">
               Built an agent that automates lead generation by identifying Instagram client profiles, extracting emails, and running targeted outreach campaigns, achieving 2x higher conversion rates compared to industry averages.
             </p>
@@ -82,7 +88,10 @@ export default function ProjectsPage() {
 
           {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <h3 className="text-xl font-semibold mb-3 text-gray-200">SafeStep</h3>
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-xl font-semibold text-gray-200">SafeStep</h3>
+              <div className="text-sm text-gray-500">Sep 2024 - Dec 2024</div>
+            </div>
             <p className="text-gray-400 mb-4">
               Developed a mobile app that helps tourists and new residents find and navigate safer walking routes via custom real-time safety alerts.
             </p>
@@ -108,7 +117,10 @@ export default function ProjectsPage() {
 
           {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <h3 className="text-xl font-semibold mb-3 text-gray-200">StatSwish</h3>
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-xl font-semibold text-gray-200">StatSwish</h3>
+              <div className="text-sm text-gray-500">Jun 2024 - Aug 2024</div>
+            </div>
             <p className="text-gray-400 mb-4">
               Engineered an NBA analytics platform tracking 700+ players with 16,000+ stats, featuring advanced filters and AI-powered game predictions.
             </p>

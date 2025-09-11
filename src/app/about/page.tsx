@@ -93,7 +93,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                  <span className="text-gray-200">Startups</span>
+                  <span className="text-gray-200">Robotics</span>
                 </div>
               </div>
               
