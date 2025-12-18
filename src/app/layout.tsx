@@ -18,10 +18,10 @@ export const metadata: Metadata = {
   description: "Have a conversation with Anish! Ask me anything about my background, skills, experience, projects, and interests. I'm a UT Austin Computer Science student passionate about AI/ML and startups.",
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/icon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/icon.svg',
-    apple: '/icon.svg',
+    shortcut: '/favicon.ico',
   },
 };
 
