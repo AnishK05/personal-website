@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Plasma from "../components/Plasma";
+import LiquidEther from "../components/LiquidEther";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        {/* Plasma background */}
+        {/* LiquidEther background */}
         <div 
           style={{ 
             position: 'fixed',
@@ -47,17 +47,25 @@ export default function RootLayout({
             left: 0,
             width: '100vw',
             height: '100vh',
-            zIndex: -1,
-            pointerEvents: 'none'
+            zIndex: -1
           }}
         >
-          <Plasma 
-            color="#00008B"
-            speed={0.8}
-            direction="forward"
-            scale={2.4}
-            opacity={1.0}
-            mouseInteractive={false}
+          <LiquidEther
+            colors={['#00A7E1', '#00A7E1', '#FFA630']}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={200}
+            autoRampDuration={0.6}
           />
         </div>
         
