@@ -352,12 +352,9 @@ export default function LiquidEther({
           if (this.active) this.forceStop();
           return;
         }
-        if (this.mouse.isHoverInside) {
-          if (this.active) this.forceStop();
-          return;
-        }
         if (!this.active) {
           this.active = true;
+          this.mouse.hasUserControl = false;
           this.current.copy(this.mouse.coords);
           this.lastTime = now;
           this.activationTime = now;
@@ -1020,7 +1017,6 @@ export default function LiquidEther({
         Mouse.takeoverDuration = props.takeoverDuration;
         Mouse.onInteract = () => {
           this.lastUserInteraction = performance.now();
-          if (this.autoDriver) this.autoDriver.forceStop();
         };
         this.autoDriver = new AutoDriver(Mouse, this as any, {
           enabled: props.autoDemo,

@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   title: "Anish Kalra",
   description: "Have a conversation with Anish! Ask me anything about my background, skills, experience, projects, and interests. I'm a UT Austin Computer Science student passionate about AI/ML and startups.",
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
   },
 };
 
