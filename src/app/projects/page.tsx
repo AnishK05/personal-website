@@ -20,38 +20,6 @@ export default function ProjectsPage() {
           {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-xl font-semibold text-gray-200">EcoReviveTX</h3>
-              <div className="text-sm text-gray-500">May 2024 - Dec 2024</div>
-            </div>
-            <p className="text-gray-400 mb-4">
-              Partnering with the Texas Parks and Wildlife Department to create a full-stack web-app supporting ecological restoration efforts in Texas.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Javascript</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">HTML and CSS</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Machine Learning</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">C</span>
-            </div>
-            <div className="flex gap-3">
-              <a 
-                href="https://github.com/AnishK05/EcoReviveTX"
-                className="inline-flex items-center px-3 py-1.5 bg-gray-600/80 text-gray-200 rounded-lg hover:bg-gray-500/80 transition-colors text-xs font-medium backdrop-blur-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                See More
-              </a>
-            </div>
-          </div>
-
-          {/* Project*/}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <div className="flex justify-between items-center mb-3">
               <h3 className="text-xl font-semibold text-gray-200">AI Marketing Agent</h3>
               <div className="text-sm text-gray-500">Feb 2025 - Jun 2025</div>
             </div>
@@ -84,6 +52,38 @@ export default function ProjectsPage() {
                   </div>
                </div>
              </div>
+          </div>
+
+          {/* Project*/}
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-xl font-semibold text-gray-200">EcoReviveTX</h3>
+              <div className="text-sm text-gray-500">May 2024 - Dec 2024</div>
+            </div>
+            <p className="text-gray-400 mb-4">
+              Partnering with the Texas Parks and Wildlife Department to create a full-stack web-app supporting ecological restoration efforts in Texas.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Javascript</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">HTML and CSS</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Machine Learning</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">C</span>
+            </div>
+            <div className="flex gap-3">
+              <a 
+                href="https://github.com/AnishK05/EcoReviveTX"
+                className="inline-flex items-center px-3 py-1.5 bg-gray-600/80 text-gray-200 rounded-lg hover:bg-gray-500/80 transition-colors text-xs font-medium backdrop-blur-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                See More
+              </a>
+            </div>
           </div>
 
           {/* Project*/}

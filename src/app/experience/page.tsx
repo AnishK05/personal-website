@@ -21,7 +21,7 @@ export default function ExperiencePage() {
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">Co-Founder & Chief Technology Officer</h3>
-              <span className="text-gray-400 text-sm">Nov 2024 - Present</span>
+              <span className="text-gray-400 text-sm">Oct 2024 - Present</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <p className="text-gray-300 font-medium">HeyEVA</p>
@@ -34,42 +34,13 @@ export default function ExperiencePage() {
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Over $250,000 awarded in data credits, $15,000 won in pitch competitions, and 15 enterprise partners</span>
+                 <span>Over $250,000 awarded in data credits, $25,000 won in pitch competitions, and 15 enterprise partners</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Software Project Management</span>
-            </div>
-          </div>
-
-          {/* Experience*/}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">ML + Robotics Researcher (Undergraduate)</h3>
-              <span className="text-gray-400 text-sm">Jan 2025 - Present</span>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">RobIn Robot Interactive Intelligence Lab</p>
-              <span className="text-gray-400 text-sm">Austin, TX</span>
-            </div>
-              <ul className="text-gray-400 mb-4 space-y-1">
-               <li className="flex items-start">
-                 <span className="text-gray-500 mr-2">•</span>
-                 <span>Developing LLM-based control system where robotic arms autonomously generate code to perform novel real-time tasks</span>
-               </li>
-               <li className="flex items-start">
-                 <span className="text-gray-500 mr-2">•</span>
-                 <span>Designing containerized execution layer with ROS/MoveIt and Docker to safely deploy autonomous robot programs</span>
-               </li>
-             </ul>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robot Operating System (ROS)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robotics</span>
             </div>
           </div>
 
@@ -114,12 +85,41 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">LLM Training (Contract)</h3>
+              <h3 className="text-xl font-semibold text-gray-200">ML + Robotics Undergraduate Researcher @ RobIn Lab</h3>
+              <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <p className="text-gray-300 font-medium">RobIn Robot Interactive Intelligence Lab</p>
+              <span className="text-gray-400 text-sm">Austin, TX</span>
+            </div>
+              <ul className="text-gray-400 mb-4 space-y-1">
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Developed an LLM-based control system enabling robotic arms to autonomously generate code for novel real-time tasks</span>
+               </li>
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Built a containerized execution layer using ROS, MoveIt and Docker, enforcing policy validation and sandboxed execution</span>
+               </li>
+             </ul>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robot Operating System (ROS)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robotics</span>
+            </div>
+          </div>
+
+          {/* Experience*/}
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 className="text-xl font-semibold text-gray-200">LLM Training</h3>
               <span className="text-gray-400 text-sm">Jul 2025 - Aug 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <p className="text-gray-300 font-medium">Uber</p>
-              <span className="text-gray-400 text-sm">Dallas, TX</span>
+              <span className="text-gray-400 text-sm">Contract -- Remote</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
@@ -143,8 +143,8 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Software Engineer</h3>
-              <span className="text-gray-400 text-sm">Jan 2025 - May 2025</span>
+              <h3 className="text-xl font-semibold text-gray-200">Software Lead and Software Engineer</h3>
+              <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <p className="text-gray-300 font-medium">Hornslink (In Collaboration with UT Austin)</p>
@@ -153,7 +153,11 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Rebuilt Hornslink, UT&apos;s premier student org platform, from scratch using React Native and Flask for 50,000+ students</span>
+                 <span>Led all technical endeavors to rebuild and launch Hornslink, UT&apos;s premier student org platform, from scratch using React Native and Flask for 50,000+ students</span>
+               </li>
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Scraped data from 3,000+ clubs using Selenium to populate the platform’s database and support ML personalizations</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
@@ -161,9 +165,10 @@ export default function ExperiencePage() {
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Typescript</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Typescript</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native and Expo</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Mobile Development</span>
             </div>
           </div>
@@ -171,7 +176,7 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Research Intern</h3>
+              <h3 className="text-xl font-semibold text-gray-200">High School Research Intern</h3>
               <span className="text-gray-400 text-sm">Jun 2023 - Aug 2024</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -187,18 +192,13 @@ export default function ExperiencePage() {
                  <span className="text-gray-500 mr-2">•</span>
                  <span>Processed and vectorized ~200 clinical reports with RAG + NLP pipelines to train early-stage healthcare-tuned LLMs</span>
                </li>
-               <li className="flex items-start">
-                 <span className="text-gray-500 mr-2">•</span>
-                 <span>Conducted research under Dr. Kehtarnavaz and Dr. Esau Hervert Hernandez</span>
-               </li>
              </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Machine Learning</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Computer Vision</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Retrival Augmented Generation (RAG)</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Natural Language Processing (NLP)</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Computer Vision</span>
             </div>
           </div>
 

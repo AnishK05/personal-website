@@ -66,17 +66,17 @@ export default function AboutPage() {
             </div>
           </div>
 
-                                           {/* Photo Area */}
-            <div className="lg:col-span-1">
-              <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg h-full flex items-center justify-center overflow-hidden">
-                <img 
-                   src="/AnishKalra.jpg" 
-                   alt="Anish Kalra" 
-                   className="w-full h-full object-cover rounded-lg"
-                   style={{ objectPosition: '40% 50%' }}
-                 />
-              </div>
+          {/* Photo Area */}
+          <div className="lg:col-span-1">
+            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg h-full flex items-center justify-center overflow-hidden">
+              <img 
+                  src="/AnishKalra.jpg" 
+                  alt="Anish Kalra" 
+                  className="w-full h-full object-cover rounded-lg"
+                  style={{ objectPosition: '40% 50%' }}
+                />
             </div>
+          </div>
 
           {/* Interests & Hobbies */}
           <div className="lg:col-span-1">
@@ -134,7 +134,7 @@ export default function AboutPage() {
                 <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
                   <p className="text-gray-200 font-semibold">Pitch Competitions</p>
-                  <p className="text-gray-400 text-sm">Awarded $250,000 in data credits; secured $15,000+ in pitch competitions; currently a finalist in a $100,000 national challenge</p>
+                  <p className="text-gray-400 text-sm">Awarded $250,000 in data/cloud credits and $25,000 in various pitch competitions</p>
                 </div>
               </div>
             </div>
@@ -149,15 +149,52 @@ export default function AboutPage() {
               <div className="flex items-start space-x-3">
                 <div className="w-3 h-3 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <p className="text-gray-200 font-semibold">Engineering Chair and Forge Tech Leadfor Texas Convergent</p>
+                  <p className="text-gray-200 font-semibold">Engineering Chair and Forge Tech Lead for Texas Convergent</p>
                   <p className="text-gray-400 text-sm">Leading all technical initiatives for Texas Convergent, UT Austin’s largest CS student org; youngest on the officer board</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-3 h-3 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <p className="text-gray-200 font-semibold">CS Pod Mentor (Teaching Assistant for CS 109)</p>
+                  <p className="text-gray-200 font-semibold">CS Pod Mentor (Teaching Assistant for CS109)</p>
                   <p className="text-gray-400 text-sm">Mentoring CS freshman on academics, career prep, and university transition</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Publications Section */}
+        <div className="mt-8">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg">
+            <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Publications</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <div className="w-3 h-3 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <a 
+                    href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4836934"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline font-semibold"
+                  >
+                    Inner Speech Recognition Brain-Computer Interface &amp; Integrated Machine Learning Model to Assist Differently Abled and Neuromuscular Disorder Patients in Home Automation
+                  </a>
+                  <p className="text-gray-400 text-sm">Co-authored an award-winning research paper on a Brain-Computer Interface for simple home automation</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-3 h-3 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <a 
+                    href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4438594"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline font-semibold"
+                  >
+                    Eye-Dentify: A Nonmydriatic Retinal Imaging Tool Utilizing Biomarker Characteristics for Broad Spectrum Disease Identification via Multi-Disease Diagnosis Deep Learning Models
+                  </a>
+                  <p className="text-gray-400 text-sm">Co-authored a research paper on an affordable AI-powered retinal imaging tool for multi-disease diagnosis</p>
                 </div>
               </div>
             </div>
