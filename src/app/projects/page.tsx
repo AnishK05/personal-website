@@ -45,7 +45,7 @@ export default function ProjectsPage() {
                  </a>
                  
                   {/* Tooltip */}
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-3 bg-gray-900/90 text-gray-100 text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10 backdrop-blur-md">
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-6 py-3 bg-gray-900/90 text-gray-100 text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-normal min-w-[320px] max-w-xl z-10 backdrop-blur-md break-words text-center">
                     This project is currently under acquisition by a company. Additional details are confidential during this process.
                     {/* Tooltip arrow */}
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900/90"></div>
