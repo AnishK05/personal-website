@@ -206,10 +206,6 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                   <span>Prev @ Anvil Labs</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                  <span>Co-Founder & CTO @ HeyEVA</span>
-                </div>
-                <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
                   <span>Engineering Chair @ Texas Convergent</span>
                 </div>

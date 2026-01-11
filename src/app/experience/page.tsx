@@ -20,33 +20,6 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Co-Founder & Chief Technology Officer</h3>
-              <span className="text-gray-400 text-sm">Oct 2024 - Present</span>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">HeyEVA</p>
-              <span className="text-gray-400 text-sm">Austin, TX</span>
-            </div>
-              <ul className="text-gray-400 mb-4 space-y-1">
-               <li className="flex items-start">
-                 <span className="text-gray-500 mr-2">•</span>
-                 <span>Building an agentic AI for less tech savvy users; beta testing in independent living facilities</span>
-               </li>
-               <li className="flex items-start">
-                 <span className="text-gray-500 mr-2">•</span>
-                 <span>Over $250,000 awarded in data credits, $25,000 won in pitch competitions, and 15 enterprise partners</span>
-               </li>
-             </ul>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Software Project Management</span>
-            </div>
-          </div>
-
-          {/* Experience*/}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">Software Engineer Intern</h3>
               <span className="text-gray-400 text-sm">May 2025 - Aug 2025</span>
             </div>
@@ -85,6 +58,32 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 className="text-xl font-semibold text-gray-200">Co-Founder & Chief Technology Officer</h3>
+              <span className="text-gray-400 text-sm">Oct 2024 - Aug 2025</span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <p className="text-gray-300 font-medium">HeyEVA</p>
+              <span className="text-gray-400 text-sm">Austin, TX</span>
+            </div>
+              <ul className="text-gray-400 mb-4 space-y-1">
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Built an agentic AI mobile assistant for less tech savvy users; 15 enterprise partners and 3,000 users</span>
+               </li>
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Over $250,000 awarded in data credits and $25,000 won in pitch competitions</span>
+               </li>
+             </ul>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Mobile App Development</span>
+            </div>
+          </div>
+
+          {/* Experience*/}
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <h3 className="text-xl font-semibold text-gray-200">ML + Robotics Undergraduate Researcher @ RobIn Lab</h3>
               <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
             </div>
@@ -108,35 +107,6 @@ export default function ExperiencePage() {
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robotics</span>
-            </div>
-          </div>
-
-          {/* Experience*/}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">LLM Training</h3>
-              <span className="text-gray-400 text-sm">Jul 2025 - Aug 2025</span>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Uber</p>
-              <span className="text-gray-400 text-sm">Contract -- Remote</span>
-            </div>
-              <ul className="text-gray-400 mb-4 space-y-1">
-               <li className="flex items-start">
-                 <span className="text-gray-500 mr-2">•</span>
-                 <span>Developed Python scripts to preprocess, normalize, and format audio/text data into scalable LLM datasets</span>
-               </li>
-               <li className="flex items-start">
-                <span className="text-gray-500 mr-2">•</span>
-                <span>Implemented validation routines using regex and schema checks to enforce data integrity and training pipeline compatibility</span>
-               </li>
-             </ul>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Natural Language Processing (NLP)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Pandas</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
             </div>
           </div>
 
