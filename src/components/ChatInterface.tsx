@@ -152,7 +152,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
              Hi, I&apos;m Anish! <span className="inline-block animate-[wave_1s_ease-in-out_infinite]">👋</span>
            </h1>
            <p className="text-gray-400 mb-8 max-w-md">
-             I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, AI/ML, agentic AI, and robotics. Feel free to chat with me about my projects, experience, skills, or anything else!
+             I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, agentic AI, AI/ML, and robotics. Feel free to chat with me about my projects, experience, skills, or anything else!
            </p>
           
           {/* Social Media Links */}
@@ -206,11 +206,11 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                   <span>Prev @ Anvil Labs</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
                   <span>Engineering Chair @ Texas Convergent</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
                   <span>Guinness World Record Holder</span>
                 </div>
               </div>

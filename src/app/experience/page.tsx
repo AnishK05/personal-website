@@ -68,15 +68,15 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Built an agentic AI mobile assistant for less tech savvy users; 15 enterprise partners, $250,000 awarded in data credits, $25,000 won in pitch competitions</span>
+                 <span>Launched an agentic AI assistant for less tech savvy users; 15 enterprise partners, $250,000 awarded in data credits, and $25,000 won in pitch competitions</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Engineered multimodal system delivering stepwise guidance by combining screen context & voice I/O with Gemini LLM</span>
+                 <span>Engineered an autonomous, screen-aware mobile agent interpreting live UI state for real-time, step-by-step voice guidance</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Developed a Python FastAPI backend deployed on AWS EC2, with Google OAuth and cloud-hosted Postgres databases</span>
+                 <span>Designed the agent runtime coordinating screen perception, Gemini-based reasoning, and voice I/O using Swift/Java, FastAPI, AWS, and PostgreSQL</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
@@ -85,7 +85,7 @@ export default function ExperiencePage() {
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">FastAPI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Gemini LLM API</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgresSQL</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgreSQL</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Swift & Java (Mobile Dev)</span>
             </div>
           </div>
@@ -103,11 +103,11 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Engineered a Dockerized control system in which an LLM autonomously generates, validates, and executes low-level Python motion policies for robotic arms in real time</span>
+                 <span>Engineered a Dockerized control system in which an LLM autonomously generates and validates low-level Python motion policies for robotic arms in real time</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Implemented a sandboxed ROS/MoveIt execution layer that safely executes newly generated policies, enabling on-the-fly handling of unseen tasks</span>
+                 <span>Implemented a sandboxed ROS/MoveIt execution layer that safely executes LLM-generated policies, enabling on-the-fly handling of unseen tasks</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
