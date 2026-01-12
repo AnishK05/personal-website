@@ -50,7 +50,7 @@ export default function ExperiencePage() {
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Django REST Framework</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React.js</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">OpenAI API</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Amazon Web Services (AWS)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">API Development</span>
             </div>
           </div>
@@ -68,16 +68,25 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Built an agentic AI mobile assistant for less tech savvy users; 15 enterprise partners and 3,000 users</span>
+                 <span>Built an agentic AI mobile assistant for less tech savvy users; 15 enterprise partners, $250,000 awarded in data credits, $25,000 won in pitch competitions</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Over $250,000 awarded in data credits and $25,000 won in pitch competitions</span>
+                 <span>Engineered multimodal system delivering stepwise guidance by combining screen context & voice I/O with Gemini LLM</span>
+               </li>
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Developed a Python FastAPI backend deployed on AWS EC2, with Google OAuth and cloud-hosted Postgres databases</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Mobile App Development</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">MCP & Tool Calling</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">FastAPI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Gemini LLM API</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgresSQL</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Swift & Java (Mobile Dev)</span>
             </div>
           </div>
 
@@ -94,19 +103,19 @@ export default function ExperiencePage() {
               <ul className="text-gray-400 mb-4 space-y-1">
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Developed an LLM-based control system enabling robotic arms to autonomously generate code for novel real-time tasks</span>
+                 <span>Engineered a Dockerized control system in which an LLM autonomously generates, validates, and executes low-level Python motion policies for robotic arms in real time</span>
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Built a containerized execution layer using ROS, MoveIt and Docker, enforcing policy validation and sandboxed execution</span>
+                 <span>Implemented a sandboxed ROS/MoveIt execution layer that safely executes newly generated policies, enabling on-the-fly handling of unseen tasks</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robot Operating System (ROS)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLM Code Generation</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">ROS</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">MoveIt</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robotics</span>
             </div>
           </div>
 
@@ -117,7 +126,7 @@ export default function ExperiencePage() {
               <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Hornslink (In Collaboration with UT Austin)</p>
+              <p className="text-gray-300 font-medium">Hornslink Mobile App (In Collaboration with UT Austin)</p>
               <span className="text-gray-400 text-sm">Austin, TX</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
@@ -127,19 +136,15 @@ export default function ExperiencePage() {
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Scraped data from 3,000+ clubs using Selenium to populate the platform’s database and support ML personalizations</span>
-               </li>
-               <li className="flex items-start">
-                 <span className="text-gray-500 mr-2">•</span>
-                 <span>Via Texas Convergent</span>
+                 <span>Scraped data from 3,000+ clubs via Selenium to populate the platform’s database and support ML personalizations</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Typescript</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native and Expo</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Mobile Development</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
             </div>
           </div>
 
@@ -166,9 +171,9 @@ export default function ExperiencePage() {
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Computer Vision</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Retrival Augmented Generation (RAG)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Natural Language Processing (NLP)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Large Language Models (LLMs)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">RAG</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">NLP</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLMs</span>
             </div>
           </div>
 

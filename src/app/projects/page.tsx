@@ -33,6 +33,7 @@ export default function ProjectsPage() {
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgreSQL</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Next.js</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
             </div>
             <div className="flex gap-3">
@@ -60,6 +61,7 @@ export default function ProjectsPage() {
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Next.js</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Node.js</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">MCP</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLM Web Search</span>
@@ -164,7 +166,7 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">EcoReviveTX</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Partnered with the Texas Parks and Wildlife Department to create a full-stack web-app supporting ecological restoration efforts in Texas.
+              Partnered with the Texas Parks and Wildlife Department to create a full-stack web-app supporting ecological restoration efforts in Texas, powered by simulations and machine learning.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
@@ -210,8 +212,7 @@ export default function ProjectsPage() {
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React.js</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Java</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Spring Boot</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Java Spring Boot</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Machine Learning</span>
             </div>
@@ -254,7 +255,8 @@ export default function ProjectsPage() {
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Machine Learning</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Scikit-learn</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">BCI & EEG</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">BCI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">EEG</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Feature Extraction</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Raspberry Pi</span>
             </div>
@@ -336,8 +338,8 @@ export default function ProjectsPage() {
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Google Maps API</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Google Maps API</span>
             </div>
             <div className="flex gap-3">
               <a 
@@ -360,7 +362,7 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">Self-Driving Car Simulator</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Developed an autonomous self-driving car system in the Udacity simulator that uses computer vision–based lane detection and traffic sign recognition to enable real-time vehicle navigation.
+              Programmed an autonomous self-driving car in the Udacity simulator that uses computer vision–based lane detection and traffic sign recognition to enable real-time vehicle navigation.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
@@ -390,10 +392,11 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">UT Racquetball Official Website</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Built a simple official website for the UT Racquetball team (vibe-coded in a single prompt).
+              Built a simple official website for the UT Racquetball team (vibe-coded in a single prompt, lol).
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Next.js</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Vibe Coding</span>
             </div>
             <div className="flex gap-3">

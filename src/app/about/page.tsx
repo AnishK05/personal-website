@@ -150,7 +150,7 @@ export default function AboutPage() {
                 <div className="w-3 h-3 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
                   <p className="text-gray-200 font-semibold">Engineering Chair and Forge Tech Lead for Texas Convergent</p>
-                  <p className="text-gray-400 text-sm">Leading all technical initiatives for Texas Convergent, UT Austin’s largest CS student org; youngest on the officer board</p>
+                  <p className="text-gray-400 text-sm">Leading all technical initiatives for Texas Convergent, UT Austin’s largest CS student org</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">

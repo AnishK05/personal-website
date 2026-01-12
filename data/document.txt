@@ -8,41 +8,51 @@ Hi! I’m Anish Kalra, a Computer Science major with a Business minor at UT Aust
 
 Education:
 
-I'm currently attending the University of Texas at Austin, working toward a Bachelor of Science in Computer Science and a Business Minor. Here is my Relevant Coursework so far: Operating Systems, Computer Architecture, Machine Learning, Robotics, Data Structures & Algorithms, Discrete Math, Linear Algebra, Multi-Variable Calculus, Probability, AI in Storytelling. Here is how I am involved on campus: Texas Convergent (Engineering Chair and Forge Tech Lead), Texas Guadaloop (Team Lead), CS Pod Mentor. 
+I'm currently attending the University of Texas at Austin, working toward a Bachelor of Science in Computer Science and a Business Minor. Here is my Relevant Coursework so far: Software Engineering, Advanced Algorithms, Operating Systems, Computer Architecture, Machine Learning, Robotics, Data Structures & Algorithms, Discrete Math, Linear Algebra, Multi-Variable Calculus, Probability, AI in Storytelling. Here is how I am involved on campus: Texas Convergent (Engineering Chair and Forge Tech Lead), Texas Guadaloop (Team Lead), CS Pod Mentor. 
 
 Here is some cool information about some of these classes:
 
 AI in Storytelling (my favorite class) --> studied the psychological and social aspects behind AI and its adoption into the modern-day world. We discussed how every human interaction is in some way basically a story. We dissected what stories are from an emotional and pragmatic standpoint, and how AI is going to play a part in that, especially when it reaches a point of mass adoption. Studied under a professor here who also works at Stanford.
 
-Machine Learning and Robotics --> building robotic arms with state-of-the-art pressure sensitivity.
-
-Operating Systems and Computer Architecture --> many sleepless nights of lecture slides and labs [feel free to discuss standard curriculum stuff if you want]
+For all the other CS classes --> discuss standard curriculum and concepts.
 
 Technical Work Experience:
 
-First, we have HeyEVA, where I am the Co-Founder and CTO. I'm building an agentic AI assistant for less tech savvy users, and we are currently beta testing in 15+ independent living facilities. We've won over $25,000 in pitch competitions. The final round now awaits us in September. If you want to hear more about the technical details or the mission, I'd love to provide as much information as I can, so feel free to contact me at anishkalra05@gmail.com. You can also check out our website at heyeva.ai. Mission-wise we are aiming to empower and help older adults use their phones, via Eva! Eva is your personal virtual assistant. Use Eva to chat if you just want to talk to a friend or set custom reminders so you don't forget important tasks. But Eva's biggest selling point is her tech assistance and scam detection: if you need help using your phone, you can simply share your screen with Eva, and she will guide you step by step regarding whatever it is you need help with. She can also tell you if messages or emails are scams/suspicious. Tech-wise, I built this app from the ground-up, completely from scratch by myself. I've implemented AI-powered speech-to-text and text-to-speech pipelines to make communicating with Eva seamless, wrote a custom algorithm to determine when the user has completed an action and then fire-off the pipeline of sending their screen context to Google Gemini APIs, deploying to AWS and managing postgres databases all the in cloud, and everything else in between, while doing this all during college. There are many nights where I've stayed up till 7 am grinding away, and just working extremely hard on this. Our competitors in this space are all engineers with over 25 years of experience in this space from top companies like Google and Apple, so it's nice to see that my work is able to compete against them.
+First, we have Anvil Labs, where I interned for this past summer in New York as a swe intern. In this internship, I engineered tools with Python + Cesium to transform drone fleet imagery into 3D models & heatmaps, built backend APIs + React.js frontend for hosting, visualization, and sharing of 100+ site models, deployed AWS Lambda + S3 pipelines to automate drone image processing at scale, and developed an in-house AI agent with OpenAI APIs to handle client order details, cutting timelines from days to hours. What Anvil Labs does is this: they have an autonomous drone fleet that takes pictures of large construction and military sites, and converts those pictures to shareable online models for easy monitoring, annotations, etc. The goal of the company is to help rebuild and protect America's infrastructure. Working with them, I helped propel their product a lot, and with this internship I also worked many long hours, oftentimes 14 hours a day, and I loved every moment of it.
 
-Second, we have Anvil Labs, where I interned for this past summer in New York as a swe intern. In this internship, I engineered tools with Python + Cesium to transform drone fleet imagery into 3D models & heatmaps, built backend APIs + React.js frontend for hosting, visualization, and sharing of 100+ site models, deployed AWS Lambda + S3 pipelines to automate drone image processing at scale, and developed an in-house AI agent with OpenAI APIs to handle client order details, cutting timelines from days to hours. What Anvil Labs does is this: they have an autonomous drone fleet that takes pictures of large construction and military sites, and converts those pictures to shareable online models for easy monitoring, annotations, etc. The goal of the company is to help rebuild and protect America's infrastructure. Working with them, I helped propel their product a lot, and with this internship I also worked many long hours, oftentimes 14 hours a day, and I loved every moment of it.
+Second, there was HeyEVA, where I served as Co-Founder and CTO. I built an agentic AI assistant for less tech savvy users, and the platform served 15+ independent living facilities. We won over $250,000 in data credits and $25,000 in pitch competitions. Our mission was to help older adults use their phones, through Eva. Eva was a personal virtual assistant users could chat with for companionship or to set custom reminders. Eva’s standout features were her tech assistance and scam detection: if someone needed help using their phone, they could share their screen with Eva and she would guide them step by step. She could also identify potentially suspicious messages or emails. On the technical side, I built the app completely from scratch. I implemented AI-powered speech-to-text and text-to-speech pipelines for seamless communication, wrote a custom algorithm to determine when the user had completed an action before triggering the pipeline to send their screen context to Google Gemini APIs, and handled deployment to AWS as well as PostgreSQL database management in the cloud—all while in college. There were many nights I stayed up until 7am working hard on this. Our competitors were engineers with over 25 years of experience at companies like Google and Apple, so it was rewarding to see my work able to compete in that arena.
 
 Third, I worked in the RobIn Robot Interactive Intelligence Lab at UT Austin. I was an undergraduate researcher in the RobIn Lab, working under a former Nuro ML engineer to develop a self-coding robotic arm system that allowed LLMs to autonomously generate and execute motion plans through ROS, MoveIt, and Docker-based sandboxing. I designed the containerized control layer and safety modules for autonomous code execution—an approach aimed at replacing rigid reinforcement learning frameworks like PyZero with something more fluid and adaptive. This was a solo research project that had the potential to redefine how we think about Vision-Language-Action (VLA) models by merging symbolic reasoning with physical autonomy. I became deeply fascinated by the idea that code itself could function as a language robots think in, and my PI emphasized that the project’s potential was immense.
 
-Fourth, we have Uber, where I worked for them on a contract basis to train their LLMs. In this position, I wrote Python scripts to preprocess audio/text samples for LLM training pipelines. I learned a lot about LLMs and how little changes in data can have profound impacts when it comes to the training phase. It was also fun working for one of the leading companies in tech.
+Fourth, we have Hornslink, where I was the software lead. On this project I helped rebuild UT’s premier student org platform from scratch using React Native + Flask for 50,000 users. I also scraped 3,000+ clubs with Selenium to populate database and support ML personalization.
 
-Fifth, we have Hornslink, where I was a software lead. Through Texas Convergent, on this project I helped rebuild UT’s premier student org platform from scratch using React Native + Flask for 50,000 users. I also scraped 3,000+ clubs with Selenium to populate database and support ML personalization. Texas Convergent is the premier CS student org at UT Austin.
-
-Sixth, we have Texas Guadaloop, where I am supporting Hyperloop R&D by building internal tools for LLM integration and data tracking. Texas Guadaloop is a student org that is trying to revolutionize travel by creating hyperloops.
+Fifth, we have Texas Guadaloop, where I am supporting Hyperloop R&D by building internal tools for LLM integration and data tracking. Texas Guadaloop is a student org that is trying to revolutionize travel by creating hyperloops.
 
 Finally, we have the Embedded Machine Learning Lab at UT Dallas, where I was a high school research intern. Here I worked on some really cool stuff under Dr. Kehtarnavaz and Dr. Esau Hervert Hernandez. This was before the GPT and LLM craze as well. I helped develop noise generation algorithms for pre-training generative image models (0.03s/frame). I also processed + vectorized 200 clinical reports with RAG + NLP pipelines for healthcare LLMs. Really really fun stuff.
 
 Here are my projects:
 
-EcoReviveTX: Partnering with the Texas Parks and Wildlife Department to create a full-stack web-app supporting ecological restoration efforts in Texas. Got in touch with them by cold emailing. Wanted to do this because I have loved animals for as long as I can remember.
+Pulse (Event Platform): Designed and implemented a multi-tenant, developer-facing event ingestion and processing platform with API-key authentication, rate limiting, idempotent intake, Kafka-based asynchronous processing, Postgres-backed persistence, dead-letter queues, and an operator dashboard for observability.
 
 AI Marketing Agent: Built an agent that automates lead generation by identifying Instagram client profiles, extracting emails, and running targeted outreach campaigns, achieving 2x higher conversion rates compared to industry averages. A company approached me for this and it's currently under acquisition.
 
-SafeStep: Developed a mobile app that helps tourists and new residents find and navigate safer walking routes via custom real-time safety alerts.
+Code as Control: Engineered a Dockerized control system in which an LLM autonomously generates, validates, and executes low-level Python motion policies for robotic arms in real time, enabling on-the-fly execution of unseen tasks via a sandboxed ROS/MoveIt execution layer.
+
+TimeDraft: Created a Chrome extension that eliminates manual scheduling by converting Google Calendar availability into clean, ready-to-send email text with configurable date ranges, meeting durations, and timezone conversion.
+
+EcoReviveTX: Partnering with the Texas Parks and Wildlife Department to create a full-stack web-app supporting ecological restoration efforts in Texas. Got in touch with them by cold emailing. Wanted to do this because I have loved animals for as long as I can remember.
 
 StatSwish: Engineered an NBA analytics platform tracking 700+ players with 16,000+ stats, featuring advanced filters and AI-powered game predictions.
+
+Inner Speech Recognition Brain-Computer Interface & Integrated Machine Learning Model to Assist Differently Abled and Neuromuscular Disorder Patients in Home Automation: Co-authored an award-winning research paper on a Brain-Computer Interface for simple home automation.
+
+Eye-Dentify: A Nonmydriatic Retinal Imaging Tool Utilizing Biomarker Characteristics for Broad Spectrum Disease Identification via Multi-Disease Diagnosis Deep Learning Models: Co-authored a research paper on an affordable AI-powered retinal imaging tool for multi-disease diagnosis.
+
+SafeStep: Developed a mobile app that helps tourists and new residents find and navigate safer walking routes via custom real-time safety alerts.
+
+Self-Driving Car Simulator: Programmed an autonomous self-driving car in the Udacity simulator that uses computer vision–based lane detection and traffic sign recognition to enable real-time vehicle navigation.
+
+UT Racquetball Official Website: Built a simple official website for the UT Racquetball team (vibe-coded in a single prompt, lol).
 
 Here is my leadership:
 
@@ -60,7 +70,9 @@ Guinness World Record: Co-author of largest book ever published (11 ft, 496 lbs)
 $25k in pitch competition winnings, and $250,000 in data/cloud credits
 
 Technical Skills:
-- Languages: Python, Java, TypeScript, JavaScript, SQL, C, Swift, HTML, SCSS, CSS, Assembly, MATLAB  
-- Frameworks & Libraries: React, React Native, FastAPI, Flask, Tailwind, Spring Boot, Django, jQuery, Docker  
-- Developer Tools: Git, Linux, Ubuntu, PostgreSQL, AWS, GCP  
-- ML Libraries: TensorFlow, Keras, OpenCV, Scikit-Learn, NLTK, Selenium, Beautiful Soup, NumPy, Pandas    
+- Languages: Python, Java, TypeScript, JavaScript, Golang, SQL, Swift, C, HTML, SCSS, CSS, MATLAB  
+- Frameworks & Libraries: Next.js, React.js, React Native, FastAPI, Flask, Spring Boot, Node.js, Kafka Django REST, ROS, Tailwind CSS, jQuery, Jupyter, Google OAuth 2.0
+- Database and Cloud: PostgreSQL, Redis, Supabase, Amazon Web Services (AWS), Firebase, Google Cloud Platform (GCP), Vercel
+- AI + Analytics: Google Gemini & OpenAI APIs, Claude, Retrieval Augmented Generation (RAG), Model Context, Protocol (MCP), Chain of Thought, Voice-First AI Systems, PostHog, Google Analytics
+- Machine Learning: TensorFlow, Keras, OpenCV, Scikit Learn, NLTK, Selenium, Beautiful Soup, NumPy, Pandas
+- Development Tools: Git, Docker, Linux, Postman, Ubuntu
