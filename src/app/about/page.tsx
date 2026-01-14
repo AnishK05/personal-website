@@ -70,10 +70,9 @@ export default function AboutPage() {
           <div className="lg:col-span-1">
             <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg h-full flex items-center justify-center overflow-hidden">
               <img 
-                  src="/AnishKalra.jpg" 
+                  src="/AnishKalraSmall.jpg" 
                   alt="Anish Kalra" 
                   className="w-full h-full object-cover rounded-lg"
-                  style={{ objectPosition: '40% 50%' }}
                 />
             </div>
           </div>
