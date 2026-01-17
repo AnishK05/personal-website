@@ -105,7 +105,7 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                    <span className="text-gray-200">Basketball & Pickleball</span>
+                    <span className="text-gray-200">Basketball & Gardening</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
               <div className="flex items-start space-x-3">
                 <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <p className="text-gray-200 font-semibold">Pitch Competitions & Hackathons</p>
+                  <p className="text-gray-200 font-semibold">Pitch Competitions, Hackathons, and Grants</p>
                   <p className="text-gray-400 text-sm">Awarded $250,000 in data/cloud credits and $25,000 in various pitch competitions & hackathons</p>
                 </div>
               </div>
