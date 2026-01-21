@@ -95,7 +95,7 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">Code as Control</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Engineered a Dockerized control system in which an LLM autonomously generates, validates, and executes low-level Python motion policies for robotic arms in real time, enabling on-the-fly execution of unseen tasks via a sandboxed ROS/MoveIt execution layer.
+              Engineered a Dockerized control system in which an LLM autonomously generates, validates, and executes low-level Python motion policies for robotic arms in real time, enabling on-the-fly policy execution for unseen tasks via a sandboxed ROS/MoveIt execution layer.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
@@ -253,7 +253,66 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-          {/* Project 8*/}
+          {/* Project*/}
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
+            <div className="mb-3">
+              <h3 className="text-xl font-semibold text-gray-200">Hornslink</h3>
+            </div>
+            <p className="text-gray-400 mb-4">
+              Rebuilt Hornslink, UT’s premier student org platform, from scratch using React Native and Flask for 50,000+ students.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native and Expo</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgreSQL</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
+            </div>
+            <div className="flex gap-3">
+              <a 
+                href="https://github.com/AnishK05/HerdUp"
+                className="inline-flex items-center px-3 py-1.5 bg-gray-600/80 text-gray-200 rounded-lg hover:bg-gray-500/80 transition-colors text-xs font-medium backdrop-blur-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                See More
+              </a>
+            </div>
+          </div>
+
+          {/* Project*/}
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
+            <div className="mb-3">
+              <h3 className="text-xl font-semibold text-gray-200">Personal Website</h3>
+            </div>
+            <p className="text-gray-400 mb-4">
+              This site! Built using Next.js and Tailwind CSS.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Next.js</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tailwind CSS</span>
+            </div>
+            <div className="flex gap-3">
+              <a 
+                href="https://github.com/AnishK05/personal-website"
+                className="inline-flex items-center px-3 py-1.5 bg-gray-600/80 text-gray-200 rounded-lg hover:bg-gray-500/80 transition-colors text-xs font-medium backdrop-blur-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                See More
+              </a>
+            </div>
+          </div>
+
+          {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="mb-3">
               <h3 className="text-xl font-semibold text-gray-200">
@@ -297,7 +356,7 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-          {/* Project 9*/}
+          {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="mb-3">
               <h3 className="text-xl font-semibold text-gray-200">Eye-Dentify: A Nonmydriatic Retinal Imaging Tool Utilizing Biomarker Characteristics for Broad Spectrum Disease Identification via Multi-Disease Diagnosis Deep Learning Models</h3>
@@ -367,7 +426,7 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-          {/* Project 10 */}
+          {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="mb-3">
               <h3 className="text-xl font-semibold text-gray-200">Self-Driving Car Simulator</h3>
@@ -397,7 +456,7 @@ export default function ProjectsPage() {
             </div>
           </div>
 
-          {/* Project 11*/}
+          {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="mb-3">
               <h3 className="text-xl font-semibold text-gray-200">UT Racquetball Official Website</h3>

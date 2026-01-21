@@ -107,7 +107,7 @@ export default function ExperiencePage() {
                </li>
                <li className="flex items-start">
                  <span className="text-gray-500 mr-2">•</span>
-                 <span>Implemented a sandboxed ROS/MoveIt execution layer that safely executes LLM-generated policies, enabling on-the-fly handling of unseen tasks</span>
+                 <span>Implemented a sandboxed ROS/MoveIt execution layer that safely executes LLM-generated policies, enabling on-the-fly policy execution for unseen tasks</span>
                </li>
              </ul>
             <div className="flex flex-wrap gap-2">
@@ -144,6 +144,7 @@ export default function ExperiencePage() {
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native and Expo</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgreSQL</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
             </div>
           </div>
