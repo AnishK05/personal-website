@@ -44,6 +44,10 @@ EcoReviveTX: Partnering with the Texas Parks and Wildlife Department to create a
 
 StatSwish: Engineered an NBA analytics platform tracking 700+ players with 16,000+ stats, featuring advanced filters and AI-powered game predictions.
 
+Hornslink:Rebuilt Hornslink, UT’s premier student org platform, from scratch using React Native and Flask for 50,000+ students.
+
+Personal Website: This site! Built using Next.js and Tailwind CSS.
+
 Inner Speech Recognition Brain-Computer Interface & Integrated Machine Learning Model to Assist Differently Abled and Neuromuscular Disorder Patients in Home Automation: Co-authored an award-winning research paper on a Brain-Computer Interface for simple home automation.
 
 Eye-Dentify: A Nonmydriatic Retinal Imaging Tool Utilizing Biomarker Characteristics for Broad Spectrum Disease Identification via Multi-Disease Diagnosis Deep Learning Models: Co-authored a research paper on an affordable AI-powered retinal imaging tool for multi-disease diagnosis.
@@ -62,7 +66,7 @@ Here is my leadership:
 
 Activities & Clubs: 
 
-Texas Convergent, Texas Guadaloop, Comedy & Improv Club, Intramural Basketball  
+Texas Convergent, Comedy & Improv Club, Intramural Basketball  
 
 Awards:
 
