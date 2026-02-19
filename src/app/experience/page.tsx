@@ -17,6 +17,25 @@ export default function ExperiencePage() {
         </div>
         
         <div className="space-y-8">
+
+          {/* Experience*/}
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <h3 className="text-xl font-semibold text-gray-200">Software Engineer Intern</h3>
+              <span className="text-gray-400 text-sm">February 2026 - Present</span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <p className="text-gray-300 font-medium">IBM</p>
+              <span className="text-gray-400 text-sm">Austin, TX</span>
+            </div>
+              <ul className="text-gray-400 mb-4 space-y-1">
+               <li className="flex items-start">
+                 <span className="text-gray-500 mr-2">•</span>
+                 <span>Cloud Incidents and Agents</span>
+               </li>
+             </ul>
+          </div>
+
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">

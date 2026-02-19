@@ -203,6 +203,10 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               <div className="space-y-2 text-xs text-gray-400">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                  <span>Software Engineer Intern @ IBM</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
                   <span>Prev @ Anvil Labs</span>
                 </div>
                 <div className="flex items-center gap-2">
