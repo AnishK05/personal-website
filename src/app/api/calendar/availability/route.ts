@@ -64,26 +64,20 @@ export async function GET() {
     while (cursor < rangeEnd && slots.length < 20) {
       const slotEnd = new Date(cursor.getTime() + SLOT_DURATION_MS);
 
-      // Check working hours in CT
-      const ctHour = parseInt(
-        cursor.toLocaleString('en-US', {
-          timeZone: 'America/Chicago',
-          hour: 'numeric',
-          hour12: false,
-        }),
-        10
-      );
-      const ctEndHour = parseInt(
-        slotEnd.toLocaleString('en-US', {
-          timeZone: 'America/Chicago',
-          hour: 'numeric',
-          hour12: false,
-        }),
-        10
-      );
+      // Check working hours in CT using minutes-since-midnight to avoid
+      // midnight wrap-around (ctEndHour=0 would falsely pass an hour <= check)
+      const ctStartStr = cursor.toLocaleString('en-US', {
+        timeZone: 'America/Chicago',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      });
+      const [startH, startM] = ctStartStr.split(':').map(Number);
+      const startMinutes = startH * 60 + startM;
+      const endMinutes = startMinutes + 30;
 
       const inWorkHours =
-        ctHour >= WORK_START_HOUR && ctEndHour <= WORK_END_HOUR;
+        startMinutes >= WORK_START_HOUR * 60 && endMinutes <= WORK_END_HOUR * 60;
 
       // Check weekday in CT
       const ctDay = cursor.toLocaleString('en-US', {

@@ -254,141 +254,6 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     resetScheduling();
   };
 
-  // ── Scheduling UI widgets ────────────────────────────────────────────────
-
-  const SchedulingWidget = () => {
-    if (schedulingStep === 'idle' || schedulingStep === 'confirmed') return null;
-
-    if (slotsLoading) {
-      return (
-        <div className="flex justify-start px-4 pb-2">
-          <div className="flex items-start gap-3 max-w-[85%]">
-            <Avatar className="w-8 h-8 flex-shrink-0">
-              <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
-            </Avatar>
-            <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm">
-              <p className="text-sm text-gray-400">Checking my calendar...</p>
-              <div className="flex space-x-1 mt-2">
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (schedulingStep === 'selecting_slot') {
-      return (
-        <div className="flex justify-start px-4 pb-2">
-          <div className="flex items-start gap-3 max-w-[90%]">
-            <Avatar className="w-8 h-8 flex-shrink-0">
-              <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
-            </Avatar>
-            <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm space-y-3">
-              <p className="text-sm text-gray-200">
-                {availableSlots.length > 0
-                  ? "Here are some times I'm free. Pick one that works for you:"
-                  : "I don't have any open slots in the next 3 days, sorry!"}
-              </p>
-              {availableSlots.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  {availableSlots.map((slot) => (
-                    <button
-                      key={slot.start}
-                      onClick={() => handleSlotSelect(slot)}
-                      className="px-3 py-1.5 rounded-lg bg-gray-600/80 hover:bg-blue-600/80 border border-gray-500 hover:border-blue-500 text-gray-200 text-xs transition-colors"
-                    >
-                      {slot.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-              <button
-                onClick={resetScheduling}
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (schedulingStep === 'awaiting_email' && selectedSlot) {
-      return (
-        <div className="flex justify-start px-4 pb-2">
-          <div className="flex items-start gap-3 max-w-[90%]">
-            <Avatar className="w-8 h-8 flex-shrink-0">
-              <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
-            </Avatar>
-            <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm space-y-3">
-              <p className="text-sm text-gray-200">
-                <span className="font-medium text-blue-300">{selectedSlot.label}</span> — sounds good!
-                What&apos;s your email? I&apos;ll send you a Google Calendar invite.
-              </p>
-              <div className="flex gap-2">
-                <input
-                  ref={emailInputRef}
-                  type="email"
-                  value={emailValue}
-                  onChange={(e) => setEmailValue(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') handleBookMeeting();
-                  }}
-                  placeholder="your@email.com"
-                  className="flex-1 px-3 py-1.5 rounded-lg bg-gray-800 border border-gray-600 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
-                />
-                <button
-                  onClick={handleBookMeeting}
-                  disabled={!emailValue.trim()}
-                  className="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors disabled:opacity-50"
-                >
-                  Book
-                </button>
-              </div>
-              {schedulingError && (
-                <p className="text-xs text-red-400">{schedulingError}</p>
-              )}
-              <button
-                onClick={() => {
-                  setSelectedSlot(null);
-                  setSchedulingStep('selecting_slot');
-                }}
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
-              >
-                ← Back to time slots
-              </button>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (schedulingStep === 'booking') {
-      return (
-        <div className="flex justify-start px-4 pb-2">
-          <div className="flex items-start gap-3 max-w-[85%]">
-            <Avatar className="w-8 h-8 flex-shrink-0">
-              <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
-            </Avatar>
-            <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm">
-              <p className="text-sm text-gray-400">Booking your meeting...</p>
-              <div className="flex space-x-1 mt-2">
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    return null;
-  };
 
   // ── Initial (empty) state ─────────────────────────────────────────────────
 
@@ -576,8 +441,115 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
             </div>
           )}
 
-          {/* Scheduling widget rendered inline after messages */}
-          <SchedulingWidget />
+          {/* Scheduling widget — inlined to avoid remount-on-render focus loss */}
+          {schedulingStep !== 'idle' && schedulingStep !== 'confirmed' && (
+            slotsLoading ? (
+              <div className="flex justify-start px-4 pb-2">
+                <div className="flex items-start gap-3 max-w-[85%]">
+                  <Avatar className="w-8 h-8 flex-shrink-0">
+                    <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
+                  </Avatar>
+                  <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm">
+                    <p className="text-sm text-gray-400">Checking my calendar...</p>
+                    <div className="flex space-x-1 mt-2">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : schedulingStep === 'selecting_slot' ? (
+              <div className="flex justify-start px-4 pb-2">
+                <div className="flex items-start gap-3 max-w-[90%]">
+                  <Avatar className="w-8 h-8 flex-shrink-0">
+                    <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
+                  </Avatar>
+                  <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm space-y-3">
+                    <p className="text-sm text-gray-200">
+                      {availableSlots.length > 0
+                        ? "Here are some times I'm free. Pick one that works for you:"
+                        : "I don't have any open slots in the next 3 days, sorry!"}
+                    </p>
+                    {availableSlots.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {availableSlots.map((slot) => (
+                          <button
+                            key={slot.start}
+                            onClick={() => handleSlotSelect(slot)}
+                            className="px-3 py-1.5 rounded-lg bg-gray-600/80 hover:bg-blue-600/80 border border-gray-500 hover:border-blue-500 text-gray-200 text-xs transition-colors"
+                          >
+                            {slot.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    <button
+                      onClick={resetScheduling}
+                      className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : schedulingStep === 'awaiting_email' && selectedSlot ? (
+              <div className="flex justify-start px-4 pb-2">
+                <div className="flex items-start gap-3 max-w-[90%]">
+                  <Avatar className="w-8 h-8 flex-shrink-0">
+                    <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
+                  </Avatar>
+                  <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm space-y-3">
+                    <p className="text-sm text-gray-200">
+                      <span className="font-medium text-blue-300">{selectedSlot.label}</span> — sounds good!
+                      What&apos;s your email? I&apos;ll send you a Google Calendar invite.
+                    </p>
+                    <div className="flex gap-2">
+                      <input
+                        ref={emailInputRef}
+                        type="email"
+                        value={emailValue}
+                        onChange={(e) => setEmailValue(e.target.value)}
+                        onKeyDown={(e) => { if (e.key === 'Enter') handleBookMeeting(); }}
+                        placeholder="your@email.com"
+                        className="flex-1 px-3 py-1.5 rounded-lg bg-gray-800 border border-gray-600 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
+                      />
+                      <button
+                        onClick={handleBookMeeting}
+                        disabled={!emailValue.trim()}
+                        className="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors disabled:opacity-50"
+                      >
+                        Book
+                      </button>
+                    </div>
+                    {schedulingError && <p className="text-xs text-red-400">{schedulingError}</p>}
+                    <button
+                      onClick={() => { setSelectedSlot(null); setSchedulingStep('selecting_slot'); }}
+                      className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                    >
+                      ← Back to time slots
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : schedulingStep === 'booking' ? (
+              <div className="flex justify-start px-4 pb-2">
+                <div className="flex items-start gap-3 max-w-[85%]">
+                  <Avatar className="w-8 h-8 flex-shrink-0">
+                    <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
+                  </Avatar>
+                  <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm">
+                    <p className="text-sm text-gray-400">Booking your meeting...</p>
+                    <div className="flex space-x-1 mt-2">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null
+          )}
 
           <div ref={messagesEndRef} />
         </div>
