@@ -19,7 +19,7 @@ interface TimeSlot {
   label: string;
 }
 
-type SchedulingStep = 'idle' | 'selecting_slot' | 'awaiting_email' | 'booking' | 'confirmed';
+type SchedulingStep = 'idle' | 'selecting_slot' | 'awaiting_email' | 'awaiting_description' | 'booking' | 'confirmed';
 
 interface ChatInterfaceProps {
   onQuickAction?: (action: string) => void;
@@ -38,6 +38,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
   const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(null);
   const [emailValue, setEmailValue] = useState('');
+  const [descriptionValue, setDescriptionValue] = useState('');
   const [slotsLoading, setSlotsLoading] = useState(false);
   const [meetLink, setMeetLink] = useState<string | null>(null);
   const [schedulingError, setSchedulingError] = useState('');
@@ -120,6 +121,11 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     setSchedulingStep('awaiting_email');
   };
 
+  const handleEmailSubmit = () => {
+    if (!emailValue.trim()) return;
+    setSchedulingStep('awaiting_description');
+  };
+
   const handleBookMeeting = async () => {
     if (!selectedSlot || !emailValue.trim()) return;
     setSchedulingStep('booking');
@@ -133,6 +139,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
           start: selectedSlot.start,
           end: selectedSlot.end,
           guestEmail: emailValue.trim(),
+          description: descriptionValue.trim() || undefined,
         }),
       });
       const data = await res.json();
@@ -163,6 +170,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     setAvailableSlots([]);
     setSelectedSlot(null);
     setEmailValue('');
+    setDescriptionValue('');
     setMeetLink(null);
     setSchedulingError('');
   };
@@ -510,24 +518,65 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                         type="email"
                         value={emailValue}
                         onChange={(e) => setEmailValue(e.target.value)}
-                        onKeyDown={(e) => { if (e.key === 'Enter') handleBookMeeting(); }}
+                        onKeyDown={(e) => { if (e.key === 'Enter') handleEmailSubmit(); }}
                         placeholder="your@email.com"
                         className="flex-1 px-3 py-1.5 rounded-lg bg-gray-800 border border-gray-600 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
                       />
                       <button
-                        onClick={handleBookMeeting}
+                        onClick={handleEmailSubmit}
                         disabled={!emailValue.trim()}
                         className="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors disabled:opacity-50"
                       >
-                        Book
+                        Next
                       </button>
                     </div>
-                    {schedulingError && <p className="text-xs text-red-400">{schedulingError}</p>}
                     <button
                       onClick={() => { setSelectedSlot(null); setSchedulingStep('selecting_slot'); }}
                       className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
                     >
                       ← Back to time slots
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : schedulingStep === 'awaiting_description' && selectedSlot ? (
+              <div className="flex justify-start px-4 pb-2">
+                <div className="flex items-start gap-3 max-w-[90%]">
+                  <Avatar className="w-8 h-8 flex-shrink-0">
+                    <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
+                  </Avatar>
+                  <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm space-y-3">
+                    <p className="text-sm text-gray-200">
+                      Anything you&apos;d like to add to the invite? A quick note about what you want to chat about is helpful, but feel free to skip.
+                    </p>
+                    <textarea
+                      value={descriptionValue}
+                      onChange={(e) => setDescriptionValue(e.target.value)}
+                      placeholder="e.g. I'd love to talk about internship opportunities..."
+                      rows={3}
+                      className="w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-600 text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm resize-none"
+                    />
+                    {schedulingError && <p className="text-xs text-red-400">{schedulingError}</p>}
+                    <div className="flex gap-2">
+                      <button
+                        onClick={handleBookMeeting}
+                        disabled={!descriptionValue.trim()}
+                        className="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors disabled:opacity-50"
+                      >
+                        Add &amp; Book
+                      </button>
+                      <button
+                        onClick={handleBookMeeting}
+                        className="px-4 py-1.5 rounded-lg bg-gray-600 hover:bg-gray-500 text-gray-200 text-sm transition-colors"
+                      >
+                        Skip
+                      </button>
+                    </div>
+                    <button
+                      onClick={() => setSchedulingStep('awaiting_email')}
+                      className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                    >
+                      ← Back
                     </button>
                   </div>
                 </div>

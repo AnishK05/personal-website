@@ -4,7 +4,7 @@ import { getAuthenticatedClient } from '@/lib/googleTokens';
 
 export async function POST(request: NextRequest) {
   try {
-    const { start, end, guestEmail } = await request.json();
+    const { start, end, guestEmail, description } = await request.json();
 
     if (!start || !end || !guestEmail) {
       return NextResponse.json(
@@ -38,7 +38,11 @@ export async function POST(request: NextRequest) {
       sendUpdates: 'all',
       requestBody: {
         summary: 'Meeting with Anish Kalra',
-        description: `A 30-minute meeting scheduled via anishkalra.com.\n\nLooking forward to chatting!`,
+        description: [
+          'A 30-minute meeting scheduled via anishkalra.com.',
+          description?.trim() ? `\nNote from guest: ${description.trim()}` : '',
+          '\nLooking forward to chatting!',
+        ].join(''),
         start: {
           dateTime: start,
           timeZone: 'America/Chicago',
@@ -47,7 +51,9 @@ export async function POST(request: NextRequest) {
           dateTime: end,
           timeZone: 'America/Chicago',
         },
-        attendees: [{ email: guestEmail }],
+        attendees: [
+          { email: guestEmail }
+        ],
         conferenceData: {
           createRequest: {
             requestId: `meeting-${Date.now()}`,
