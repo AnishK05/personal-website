@@ -43,6 +43,10 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   const [meetLink, setMeetLink] = useState<string | null>(null);
   const [schedulingError, setSchedulingError] = useState('');
 
+  // Schedule nudge state
+  const [nudgeDismissed, setNudgeDismissed] = useState(false);
+  const [hasTriggeredScheduling, setHasTriggeredScheduling] = useState(false);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
@@ -100,6 +104,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   }, [schedulingStep]);
 
   const fetchAvailableSlots = async () => {
+    setHasTriggeredScheduling(true);
     setSlotsLoading(true);
     setSchedulingError('');
     try {
@@ -117,6 +122,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   };
 
   const fetchSlotsForDates = async (dates: string[]) => {
+    setHasTriggeredScheduling(true);
     setSlotsLoading(true);
     setSchedulingError('');
     try {
@@ -636,6 +642,30 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
           <div ref={messagesEndRef} />
         </div>
       </div>
+
+      {/* Schedule nudge */}
+      {messages.filter(m => m.isUser).length >= 3 &&
+        schedulingStep === 'idle' &&
+        !hasTriggeredScheduling &&
+        !nudgeDismissed && (
+        <div className="px-4 py-2 animate-in fade-in slide-in-from-bottom-2 duration-500">
+          <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-950/60 border border-emerald-700/50 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0 animate-pulse" />
+            <p className="text-xs text-emerald-300 flex-1">
+              Enjoying the chat? Try asking to <span className="font-medium">&quot;schedule a meeting&quot;</span> — I can book a real time slot with you.
+            </p>
+            <button
+              onClick={() => setNudgeDismissed(true)}
+              className="text-emerald-600 hover:text-emerald-400 transition-colors flex-shrink-0 ml-1"
+              aria-label="Dismiss"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Fixed Input at Bottom */}
       <div className="border-t border-gray-700/50 bg-gray-900/30 backdrop-blur-md pb-safe-bottom">
