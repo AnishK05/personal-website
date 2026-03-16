@@ -79,14 +79,7 @@ export async function GET() {
       const inWorkHours =
         startMinutes >= WORK_START_HOUR * 60 && endMinutes <= WORK_END_HOUR * 60;
 
-      // Check weekday in CT
-      const ctDay = cursor.toLocaleString('en-US', {
-        timeZone: 'America/Chicago',
-        weekday: 'short',
-      });
-      const isWeekend = ctDay === 'Sat' || ctDay === 'Sun';
-
-      if (inWorkHours && !isWeekend) {
+      if (inWorkHours) {
         const slotStartMs = cursor.getTime();
         const slotEndMs = slotEnd.getTime();
 

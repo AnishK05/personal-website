@@ -116,6 +116,24 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     }
   };
 
+  const fetchSlotsForDates = async (dates: string[]) => {
+    setSlotsLoading(true);
+    setSchedulingError('');
+    try {
+      const datesParam = dates.join(',');
+      const res = await fetch(`/api/calendar/availability/custom?dates=${encodeURIComponent(datesParam)}`);
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to fetch slots');
+      setAvailableSlots(data.slots ?? []);
+      setSchedulingStep('selecting_slot');
+    } catch {
+      setSchedulingError("Couldn't load available times for those dates. Please try again.");
+      setSchedulingStep('idle');
+    } finally {
+      setSlotsLoading(false);
+    }
+  };
+
   const handleSlotSelect = (slot: TimeSlot) => {
     setSelectedSlot(slot);
     setSchedulingStep('awaiting_email');
@@ -195,21 +213,35 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     setIsLoading(true);
 
     try {
+      // Build history from all messages currently displayed (before the new user message)
+      const history = messages.map(m => ({
+        role: m.isUser ? 'user' : 'assistant',
+        content: m.content,
+      }));
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: inputValue }),
+        body: JSON.stringify({ message: inputValue, history }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
         const rawResponse: string = data.response;
+
         const SCHEDULE_TOKEN = '[SCHEDULE_MEETING]';
+        const CHECK_AVAILABILITY_REGEX = /\[CHECK_AVAILABILITY:([^\]]+)\]/;
+
         const hasScheduleIntent = rawResponse.trimEnd().endsWith(SCHEDULE_TOKEN);
-        const displayText = hasScheduleIntent
-          ? rawResponse.slice(0, rawResponse.lastIndexOf(SCHEDULE_TOKEN)).trimEnd()
-          : rawResponse;
+        const checkMatch = rawResponse.match(CHECK_AVAILABILITY_REGEX);
+
+        let displayText = rawResponse;
+        if (hasScheduleIntent) {
+          displayText = rawResponse.slice(0, rawResponse.lastIndexOf(SCHEDULE_TOKEN)).trimEnd();
+        } else if (checkMatch) {
+          displayText = rawResponse.replace(CHECK_AVAILABILITY_REGEX, '').trimEnd();
+        }
 
         const aiMessage: Message = {
           id: (Date.now() + 1).toString(),
@@ -222,12 +254,13 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
         setCurrentTypingLength(0);
         setIsTyping(true);
 
+        const typingDurationMs = displayText.length * 9 + 400;
+
         if (hasScheduleIntent) {
-          // Wait for typing to finish (approx) then fetch slots
-          const typingDurationMs = displayText.length * 9 + 400;
-          setTimeout(() => {
-            fetchAvailableSlots();
-          }, typingDurationMs);
+          setTimeout(() => fetchAvailableSlots(), typingDurationMs);
+        } else if (checkMatch) {
+          const dates = checkMatch[1].split(',').map(d => d.trim()).filter(Boolean);
+          setTimeout(() => fetchSlotsForDates(dates), typingDurationMs);
         }
       } else {
         throw new Error(data.error || 'Failed to get response');
@@ -477,7 +510,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                     <p className="text-sm text-gray-200">
                       {availableSlots.length > 0
                         ? "Here are some times I'm free. Pick one that works for you:"
-                        : "I don't have any open slots in the next 3 days, sorry!"}
+                        : "I don't have any open slots on those days, sorry!"}
                     </p>
                     {availableSlots.length > 0 && (
                       <div className="flex flex-wrap gap-2">
