@@ -21,11 +21,11 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Software Development Engineer Intern</h3>
+              <h3 className="text-xl font-semibold text-gray-200">Amazon</h3>
               <span className="text-gray-400 text-sm">Summer 2026</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Amazon</p>
+              <p className="text-gray-300 font-medium">Software Development Engineer Intern</p>
               <span className="text-gray-400 text-sm">Seattle, WA</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
@@ -39,11 +39,11 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Software Engineer Intern</h3>
+              <h3 className="text-xl font-semibold text-gray-200">IBM</h3>
               <span className="text-gray-400 text-sm">February 2026 - Present</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">IBM</p>
+              <p className="text-gray-300 font-medium">Software Engineer Intern</p>
               <span className="text-gray-400 text-sm">Austin, TX</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
@@ -57,11 +57,11 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Software Engineer Intern</h3>
+              <h3 className="text-xl font-semibold text-gray-200">Anvil Labs</h3>
               <span className="text-gray-400 text-sm">May 2025 - Aug 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Anvil Labs</p>
+              <p className="text-gray-300 font-medium">Software Engineer Intern</p>
               <span className="text-gray-400 text-sm">New York, NY</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
@@ -95,11 +95,11 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Co-Founder & Chief Technology Officer</h3>
+              <h3 className="text-xl font-semibold text-gray-200">HeyEVA</h3>
               <span className="text-gray-400 text-sm">Oct 2024 - Aug 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">HeyEVA</p>
+              <p className="text-gray-300 font-medium">Co-Founder & Chief Technology Officer</p>
               <span className="text-gray-400 text-sm">Austin, TX</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
@@ -130,11 +130,11 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">ML + Robotics Undergraduate Researcher @ RobIn Lab</h3>
+              <h3 className="text-xl font-semibold text-gray-200">RobIn Robot Interactive Intelligence Lab</h3>
               <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">RobIn Robot Interactive Intelligence Lab</p>
+              <p className="text-gray-300 font-medium">ML + Robotics Undergraduate Researcher</p>
               <span className="text-gray-400 text-sm">Austin, TX</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
@@ -159,11 +159,11 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Software Lead and Software Engineer</h3>
+              <h3 className="text-xl font-semibold text-gray-200">Hornslink Mobile App (In Collaboration with UT Austin)</h3>
               <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Hornslink Mobile App (In Collaboration with UT Austin)</p>
+              <p className="text-gray-300 font-medium">Software Lead and Software Engineer</p>
               <span className="text-gray-400 text-sm">Austin, TX</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
@@ -189,11 +189,11 @@ export default function ExperiencePage() {
           {/* Experience*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">High School Research Intern</h3>
+              <h3 className="text-xl font-semibold text-gray-200">Embedded Machine Learning Lab @ University of Texas at Dallas</h3>
               <span className="text-gray-400 text-sm">Jun 2023 - Aug 2024</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Embedded Machine Learning Lab @ University of Texas at Dallas</p>
+              <p className="text-gray-300 font-medium">High School Research Intern</p>
               <span className="text-gray-400 text-sm">Richardson, TX</span>
             </div>
               <ul className="text-gray-400 mb-4 space-y-1">
