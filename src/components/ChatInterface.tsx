@@ -362,12 +362,12 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               <h3 className="text-sm font-medium text-gray-300 mb-3 text-center">Quick Facts</h3>
               <div className="space-y-2 text-xs text-gray-400">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                  <span>Software Engineer Intern @ IBM</span>
+                  <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
+                  <span>Incoming SDE Intern @ Amazon</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
-                  <span>Prev @ Anvil Labs</span>
+                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                  <span>Software Engineer Intern @ IBM</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
