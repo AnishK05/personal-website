@@ -23,7 +23,7 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">Pulse: Event Platform</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Designed and implemented a multi-tenant, developer-facing event ingestion and processing platform with API-key authentication, rate limiting, idempotent intake, Kafka-based asynchronous processing, Postgres-backed persistence, dead-letter queues, and an operator dashboard for observability.
+              Implemented a multi-tenant, developer-facing event ingestion and processing platform sustaining 10,000 requests per second, with API-key authentication, rate limiting, idempotent intake, Kafka-based asynchronous processing, Postgres-backed persistence, dead-letter queues, and an operator dashboard for observability.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Java Spring Boot</span>
@@ -57,14 +57,14 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">AI Marketing Agent</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Built an agent that automates lead generation by identifying Instagram client profiles, extracting emails, and running targeted outreach campaigns, achieving 2x higher conversion rates compared to industry averages.
+            Built an AI agent that automates lead generation by using LLM tool-calling to identify Instagram client profiles, extract emails, and run targeted outreach campaigns, achieving 2x higher conversion rates compared to industry averages.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Next.js</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Node.js</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">MCP</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLM Web Search</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tool Calling</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tailwind CSS</span>
             </div>
@@ -93,15 +93,17 @@ export default function ProjectsPage() {
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="mb-3">
               <h3 className="text-xl font-semibold text-gray-200">Code as Control</h3>
+              <span className="px-2 py-0.5 bg-cyan-700/80 text-cyan-100 rounded-full text-xs font-semibold backdrop-blur-sm mt-2 inline-block border border-cyan-400/30 shadow-sm">Research Project</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Engineered a Dockerized control system in which an LLM autonomously generates, validates, and executes low-level Python motion policies for robotic arms in real time, enabling on-the-fly policy execution for unseen tasks via a sandboxed ROS/MoveIt execution layer.
+              Engineered a Dockerized robotics control system in which an AI agent autonomously generates, validates, and executes low-level Python motion policies for robotic arms in real time, enabling on-the-fly policy execution for unseen tasks via a sandboxed ROS execution layer.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tool Calling</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLM Code Generation</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">ROS</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">MoveIt</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
             </div>
             <div className="flex gap-3">
@@ -219,7 +221,7 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">StatSwish</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Engineered an NBA analytics platform tracking 700+ players with 16,000+ stats, featuring advanced filters and AI-powered game predictions.
+              Engineered an NBA analytics platform tracking 700+ players with 16,000+ stats, featuring advanced filters and ML-powered game predictions.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React.js</span>
@@ -259,15 +261,15 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">Hornslink</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Rebuilt Hornslink, UT’s premier student org platform, from scratch using React Native and Flask for 50,000+ students.
+              Rebuilt Hornslink from scratch using React Native and Flask in direct collaboration with UT Austin, modernizing the application used by 50,000+ students to discover campus opportunities.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native and Expo</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgreSQL</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgreSQL</span>
             </div>
             <div className="flex gap-3">
               <a 
@@ -290,12 +292,15 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-semibold text-gray-200">Personal Website</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              This site! Built using Next.js and Tailwind CSS.
+              This site! Built using Next.js and Tailwind CSS. It features an agentic AI secretary integrated directly into the chat. If you ask to meet with me, the AI will coordinate and schedule the meeting. Go try it out!
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Next.js</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tailwind CSS</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tool Calling</span>
             </div>
             <div className="flex gap-3">
               <a 
@@ -316,7 +321,11 @@ export default function ProjectsPage() {
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="mb-3">
               <h3 className="text-xl font-semibold text-gray-200">
-                Inner Speech Recognition Brain-Computer Interface & Integrated Machine Learning Model to Assist Differently Abled and Neuromuscular Disorder Patients in Home Automation</h3>
+                Inner Speech Recognition Brain-Computer Interface & Integrated Machine Learning Model to Assist Differently Abled and Neuromuscular Disorder Patients in Home Automation
+              </h3>
+              <span className="px-2 py-0.5 bg-cyan-700/80 text-cyan-100 rounded-full text-xs font-semibold backdrop-blur-sm mt-2 inline-block border border-cyan-400/30 shadow-sm">
+                Publication
+              </span>
             </div>
             <p className="text-gray-400 mb-4">
               Co-authored an award-winning research paper on a Brain-Computer Interface for simple home automation.
@@ -359,7 +368,12 @@ export default function ProjectsPage() {
           {/* Project*/}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="mb-3">
-              <h3 className="text-xl font-semibold text-gray-200">Eye-Dentify: A Nonmydriatic Retinal Imaging Tool Utilizing Biomarker Characteristics for Broad Spectrum Disease Identification via Multi-Disease Diagnosis Deep Learning Models</h3>
+              <h3 className="text-xl font-semibold text-gray-200">
+                Eye-Dentify: A Nonmydriatic Retinal Imaging Tool Utilizing Biomarker Characteristics for Broad Spectrum Disease Identification via Multi-Disease Diagnosis Deep Learning Models
+              </h3>
+              <span className="px-2 py-0.5 bg-cyan-700/80 text-cyan-100 rounded-full text-xs font-semibold backdrop-blur-sm mt-2 inline-block border border-cyan-400/30 shadow-sm">
+                Publication
+              </span>
             </div>
             <p className="text-gray-400 mb-4">
               Co-authored a research paper on an affordable AI-powered retinal imaging tool for multi-disease diagnosis.
