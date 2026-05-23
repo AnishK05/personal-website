@@ -54,7 +54,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
 
   const quickActions = [
     { label: 'Experience', path: '/experience' },
-    { label: 'Projects', path: '/projects' },
+    { label: 'Projects & Publications', path: '/projects' },
     { label: 'Skills', path: '/skills' },
     { label: 'About & Contact', path: '/about' },
   ];
