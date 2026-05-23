@@ -81,28 +81,24 @@ export default function ExperiencePage() {
             <ul className="text-gray-400 mb-4 space-y-1">
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Engineered tools with Python, GDAL, and Cesium to transform imagery from Anvil Labs&apos; autonomous drone fleet into 3D models for construction and defense site monitoring</span>
+                <span>Engineered Python + React systems transforming drone imagery into interactive 3D inspection models for site managers</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Built backend APIs and React.js frontend features to automate hosting, visualization, and sharing of 100+ site models</span>
+                <span>Architected AWS Lambda/S3 pipelines processing 5M+ drone images per client for large-scale infrastructure analysis</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Deployed AWS Lambda and S3 pipelines to automate drone image processing, scaling to millions of files per client</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-gray-500 mr-2">•</span>
-                <span>Developed an in-house AI agent with Python and LLM APIs to manage client order details, cutting order finalization timelines from several days to under 24 hours</span>
+                <span>Developed an autonomous tool-calling AI agent, reducing order-processing turnaround from 3 days to under 24 hours</span>
               </li>
             </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Django REST Framework</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React.js</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLM API</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">API Development</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tool Calling</span>
             </div>
           </div>
 
@@ -123,28 +119,30 @@ export default function ExperiencePage() {
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Engineered an autonomous, screen-aware mobile agent interpreting live UI state for real-time, step-by-step voice guidance (MCP)</span>
+                <span>Engineered an autonomous, screen-aware mobile agent interpreting live UI state for real-time, step-by-step voice guidance</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Designed the agent runtime coordinating screen perception, LLM reasoning, and voice I/O using Swift/Java, FastAPI, AWS, and PostgreSQL</span>
+                <span>Designed the agent runtime coordinating screen perception, LLM tool-calling, and voice I/O using Swift/Java, FastAPI, AWS, and PostgreSQL</span>
               </li>
             </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">MCP</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tool Calling</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Swift</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Java</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">FastAPI</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLM API</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgreSQL</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Swift & Java (Mobile Dev)</span>
             </div>
           </div>
 
           {/* Experience */}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">RobIn Robot Interactive Intelligence Lab</h3>
+              <h3 className="text-xl font-semibold text-gray-200">RobIn: Robot Interactive Intelligence Lab @ University of Texas at Austin</h3>
               <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -154,49 +152,20 @@ export default function ExperiencePage() {
             <ul className="text-gray-400 mb-4 space-y-1">
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Engineered a Dockerized control system in which an LLM autonomously generates and validates low-level Python motion policies for robotic arms in real time</span>
+                <span>Engineered a Dockerized robotics control system in which an AI agent autonomously generates and validates low-level Python motion policies for robotic arms in real time</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Implemented a sandboxed ROS/MoveIt execution layer that safely executes LLM-generated policies, enabling on-the-fly policy execution for unseen tasks</span>
+                <span>Implemented a sandboxed ROS execution layer that safely executes agent-generated policies, enabling on-the-fly policy execution for unseen tasks</span>
               </li>
             </ul>
             <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tool Calling</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLM API</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">ROS</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">MoveIt</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robot Operating System (ROS)</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
-            </div>
-          </div>
-
-          {/* Experience */}
-          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Hornslink Mobile App (In Collaboration with UT Austin)</h3>
-              <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Software Lead and Software Engineer</p>
-              <span className="text-gray-400 text-sm">Austin, TX</span>
-            </div>
-            <ul className="text-gray-400 mb-4 space-y-1">
-              <li className="flex items-start">
-                <span className="text-gray-500 mr-2">•</span>
-                <span>Led all technical endeavors to rebuild and launch Hornslink, UT&apos;s premier student org platform, from scratch using React Native and Flask for 50,000+ students</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-gray-500 mr-2">•</span>
-                <span>Scraped data from 3,000+ clubs via Selenium to populate the platform&apos;s database and support ML personalizations</span>
-              </li>
-            </ul>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Flask</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">TypeScript</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React Native and Expo</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">PostgreSQL</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
             </div>
           </div>
 
@@ -217,15 +186,15 @@ export default function ExperiencePage() {
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Processed and vectorized ~200 clinical reports with RAG + NLP pipelines to train early-stage healthcare-tuned LLMs</span>
+                <span>Processed and vectorized ~200 clinical reports with RAG + NLP pipelines to train healthcare-tuned LLMs</span>
               </li>
             </ul>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Computer Vision</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLMs</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">RAG</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">NLP</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">LLMs</span>
             </div>
           </div>
 
