@@ -2,8 +2,23 @@
 'use client';
 
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+
+const carouselImages = [
+  { src: '/AnishKalraNature.jpg',    alt: 'Anish Kalra in nature' },
+  { src: '/AnishKalraPointing.png',  alt: 'Anish Kalra pointing' },
+];
 
 export default function AboutPage() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % carouselImages.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="min-h-screen text-gray-100 p-8">
       <div className="max-w-4xl mx-auto">
@@ -66,14 +81,31 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Photo Area */}
+          {/* Photo Carousel */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg h-full flex items-center justify-center overflow-hidden">
-              <img 
-                  src="/AnishKalraNature.jpg" 
-                  alt="Anish Kalra" 
-                  className="w-full h-full object-cover rounded-lg"
+            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70 h-full relative overflow-hidden">
+              {carouselImages.map((img, idx) => (
+                <img
+                  key={img.src}
+                  src={img.src}
+                  alt={img.alt}
+                  className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-700 ${
+                    idx === current ? 'opacity-100' : 'opacity-0'
+                  }`}
                 />
+              ))}
+              {/* Dot indicators */}
+              <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10">
+                {carouselImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrent(idx)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      idx === current ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/70'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
