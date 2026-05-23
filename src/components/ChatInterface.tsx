@@ -56,6 +56,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     { label: 'Experience', path: '/experience' },
     { label: 'Projects & Publications', path: '/projects' },
     { label: 'Skills', path: '/skills' },
+    { label: 'Leadership & Awards', path: '/leadership' },
     { label: 'About & Contact', path: '/about' },
   ];
 
