@@ -71,34 +71,30 @@ export default function ExperiencePage() {
           {/* Experience */}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">Anvil Labs</h3>
-              <span className="text-gray-400 text-sm">May 2025 - Aug 2025</span>
+              <h3 className="text-xl font-semibold text-gray-200">RobIn: Robot Interactive Intelligence Lab @ University of Texas at Austin</h3>
+              <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Software Engineer Intern</p>
-              <span className="text-gray-400 text-sm">New York, NY</span>
+              <p className="text-gray-300 font-medium">ML + Robotics Undergraduate Researcher</p>
+              <span className="text-gray-400 text-sm">Austin, TX</span>
             </div>
             <ul className="text-gray-400 mb-4 space-y-1">
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Engineered Python + React systems transforming drone imagery into interactive 3D inspection models for site managers</span>
+                <span>Engineered a Dockerized robotics control system in which an AI agent autonomously generates and validates low-level Python motion policies for robotic arms in real time</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Architected AWS Lambda/S3 pipelines processing 5M+ drone images per client for large-scale infrastructure analysis</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-gray-500 mr-2">•</span>
-                <span>Developed an autonomous tool-calling AI agent, reducing order-processing turnaround from 3 days to under 24 hours</span>
+                <span>Implemented a sandboxed ROS execution layer that safely executes agent-generated policies, enabling on-the-fly policy execution for unseen tasks</span>
               </li>
             </ul>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React.js</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tool Calling</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robot Operating System (ROS)</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
             </div>
           </div>
 
@@ -142,30 +138,34 @@ export default function ExperiencePage() {
           {/* Experience */}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h3 className="text-xl font-semibold text-gray-200">RobIn: Robot Interactive Intelligence Lab @ University of Texas at Austin</h3>
-              <span className="text-gray-400 text-sm">Jan 2025 - Dec 2025</span>
+              <h3 className="text-xl font-semibold text-gray-200">Anvil Labs</h3>
+              <span className="text-gray-400 text-sm">May 2025 - Aug 2025</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">ML + Robotics Undergraduate Researcher</p>
-              <span className="text-gray-400 text-sm">Austin, TX</span>
+              <p className="text-gray-300 font-medium">Software Engineer Intern</p>
+              <span className="text-gray-400 text-sm">New York, NY</span>
             </div>
             <ul className="text-gray-400 mb-4 space-y-1">
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Engineered a Dockerized robotics control system in which an AI agent autonomously generates and validates low-level Python motion policies for robotic arms in real time</span>
+                <span>Engineered Python + React systems transforming drone imagery into interactive 3D inspection models for site managers</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Implemented a sandboxed ROS execution layer that safely executes agent-generated policies, enabling on-the-fly policy execution for unseen tasks</span>
+                <span>Architected AWS Lambda/S3 pipelines processing 5M+ drone images per client for large-scale infrastructure analysis</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gray-500 mr-2">•</span>
+                <span>Developed an autonomous tool-calling AI agent, reducing order-processing turnaround from 3 days to under 24 hours</span>
               </li>
             </ul>
             <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">React.js</span>
+              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AWS</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Agentic AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">AI</span>
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Tool Calling</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Python</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Robot Operating System (ROS)</span>
-              <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">Docker</span>
             </div>
           </div>
 
