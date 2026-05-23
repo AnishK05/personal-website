@@ -313,7 +313,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
             Hi, I&apos;m Anish! <span className="inline-block animate-[wave_1s_ease-in-out_infinite]">👋</span>
           </h1>
           <p className="text-gray-400 mb-8 max-w-md">
-            I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, agentic AI, AI/ML, and robotics. Feel free to chat with me about my projects, experience, skills, or anything else!
+            I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, agentic AI, AI/ML, and robotics. Feel free to chat with me about my experiences, projects, skills, or anything else!
           </p>
 
           {/* Social Media Links */}
@@ -364,15 +364,11 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               <div className="space-y-2 text-xs text-gray-400">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
-                  <span>Incoming SDE Intern @ Amazon</span>
+                  <span>SDE Intern @ Amazon</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
-                  <span>Software Engineer Intern @ IBM</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
-                  <span>Engineering Chair @ Texas Convergent</span>
+                  <span>President @ Texas Convergent</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
@@ -380,7 +376,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                 </div>
               </div>
               <div className="mt-3 text-center">
-                <span className="text-xs text-gray-500 italic">Type below to learn more</span>
+                <span className="text-xs text-gray-500 italic">Type below to chat with me ↓↓↓↓</span>
               </div>
             </div>
           </div>
