@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information Box */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg">
+            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70 h-full">
               <h3 className="text-xl font-bold mb-4 text-gray-100 border-b border-gray-600/70 pb-2">Contact</h3>
               <div className="space-y-3">
                 <div>
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <div className="lg:col-span-1">
             <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg h-full flex items-center justify-center overflow-hidden">
               <img 
-                  src="/AnishKalraSmall.jpg" 
+                  src="/AnishKalraNature.jpg" 
                   alt="Anish Kalra" 
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -100,19 +100,91 @@ export default function AboutPage() {
                 <h4 className="text-lg font-semibold mb-3 text-gray-200">Hobbies</h4>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                    <span className="text-gray-200">Hiking, Outdoors, and Gardening</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span className="text-gray-200">Basketball, Volleyball, and Pickleball</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                    <span className="text-gray-200">Hiking & Outdoors</span>
+                    <span className="text-gray-200">Acting, Comedy, and Improv</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                    <span className="text-gray-200">Basketball & Gardening</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                     <span className="text-gray-200">Food</span>
                   </div>
+             
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Education Section */}
+        <div className="mt-8">
+          <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70">
+            <h3 className="text-xl font-bold mb-6 text-gray-100 border-b border-gray-600/70 pb-2">Education</h3>
+            <div className="space-y-6">
+
+              {/* UT Austin — BS Computer Science */}
+              <div className="pb-6 border-b border-gray-700/50">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
+                  <p className="text-gray-200 font-semibold">The University of Texas at Austin</p>
+                </div>
+                <p className="text-gray-300 text-sm mb-3">Bachelor of Science - Computer Science</p>
+                <p className="text-gray-400 text-sm mb-2">
+                  <span className="text-gray-300 font-medium">Activities: </span>
+                  Texas Convergent, TA for CS 109 (Think Lab), Comedy and Improv, IM Basketball
+                </p>
+                <p className="text-gray-400 text-sm mb-2 font-medium">Relevant Coursework</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    'Software Engineering', 'Cloud Computing', 'Operating Systems', 'Machine Learning',
+                    'Robotics', 'Data Warehousing', 'Computer Architecture', 'Advanced Algorithms',
+                    'Data Structures & Algorithms', 'AI in Storytelling', 'Discrete Math',
+                    'Linear Algebra', 'Probability & Statistics', 'Multivariable Calculus',
+                  ].map((course) => (
+                    <span key={course} className="bg-gray-700/70 text-gray-300 px-3 py-1 rounded-full text-xs border border-gray-600/70 backdrop-blur-sm">
+                      {course}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* UT Austin — Minor Business */}
+              <div className="pb-6 border-b border-gray-700/50">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
+                  <p className="text-gray-200 font-semibold">The University of Texas at Austin</p>
+                </div>
+                <p className="text-gray-300 text-sm mb-3">Minor - Business</p>
+                <p className="text-gray-400 text-sm mb-2 font-medium">Relevant Coursework</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    'Accounting', 'Management Information Sciences (MIS)', 'Marketing',
+                    'Legal Environment of Business (LEB)',
+                  ].map((course) => (
+                    <span key={course} className="bg-gray-700/70 text-gray-300 px-3 py-1 rounded-full text-xs border border-gray-600/70 backdrop-blur-sm">
+                      {course}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Coppell High School */}
+              <div>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
+                  <p className="text-gray-200 font-semibold">Coppell High School</p>
+                  <span className="text-gray-400 text-sm">Aug 2020 – May 2024</span>
+                </div>
+                <p className="text-gray-300 text-sm mb-3">Class Rank: 7/976</p>
+                <p className="text-gray-400 text-sm mb-2">
+                  <span className="text-gray-300 font-medium">Activities: </span>
+                  20 AP/IB Classes, Regeneron International Science and Engineering Fair, Science &amp; Research Club (Founder and President), Texas Thespians (State Officer), Theatre (Officer), Technology Student Association (Officer), IB Program
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
