@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import GroupedExperienceCard from '@/components/GroupedExperienceCard';
 
 export default function ExperiencePage() {
   return (
@@ -67,6 +68,57 @@ export default function ExperiencePage() {
               <span className="px-3 py-1 bg-gray-700/70 text-gray-300 rounded-full text-sm backdrop-blur-sm">CI/CD</span>
             </div>
           </div>
+
+          {/* Experience */}
+          <GroupedExperienceCard
+            company="Texas Convergent"
+            location="Austin, TX"
+            roles={[
+              {
+                title: 'President',
+                dateRange: 'May 2026 - Present',
+                bullets: [
+                  "Lead Texas Convergent, UT Austin's largest CS and entrepreneurship organization with 200+ members and 40+ officers",
+                ],
+              },
+              {
+                title: 'Engineering Chair',
+                dateRange: 'Jun 2025 - May 2026',
+                bullets: [
+                  'Oversaw all technical initiatives for Texas Convergent, modernizing curriculum around AI systems, MCP, agents, advanced RAG, and cloud infrastructure',
+                  'Built a TypeScript-based web portal serving as a centralized hub for applications, review workflows, analytics, and member resources across hundreds of active members and officers',
+                ],
+                skills: ['AI', 'MCP', 'Agentic AI', 'RAG', 'Tool Calling', 'AWS', 'TypeScript', 'PostgreSQL'],
+              },
+              {
+                title: 'Forge: Software Lead for REFIND (Local Austin Startup)',
+                dateRange: 'Feb 2026 - Apr 2026',
+                bullets: [
+                  "Led an 8-member technical team in building REFIND's core product, a CRM analytics suite for in-person brand activations",
+                  "Architected and shipped the product's entire codebase within a 7-week startup sprint",
+                ],
+                skills: ['TypeScript', 'PostgreSQL'],
+              },
+              {
+                title: 'Forge: Software Lead and Engineer for Hornslink (Collab. with UT)',
+                dateRange: 'Jan 2025 - Dec 2025',
+                bullets: [
+                  'Rebuilt Hornslink from scratch using React Native and Flask in direct collaboration with UT Austin, modernizing the application used by 50,000+ students to discover campus opportunities',
+                  'Scraped and processed data from 3,000+ student organizations using Selenium to populate the platform\'s database and support ML-driven personalizations',
+                  'Directed a 12-member technical team across system architecture, database design, and scalability engineering',
+                ],
+                skills: ['Python', 'Flask', 'Selenium', 'React Native', 'TypeScript', 'AWS', 'PostgreSQL'],
+              },
+              {
+                title: 'Build Teams: Software Engineer for SafeStep',
+                dateRange: 'Sep 2024 - Dec 2024',
+                bullets: [
+                  'Developed SafeStep, a React Native app that helps tourists and new residents find and navigate safer walking routes using Google Maps API and custom real-time safety alerts',
+                ],
+                skills: ['React Native', 'TypeScript', 'Google Maps API'],
+              },
+            ]}
+          />
 
           {/* Experience */}
           <div className="bg-gray-800/70 backdrop-blur-md rounded-lg p-6 border border-gray-700/70">
