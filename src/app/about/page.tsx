@@ -190,7 +190,6 @@ export default function AboutPage() {
               <div className="pb-6 border-b border-gray-700/50">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
                   <p className="text-gray-200 font-semibold">The University of Texas at Austin</p>
-                  <span className="text-gray-400 text-sm">Aug 2024 – May 2028</span>
                 </div>
                 <p className="text-gray-300 text-sm mb-3">Minor - Business</p>
                 <p className="text-gray-400 text-sm mb-2 font-medium">Relevant Coursework</p>
