@@ -83,7 +83,7 @@ export default function AboutPage() {
 
           {/* Photo Carousel */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70 h-full relative overflow-hidden">
+            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70 relative overflow-hidden aspect-square w-full lg:aspect-auto lg:h-full">
               {carouselImages.map((img, idx) => (
                 <img
                   key={img.src}
