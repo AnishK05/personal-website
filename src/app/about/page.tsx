@@ -91,11 +91,11 @@ export default function AboutPage() {
                   alt={img.alt}
                   className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-700 ${
                     idx === current ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  } ${idx === 0 ? 'max-lg:opacity-100' : 'max-lg:hidden'}`}
                 />
               ))}
               {/* Dot indicators */}
-              <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10">
+              <div className="absolute bottom-3 left-0 right-0 hidden justify-center gap-2 z-10 lg:flex">
                 {carouselImages.map((_, idx) => (
                   <button
                     key={idx}
