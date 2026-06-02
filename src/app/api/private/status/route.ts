@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { tokensExist } from '@/lib/googleTokens';
+import { getGoogleCalendarConnectionStatus } from '@/lib/googleTokens';
 
 export async function GET(request: NextRequest) {
   const password = request.headers.get('x-private-password');
@@ -8,5 +8,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ authorized: false, connected: false }, { status: 401 });
   }
 
-  return NextResponse.json({ authorized: true, connected: tokensExist() });
+  const calendarStatus = await getGoogleCalendarConnectionStatus();
+
+  return NextResponse.json({
+    authorized: true,
+    connected: calendarStatus.connected,
+    message: calendarStatus.message,
+  });
 }
