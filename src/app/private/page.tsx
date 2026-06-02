@@ -108,18 +108,10 @@ function PrivatePageContent() {
               {connected
                 ? 'The AI secretary can access your calendar.'
                 : connectionMessage ||
-                  'Click below to authenticate with Google, then follow the instructions to set GOOGLE_REFRESH_TOKEN or GOOGLE_TOKENS_JSON in your environment.'}
+                  'Click below to authenticate with Google, then follow the instructions to set GOOGLE_TOKENS_JSON in your environment.'}
             </p>
           </div>
         </div>
-
-        {!connected && (
-          <div className="text-xs px-3 py-2 rounded-lg bg-amber-950/40 text-amber-300 border border-amber-800 leading-relaxed">
-            If access fails roughly every 7 days, your Google OAuth consent screen is likely still
-            in Testing. Publish it to In production, then re-authenticate once and update the
-            refresh token.
-          </div>
-        )}
 
         <a
           href="/api/google/auth"

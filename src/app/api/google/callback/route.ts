@@ -16,19 +16,19 @@ export async function GET(request: NextRequest) {
     const oauth2Client = createOAuthClient();
     const { tokens } = await oauth2Client.getToken(code);
 
-    if (!tokens.refresh_token) {
+    if (!tokens.access_token || !tokens.refresh_token) {
       return new Response(errorPage('OAuth succeeded but no tokens were returned. Try again with prompt=consent.'), {
         headers: { 'Content-Type': 'text/html' },
       });
     }
 
     const tokenData: TokenData = {
+      access_token: tokens.access_token,
       refresh_token: tokens.refresh_token,
+      expiry_date: tokens.expiry_date ?? Date.now() + 3600 * 1000,
       token_type: tokens.token_type ?? 'Bearer',
       scope: tokens.scope ?? '',
     };
-    if (tokens.access_token) tokenData.access_token = tokens.access_token;
-    if (tokens.expiry_date) tokenData.expiry_date = tokens.expiry_date;
 
     const json = JSON.stringify(tokenData);
 
@@ -77,9 +77,8 @@ function successPage(json: string): string {
       <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
       OAuth successful
     </div>
-    <h1>Copy your refresh token</h1>
-    <p>Google Calendar access granted. For long-lived access, first make sure the Google Cloud OAuth consent screen is set to <code>In production</code>. Refresh tokens created while the app is in <code>Testing</code> expire after 7 days.</p>
-    <p>Preferred: copy the <code>refresh_token</code> value from the JSON below into an environment variable named <code>GOOGLE_REFRESH_TOKEN</code>. The full JSON can still be used as <code>GOOGLE_TOKENS_JSON</code> for backwards compatibility.</p>
+    <h1>Copy your tokens</h1>
+    <p>Google Calendar access granted. Copy the JSON below and add it as an environment variable named <code>GOOGLE_TOKENS_JSON</code> in both places:</p>
     <div class="token-box">
       <textarea id="tj" readonly>${escaped}</textarea>
       <button class="copy-btn" onclick="copy()">Copy</button>
@@ -87,15 +86,15 @@ function successPage(json: string): string {
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <p><strong style="color:#e5e7eb">Local dev:</strong> add <code>GOOGLE_REFRESH_TOKEN=&lt;refresh_token&gt;</code> to <code>.env.local</code>, then restart the dev server.</p>
+        <p><strong style="color:#e5e7eb">Local dev:</strong> add <code>GOOGLE_TOKENS_JSON=&lt;paste&gt;</code> to <code>.env.local</code>, then restart the dev server.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <p><strong style="color:#e5e7eb">Production:</strong> go to Vercel → Project Settings → Environment Variables → add <code>GOOGLE_REFRESH_TOKEN</code> → redeploy once.</p>
+        <p><strong style="color:#e5e7eb">Production:</strong> go to Vercel → Project Settings → Environment Variables → add <code>GOOGLE_TOKENS_JSON</code> → redeploy.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <p>Visit <code>/private</code> to confirm the green checkmark. If it breaks every 7 days, publish the OAuth consent screen to <code>In production</code>, re-authenticate, and replace the refresh token.</p>
+        <p>Visit <code>/private</code> to confirm the green checkmark.</p>
       </div>
     </div>
     <a href="/private" class="back">← Back to admin panel</a>
