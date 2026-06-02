@@ -1,30 +1,21 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { getAuthenticatedClient } from '@/lib/googleTokens';
+import {
+  CALENDAR_TIME_ZONE,
+  SLOT_DURATION_MS,
+  WORK_END_HOUR,
+  WORK_START_HOUR,
+  formatSlotLabel,
+  getMinutesSinceMidnightInCalendarZone,
+} from '@/lib/calendarConfig';
 
-const SLOT_DURATION_MS = 30 * 60 * 1000; // 30 minutes
 const LOOK_AHEAD_DAYS = 3;
-const WORK_START_HOUR = 11;  // 11 AM CT
-const WORK_END_HOUR = 20;   // 8 PM CT
 
 export interface TimeSlot {
   start: string;
   end: string;
   label: string;
-}
-
-
-function formatSlotLabel(startIso: string): string {
-  const date = new Date(startIso);
-  return date.toLocaleString('en-US', {
-    timeZone: 'America/Chicago',
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-  });
 }
 
 export async function GET() {
@@ -45,7 +36,7 @@ export async function GET() {
       requestBody: {
         timeMin: rangeStart.toISOString(),
         timeMax: rangeEnd.toISOString(),
-        timeZone: 'America/Chicago',
+        timeZone: CALENDAR_TIME_ZONE,
         items: [{ id: 'primary' }],
       },
     });
@@ -64,16 +55,9 @@ export async function GET() {
     while (cursor < rangeEnd && slots.length < 20) {
       const slotEnd = new Date(cursor.getTime() + SLOT_DURATION_MS);
 
-      // Check working hours in CT using minutes-since-midnight to avoid
-      // midnight wrap-around (ctEndHour=0 would falsely pass an hour <= check)
-      const ctStartStr = cursor.toLocaleString('en-US', {
-        timeZone: 'America/Chicago',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      });
-      const [startH, startM] = ctStartStr.split(':').map(Number);
-      const startMinutes = startH * 60 + startM;
+      // Check working hours in Pacific Time using minutes-since-midnight to avoid
+      // midnight wrap-around (endHour=0 would falsely pass an hour <= check).
+      const startMinutes = getMinutesSinceMidnightInCalendarZone(cursor);
       const endMinutes = startMinutes + 30;
 
       const inWorkHours =

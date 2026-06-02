@@ -1,6 +1,7 @@
 import { GoogleGenAI, createUserContent, createPartFromUri } from '@google/genai';
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
+import { CALENDAR_TIME_ZONE, CALENDAR_TIME_ZONE_LABEL } from '@/lib/calendarConfig';
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
 
@@ -25,9 +26,9 @@ export async function POST(request: NextRequest) {
       config: { mimeType: 'text/plain' },
     });
 
-    // Inject today's date in CT so the LLM can resolve relative dates
+    // Inject today's date in the scheduling timezone so the LLM can resolve relative dates.
     const todayLabel = new Date().toLocaleDateString('en-US', {
-      timeZone: 'America/Chicago',
+      timeZone: CALENDAR_TIME_ZONE,
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -38,7 +39,7 @@ export async function POST(request: NextRequest) {
 
 The attached document contains all the information about yourself that you should use to answer questions. This is your personal information that you're sharing with others.
 
-Today's date (Central Time): ${todayLabel}
+Today's date (${CALENDAR_TIME_ZONE_LABEL}): ${todayLabel}
 
 INSTRUCTIONS:
 1. Respond as if you are Anish speaking directly to the person

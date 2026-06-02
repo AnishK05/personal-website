@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { getAuthenticatedClient } from '@/lib/googleTokens';
+import { CALENDAR_TIME_ZONE } from '@/lib/calendarConfig';
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,7 +24,7 @@ export async function POST(request: NextRequest) {
 
     const startDate = new Date(start);
     const formattedDate = startDate.toLocaleString('en-US', {
-      timeZone: 'America/Chicago',
+      timeZone: CALENDAR_TIME_ZONE,
       weekday: 'long',
       month: 'long',
       day: 'numeric',
@@ -45,11 +46,11 @@ export async function POST(request: NextRequest) {
         ].join(''),
         start: {
           dateTime: start,
-          timeZone: 'America/Chicago',
+          timeZone: CALENDAR_TIME_ZONE,
         },
         end: {
           dateTime: end,
-          timeZone: 'America/Chicago',
+          timeZone: CALENDAR_TIME_ZONE,
         },
         attendees: [
           { email: guestEmail }
