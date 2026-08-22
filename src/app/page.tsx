@@ -1,15 +1,14 @@
 'use client';
 
 import ChatInterface from '@/components/ChatInterface';
+import IntroSequence from '@/components/IntroSequence';
 
 export default function Home() {
-
   return (
     <main className="min-h-screen min-h-[100dvh] text-gray-100">
-        {/* Main Content */}
-        <div className="h-full min-h-[100dvh]">
-          <ChatInterface />
-        </div>
+      <IntroSequence>
+        <ChatInterface />
+      </IntroSequence>
     </main>
   );
 }
