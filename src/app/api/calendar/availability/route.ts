@@ -1,31 +1,22 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { getAuthenticatedClient } from '@/lib/googleTokens';
+import {
+  CALENDAR_TIME_ZONE,
+  SLOT_DURATION_MS,
+  addCalendarDays,
+  formatSlotLabel,
+  getDateInCentralTime,
+  getWorkWindowForDate,
+  isWithinWorkHours,
+  type TimeSlot,
+} from '@/lib/calendarTime';
 
-const SLOT_DURATION_MS = 30 * 60 * 1000; // 30 minutes
 const LOOK_AHEAD_DAYS = 3;
-const WORK_START_HOUR = 11;  // 11 AM CT
-const WORK_END_HOUR = 20;   // 8 PM CT
+const MAX_SLOTS = 20;
+const MIN_LEAD_MS = 60 * 60 * 1000;
 
-export interface TimeSlot {
-  start: string;
-  end: string;
-  label: string;
-}
-
-
-function formatSlotLabel(startIso: string): string {
-  const date = new Date(startIso);
-  return date.toLocaleString('en-US', {
-    timeZone: 'America/Chicago',
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-  });
-}
+export type { TimeSlot };
 
 export async function GET() {
   try {
@@ -33,71 +24,80 @@ export async function GET() {
     const calendar = google.calendar({ version: 'v3', auth });
 
     const now = new Date();
-    // Start from next full 30-min boundary, at least 1 hour from now
-    const rangeStart = new Date(now.getTime() + 60 * 60 * 1000);
-    rangeStart.setMinutes(Math.ceil(rangeStart.getMinutes() / 30) * 30, 0, 0);
+    const minStart = new Date(now.getTime() + MIN_LEAD_MS);
+    const todayCt = getDateInCentralTime(now);
+    const dates = Array.from({ length: LOOK_AHEAD_DAYS + 1 }, (_, i) =>
+      addCalendarDays(todayCt, i)
+    );
 
-    const rangeEnd = new Date(now);
-    rangeEnd.setDate(rangeEnd.getDate() + LOOK_AHEAD_DAYS);
-    rangeEnd.setHours(23, 59, 59, 999);
+    const windows = dates
+      .map(getWorkWindowForDate)
+      .filter((w): w is NonNullable<typeof w> => w !== null);
+
+    if (windows.length === 0) {
+      return NextResponse.json({ slots: [] });
+    }
+
+    const queryStart = new Date(
+      Math.max(minStart.getTime(), windows[0].windowStart.getTime())
+    );
+    const queryEnd = windows[windows.length - 1].windowEnd;
+
+    if (queryStart >= queryEnd) {
+      return NextResponse.json({ slots: [] });
+    }
 
     const freeBusyRes = await calendar.freebusy.query({
       requestBody: {
-        timeMin: rangeStart.toISOString(),
-        timeMax: rangeEnd.toISOString(),
-        timeZone: 'America/Chicago',
+        timeMin: queryStart.toISOString(),
+        timeMax: queryEnd.toISOString(),
+        timeZone: CALENDAR_TIME_ZONE,
         items: [{ id: 'primary' }],
       },
     });
 
     const busyPeriods = freeBusyRes.data.calendars?.primary?.busy ?? [];
-
-    // Build list of busy intervals as timestamps
     const busyIntervals = busyPeriods.map((b) => ({
       start: new Date(b.start!).getTime(),
       end: new Date(b.end!).getTime(),
     }));
 
     const slots: TimeSlot[] = [];
-    const cursor = new Date(rangeStart);
 
-    while (cursor < rangeEnd && slots.length < 20) {
-      const slotEnd = new Date(cursor.getTime() + SLOT_DURATION_MS);
+    for (const window of windows) {
+      if (slots.length >= MAX_SLOTS) break;
 
-      // Check working hours in CT using minutes-since-midnight to avoid
-      // midnight wrap-around (ctEndHour=0 would falsely pass an hour <= check)
-      const ctStartStr = cursor.toLocaleString('en-US', {
-        timeZone: 'America/Chicago',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      });
-      const [startH, startM] = ctStartStr.split(':').map(Number);
-      const startMinutes = startH * 60 + startM;
-      const endMinutes = startMinutes + 30;
-
-      const inWorkHours =
-        startMinutes >= WORK_START_HOUR * 60 && endMinutes <= WORK_END_HOUR * 60;
-
-      if (inWorkHours) {
-        const slotStartMs = cursor.getTime();
-        const slotEndMs = slotEnd.getTime();
-
-        const overlaps = busyIntervals.some(
-          (busy) => slotStartMs < busy.end && slotEndMs > busy.start
-        );
-
-        if (!overlaps) {
-          slots.push({
-            start: cursor.toISOString(),
-            end: slotEnd.toISOString(),
-            label: formatSlotLabel(cursor.toISOString()),
-          });
-        }
+      const cursor = new Date(
+        Math.max(window.windowStart.getTime(), minStart.getTime())
+      );
+      // Snap to the next 30-minute boundary
+      const leftover = cursor.getTime() % SLOT_DURATION_MS;
+      if (leftover !== 0) {
+        cursor.setTime(cursor.getTime() + (SLOT_DURATION_MS - leftover));
       }
 
-      // Advance by 30 minutes
-      cursor.setTime(cursor.getTime() + SLOT_DURATION_MS);
+      while (cursor < window.windowEnd && slots.length < MAX_SLOTS) {
+        const slotEnd = new Date(cursor.getTime() + SLOT_DURATION_MS);
+        if (slotEnd > window.windowEnd) break;
+
+        if (isWithinWorkHours(cursor)) {
+          const slotStartMs = cursor.getTime();
+          const slotEndMs = slotEnd.getTime();
+          const overlaps = busyIntervals.some(
+            (busy) => slotStartMs < busy.end && slotEndMs > busy.start
+          );
+
+          if (!overlaps) {
+            slots.push({
+              start: cursor.toISOString(),
+              end: slotEnd.toISOString(),
+              label: formatSlotLabel(cursor.toISOString()),
+            });
+          }
+        }
+
+        cursor.setTime(cursor.getTime() + SLOT_DURATION_MS);
+      }
     }
 
     return NextResponse.json({ slots });

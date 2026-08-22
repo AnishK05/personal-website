@@ -147,7 +147,13 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   };
 
   const handleEmailSubmit = () => {
-    if (!emailValue.trim()) return;
+    const email = emailValue.trim();
+    if (!email) return;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setSchedulingError('Please enter a valid email address.');
+      return;
+    }
+    setSchedulingError('');
     setSchedulingStep('awaiting_description');
   };
 
@@ -186,7 +192,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Failed to book meeting';
       setSchedulingError(message);
-      setSchedulingStep('awaiting_email');
+      setSchedulingStep('awaiting_description');
     }
   };
 
@@ -240,15 +246,13 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
         const SCHEDULE_TOKEN = '[SCHEDULE_MEETING]';
         const CHECK_AVAILABILITY_REGEX = /\[CHECK_AVAILABILITY:([^\]]+)\]/;
 
-        const hasScheduleIntent = rawResponse.trimEnd().endsWith(SCHEDULE_TOKEN);
+        const hasScheduleIntent = rawResponse.includes(SCHEDULE_TOKEN);
         const checkMatch = rawResponse.match(CHECK_AVAILABILITY_REGEX);
 
-        let displayText = rawResponse;
-        if (hasScheduleIntent) {
-          displayText = rawResponse.slice(0, rawResponse.lastIndexOf(SCHEDULE_TOKEN)).trimEnd();
-        } else if (checkMatch) {
-          displayText = rawResponse.replace(CHECK_AVAILABILITY_REGEX, '').trimEnd();
-        }
+        const displayText = rawResponse
+          .replaceAll(SCHEDULE_TOKEN, '')
+          .replace(CHECK_AVAILABILITY_REGEX, '')
+          .trim();
 
         const aiMessage: Message = {
           id: (Date.now() + 1).toString(),
@@ -263,11 +267,11 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
 
         const typingDurationMs = displayText.length * 9 + 400;
 
-        if (hasScheduleIntent) {
-          setTimeout(() => fetchAvailableSlots(), typingDurationMs);
-        } else if (checkMatch) {
+        if (checkMatch) {
           const dates = checkMatch[1].split(',').map(d => d.trim()).filter(Boolean);
           setTimeout(() => fetchSlotsForDates(dates), typingDurationMs);
+        } else if (hasScheduleIntent) {
+          setTimeout(() => fetchAvailableSlots(), typingDurationMs);
         }
       } else {
         throw new Error(data.error || 'Failed to get response');
@@ -512,7 +516,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                   <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm space-y-3">
                     <p className="text-sm text-gray-200">
                       {availableSlots.length > 0
-                        ? "Here are some times I'm free. Pick one that works for you:"
+                        ? "Here are some times I'm free (Central Time). Pick one that works for you:"
                         : "I don't have any open slots on those days, sorry!"}
                     </p>
                     {availableSlots.length > 0 && (
@@ -566,6 +570,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                         Next
                       </button>
                     </div>
+                    {schedulingError && <p className="text-xs text-red-400">{schedulingError}</p>}
                     <button
                       onClick={() => { setSelectedSlot(null); setSchedulingStep('selecting_slot'); }}
                       className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
