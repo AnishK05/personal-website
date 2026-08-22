@@ -83,7 +83,7 @@ export default function AboutPage() {
 
           {/* Photo Carousel */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70 h-full relative overflow-hidden">
+            <div className="bg-gray-800/70 backdrop-blur-md rounded-lg border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70 relative overflow-hidden aspect-square w-full lg:aspect-auto lg:h-full">
               {carouselImages.map((img, idx) => (
                 <img
                   key={img.src}
@@ -91,11 +91,11 @@ export default function AboutPage() {
                   alt={img.alt}
                   className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-700 ${
                     idx === current ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  } ${idx === 0 ? 'max-lg:opacity-100' : 'max-lg:hidden'}`}
                 />
               ))}
               {/* Dot indicators */}
-              <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10">
+              <div className="absolute bottom-3 left-0 right-0 hidden justify-center gap-2 z-10 lg:flex">
                 {carouselImages.map((_, idx) => (
                   <button
                     key={idx}
@@ -164,6 +164,7 @@ export default function AboutPage() {
               <div className="pb-6 border-b border-gray-700/50">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
                   <p className="text-gray-200 font-semibold">The University of Texas at Austin</p>
+                  <span className="text-gray-400 text-sm">Aug 2024 – May 2028</span>
                 </div>
                 <p className="text-gray-300 text-sm mb-3">Bachelor of Science - Computer Science</p>
                 <p className="text-gray-400 text-sm mb-2">

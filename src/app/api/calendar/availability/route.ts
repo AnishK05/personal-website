@@ -6,11 +6,11 @@ import {
   SLOT_DURATION_MS,
   addCalendarDays,
   formatSlotLabel,
-  getDateInCentralTime,
+  getDateInCalendarZone,
   getWorkWindowForDate,
   isWithinWorkHours,
   type TimeSlot,
-} from '@/lib/calendarTime';
+} from '@/lib/calendarConfig';
 
 const LOOK_AHEAD_DAYS = 3;
 const MAX_SLOTS = 20;
@@ -25,9 +25,9 @@ export async function GET() {
 
     const now = new Date();
     const minStart = new Date(now.getTime() + MIN_LEAD_MS);
-    const todayCt = getDateInCentralTime(now);
+    const todayInZone = getDateInCalendarZone(now);
     const dates = Array.from({ length: LOOK_AHEAD_DAYS + 1 }, (_, i) =>
-      addCalendarDays(todayCt, i)
+      addCalendarDays(todayInZone, i)
     );
 
     const windows = dates
@@ -70,7 +70,6 @@ export async function GET() {
       const cursor = new Date(
         Math.max(window.windowStart.getTime(), minStart.getTime())
       );
-      // Snap to the next 30-minute boundary
       const leftover = cursor.getTime() % SLOT_DURATION_MS;
       if (leftover !== 0) {
         cursor.setTime(cursor.getTime() + (SLOT_DURATION_MS - leftover));

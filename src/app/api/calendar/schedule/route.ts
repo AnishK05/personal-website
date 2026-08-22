@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { getAuthenticatedClient } from '@/lib/googleTokens';
-import { CALENDAR_TIME_ZONE } from '@/lib/calendarTime';
+import { CALENDAR_TIME_ZONE } from '@/lib/calendarConfig';
 
 export async function POST(request: NextRequest) {
   try {

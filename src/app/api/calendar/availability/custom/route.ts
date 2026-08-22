@@ -8,7 +8,7 @@ import {
   getWorkWindowForDate,
   isWithinWorkHours,
   type TimeSlot,
-} from '@/lib/calendarTime';
+} from '@/lib/calendarConfig';
 
 const MAX_SLOTS = 20;
 

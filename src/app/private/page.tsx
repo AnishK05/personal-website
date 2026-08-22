@@ -12,6 +12,7 @@ function PrivatePageContent() {
   const [authError, setAuthError] = useState('');
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
+  const [connectionMessage, setConnectionMessage] = useState('');
 
   useEffect(() => {
     const authParam = searchParams.get('auth');
@@ -34,6 +35,7 @@ function PrivatePageContent() {
       if (data.authorized) {
         setAuthorized(true);
         setConnected(data.connected);
+        setConnectionMessage(data.message ?? '');
       } else {
         setAuthError('Incorrect password.');
       }
@@ -105,7 +107,8 @@ function PrivatePageContent() {
             <p className="text-gray-400 text-xs mt-0.5">
               {connected
                 ? 'The AI secretary can access your calendar.'
-                : 'Click below to authenticate with Google, then follow the instructions to set GOOGLE_TOKENS_JSON in your environment.'}
+                : connectionMessage ||
+                  'Click below to authenticate with Google, then follow the instructions to set GOOGLE_TOKENS_JSON in your environment.'}
             </p>
           </div>
         </div>
