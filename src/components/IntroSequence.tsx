@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { naturePhotos } from '@/lib/photos';
 
 const STORAGE_KEY = 'anish-intro-seen';
@@ -34,6 +34,37 @@ const FILL_SLOTS = [
   { x: 8, y: 40, rot: 6 },
   { x: 22, y: 38, rot: -7 },
 ];
+
+// naturePhotos.ts lists photos grouped by location (all Cascades shots
+// together, all Rainier shots together, ...), and FILL_SLOTS is handed
+// out in that same array order. Left alone, that puts every photo from
+// one location next to each other in the collage. Round-robin across
+// locations instead so slot order stays visually shuffled.
+function locationKey(src: string) {
+  return src.replace(/^\//, '').replace(/\d+\.jpg$/i, '');
+}
+
+const FILL_INDEX: Record<string, number> = (() => {
+  const groups = new Map<string, string[]>();
+  naturePhotos.forEach((photo) => {
+    if (STANDOUT_LAYOUT[photo.src]) return;
+    const key = locationKey(photo.src);
+    const list = groups.get(key) ?? [];
+    list.push(photo.src);
+    groups.set(key, list);
+  });
+
+  const buckets = Array.from(groups.values());
+  const total = buckets.reduce((n, b) => n + b.length, 0);
+  const order: string[] = [];
+  for (let round = 0; order.length < total; round += 1) {
+    buckets.forEach((bucket) => {
+      if (bucket[round]) order.push(bucket[round]);
+    });
+  }
+
+  return Object.fromEntries(order.map((src, i) => [src, i]));
+})();
 
 function mulberry32(seed: number) {
   return () => {
@@ -75,116 +106,87 @@ function lerp(a: number, b: number, t: number) {
   return a + (b - a) * t;
 }
 
-function cubicPoint(
-  p0: { x: number; y: number },
-  c1: { x: number; y: number },
-  c2: { x: number; y: number },
-  p3: { x: number; y: number },
-  t: number,
-) {
-  const u = 1 - t;
-  return {
-    x: u * u * u * p0.x + 3 * u * u * t * c1.x + 3 * u * t * t * c2.x + t * t * t * p3.x,
-    y: u * u * u * p0.y + 3 * u * u * t * c1.y + 3 * u * t * t * c2.y + t * t * t * p3.y,
-  };
+function smoothstep(edge0: number, edge1: number, x: number) {
+  const t = Math.min(1, Math.max(0, (x - edge0) / (edge1 - edge0)));
+  return t * t * (3 - 2 * t);
 }
 
-// Number of intermediate keyframe stops (t=1 / rest is handled by the
-// final 100% keyframe, so this covers u = 0, 1/18, ..., 17/18). Enough
-// points that the linearly-interpolated chords hug the curved path
-// instead of visibly cornering through the swirliest part of the flight.
-const SAMPLE_STEPS = 18;
-
-function photoMotion(
+// Per-photo constants for the physics sim: where it rests, where it
+// starts, and the parameters governing how it wanders and settles.
+// This replaces precomputed keyframes entirely — position, rotation,
+// tilt and scale are now integrated live every animation frame in the
+// component below, so there's no fixed sampling resolution to outgrow.
+function photoRig(
   photo: (typeof naturePhotos)[number],
   index: number,
-  fillIndex: number,
   seed: number,
   compact: boolean,
 ) {
   const rng = mulberry32(seed * 4243 + index * 917 + 11);
   const standout = Boolean(STANDOUT_LAYOUT[photo.src]);
-  const slot = STANDOUT_LAYOUT[photo.src] ?? FILL_SLOTS[fillIndex % FILL_SLOTS.length];
+  const slot = STANDOUT_LAYOUT[photo.src] ?? FILL_SLOTS[(FILL_INDEX[photo.src] ?? 0) % FILL_SLOTS.length];
   const fit = compact ? 0.9 : 1;
 
   const restX = slot.x * fit;
   const restY = slot.y * fit;
   const rotRest = slot.rot + (rng() - 0.5) * 3;
   const p0 = startPoint(rng, restX, restY, compact);
-  const rest = { x: restX, y: restY };
-
-  const swirl = (compact ? 46 : 74) + rng() * (compact ? 32 : 52);
-  const side = rng() > 0.5 ? 1 : -1;
-  const c1 = {
-    x: lerp(p0.x, restX, 0.28) + side * swirl * (0.6 + rng()),
-    y: lerp(p0.y, restY, 0.18) - swirl * (0.35 + rng() * 0.7),
-  };
-  const c2 = {
-    x: lerp(p0.x, restX, 0.72) - side * swirl * (0.25 + rng() * 0.5),
-    y: lerp(p0.y, restY, 0.78) + swirl * (0.15 + rng() * 0.45),
-  };
-
-  // The keyframe % stops are evenly spaced in time (see CSS), so the
-  // deceleration into rest has to come from how densely we sample the
-  // path itself: early equal-time steps cover a lot of path (t), later
-  // ones cover very little. That's the only easing applied — segments
-  // are interpolated linearly in CSS — so there's one continuous glide
-  // instead of every segment re-decelerating on its own.
-  // Keep this modest: much above ~1.9 and the path is essentially
-  // fully covered by the 80% keyframe, leaving a dead, motionless
-  // hold before it "locks in" — which reads as a rigid stop rather
-  // than a continuous glide.
-  const easePower = 1.15 + rng() * 0.4;
 
   // Photos start big — like they're already close to the viewer — and
-  // shrink smoothly down to their resting size as they swoop in. One
-  // monotonic decay curve (no separate "rise" phase), so there's no
-  // seam where the scale used to visibly pop.
+  // shrink smoothly down to their resting size as they settle. One
+  // monotonic decay curve driven by live settle-progress each frame.
   const basePeak = compact
-    ? (standout ? 2.7 : 2.15)
-    : (standout ? 3.9 : 2.9);
-  const peak = basePeak + rng() * (compact ? 0.4 : 0.6);
-  const decayPower = 1.5 + rng();
+    ? (standout ? 3.1 : 2.4)
+    : (standout ? 4.5 : 3.3);
+  const peak = basePeak + rng() * (compact ? 0.5 : 0.8);
+  const decayPower = 1.4 + rng() * 0.6;
 
-  const rot0 = (rng() - 0.5) * 55;
+  const rot0 = (rng() - 0.5) * 70;
+  const rotXStart = (rng() - 0.5) * (compact ? 50 : 85);
+  const rotYStart = (rng() - 0.5) * (compact ? 50 : 85);
 
-  // Chaotic 3D tumble that levels out as the photo lands, using the
-  // `perspective` set on the stage container.
-  const rotXStart = (rng() - 0.5) * (compact ? 46 : 78);
-  const rotYStart = (rng() - 0.5) * (compact ? 46 : 78);
+  // The photo orbits around its own flight path on the way in — radius
+  // shrinks smoothly to exactly 0 by the time it settles, so the swirl
+  // never has to be "stopped," it just runs out of room on its own.
+  const spiralRadius0 = compact ? 16 + rng() * 14 : 26 + rng() * 22;
+  const spiralAngle0 = rng() * Math.PI * 2;
+  const spiralSpeed = (rng() < 0.5 ? -1 : 1) * (1.4 + rng() * 1.6);
+  const spiralDecayPower = 1.1 + rng() * 0.8;
+  // A little rotation leans into the swirl (banks like it's turning),
+  // fading out on the same envelope as the swirl itself.
+  const rotSwirlAmp = 8 + rng() * 10;
 
-  const vars: Record<string, string> = {};
-  for (let i = 0; i < SAMPLE_STEPS; i += 1) {
-    const u = i / SAMPLE_STEPS;
-    const t = 1 - (1 - u) ** easePower;
-    const pt = cubicPoint(p0, c1, c2, rest, t);
-    const scale = 1 + (peak - 1) * (1 - t) ** decayPower;
-    const rot = lerp(rot0, rotRest, t);
-    const rotX = lerp(rotXStart, 0, t);
-    const rotY = lerp(rotYStart, 0, t);
-
-    vars[`--k${i}x`] = `${pt.x}vw`;
-    vars[`--k${i}y`] = `${pt.y}vh`;
-    vars[`--k${i}r`] = `${rot}deg`;
-    vars[`--k${i}rx`] = `${rotX}deg`;
-    vars[`--k${i}ry`] = `${rotY}deg`;
-    vars[`--k${i}s`] = `${scale}`;
-  }
-
-  const width = standout
-    ? compact ? 6.8 : 12.4
-    : compact ? 5.1 + rng() * 0.4 : 7.5 + rng() * 0.8;
+  // Always at or above critical damping — an underdamped spring rings
+  // (overshoots and wobbles back) as it nears its target, which is
+  // exactly the "wavy" motion on arrival. No oscillation is possible
+  // at ratio >= 1, so the landing is always a smooth, single glide in.
+  const dampingRatio = 1.0 + rng() * 0.3;
 
   return {
-    restX: `${restX}vw`,
-    restY: `${restY}vh`,
-    width,
+    restX,
+    restY,
     rotRest,
-    delay: rng() < 0.45 ? rng() * 0.22 : 0.16 + rng() * 0.82,
-    duration: 1.05 + rng() * 0.8,
-    vars,
+    p0,
     standout,
+    width: standout
+      ? compact ? 6.8 : 12.4
+      : compact ? 5.1 + rng() * 0.4 : 7.5 + rng() * 0.8,
     z: standout ? 11 : 4 + Math.floor(rng() * 5),
+    // Stagger: how long this photo waits before its sim clock starts.
+    delay: rng() < 0.32 ? rng() * 0.55 : 0.4 + rng() * 2.0,
+    // Total active wander+settle time once it starts.
+    settleDuration: 3.8 + rng() * 2.2,
+    dampingRatio,
+    peak,
+    decayPower,
+    rot0,
+    rotXStart,
+    rotYStart,
+    spiralRadius0,
+    spiralAngle0,
+    spiralSpeed,
+    spiralDecayPower,
+    rotSwirlAmp,
     floatX: `${(rng() - 0.5) * (compact ? 10 : 18)}px`,
     floatY: `${(rng() - 0.5) * (compact ? 14 : 22)}px`,
     floatRot: `${(rng() - 0.5) * 5}deg`,
@@ -219,16 +221,14 @@ export default function IntroSequence({ children }: { children: React.ReactNode 
   const playing = phase === 'photos' || phase === 'text';
   const showOverlay = playing || phase === 'exiting';
 
-  const motions = useMemo(() => {
-    let fillIndex = 0;
-    return naturePhotos.map((photo, i) => {
-      const motion = photoMotion(photo, i, fillIndex, seed, compact);
-      if (!motion.standout) fillIndex += 1;
-      return motion;
-    });
-  }, [seed, compact]);
+  const motions = useMemo(
+    () => naturePhotos.map((photo, i) => photoRig(photo, i, seed, compact)),
+    [seed, compact],
+  );
 
   const motes = useMemo(() => dustMotes(seed, compact), [seed, compact]);
+
+  const photoRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const play = (nextSeed = seed + 1) => {
     setSeed(nextSeed);
@@ -274,9 +274,9 @@ export default function IntroSequence({ children }: { children: React.ReactNode 
   useEffect(() => {
     if (phase !== 'photos') return;
 
-    const arrivals = motions.map((m) => m.delay + m.duration).sort((a, b) => a - b);
+    const arrivals = motions.map((m) => m.delay + m.settleDuration).sort((a, b) => a - b);
     const textAt = arrivals[Math.floor(arrivals.length * 0.35)] * 1000;
-    const doneAt = arrivals[arrivals.length - 1] * 1000 + 2600;
+    const doneAt = arrivals[arrivals.length - 1] * 1000 + 3200;
 
     const textTimer = window.setTimeout(() => setPhase('text'), textAt);
     const doneTimer = window.setTimeout(finish, doneAt);
@@ -285,6 +285,107 @@ export default function IntroSequence({ children }: { children: React.ReactNode 
       window.clearTimeout(doneTimer);
     };
   }, [phase, motions]);
+
+  // Live physics sim: each photo gets a noise-driven "wander"
+  // acceleration plus a damped spring pulling it toward its rest slot.
+  // The spring stiffness ramps up and the wander fades out over the
+  // photo's own settle window, so early on it's drifting freely and by
+  // the end it's smoothly, firmly locked in — computed fresh every
+  // frame rather than interpolated between fixed keyframes.
+  useEffect(() => {
+    if (!playing) return;
+
+    // Only the spring's own base position needs integrated state now —
+    // rotation/tilt are plain deterministic curves (see below), so they
+    // can't ring/oscillate no matter what.
+    const states = motions.map((m) => ({ x: m.p0.x, y: m.p0.y, vx: 0, vy: 0 }));
+
+    const springK0 = 0.28; // weak pull early — lets it swirl further out
+    const springK1 = 32; // firm pull while settling
+
+    let raf = 0;
+    let last = performance.now();
+    const start = last;
+
+    const tick = (now: number) => {
+      const dt = Math.min((now - last) / 1000, 0.04);
+      last = now;
+      const elapsed = (now - start) / 1000;
+
+      motions.forEach((m, i) => {
+        const node = photoRefs.current[i];
+        const s = states[i];
+        if (!node) return;
+
+        const localT = elapsed - m.delay;
+        if (localT < 0) {
+          node.style.opacity = '0';
+          return;
+        }
+
+        const progress = Math.min(1, localT / m.settleDuration);
+        const settle = smoothstep(0, 1, progress);
+
+        // The base flight path: a spring pulling toward the rest slot.
+        // dampingRatio is always >= 1 (see photoRig), so this alone can
+        // never overshoot or oscillate — it's a single smooth glide.
+        const k = springK0 + (springK1 - springK0) * settle;
+        const c = 2 * Math.sqrt(k) * m.dampingRatio;
+
+        if (progress >= 1) {
+          s.x = m.restX;
+          s.y = m.restY;
+          s.vx = 0;
+          s.vy = 0;
+        } else {
+          const ax = (m.restX - s.x) * k - s.vx * c;
+          const ay = (m.restY - s.y) * k - s.vy * c;
+          s.vx += ax * dt;
+          s.x += s.vx * dt;
+          s.vy += ay * dt;
+          s.y += s.vy * dt;
+        }
+
+        // The airy "flying around" flair: an orbit around the spring's
+        // own path, with a radius that shrinks smoothly to exactly zero
+        // right as the spring finishes — so the swirl runs out of room
+        // on its own instead of being cut off or fought to a stop.
+        const spiralEnvelope = progress >= 1 ? 0 : (1 - settle) ** m.spiralDecayPower;
+        const spiralAngle = m.spiralAngle0 + m.spiralSpeed * localT;
+        const spiralRadius = m.spiralRadius0 * spiralEnvelope;
+        const swirlX = spiralRadius * Math.cos(spiralAngle);
+        const swirlY = spiralRadius * Math.sin(spiralAngle) * 0.82;
+
+        const drawX = s.x + swirlX;
+        const drawY = s.y + swirlY;
+
+        // Rotation/tilt: plain interpolation toward rest, no spring —
+        // guaranteed to never overshoot or wobble on the way in. A touch
+        // of rotation banks into the swirl and fades with it.
+        const rot = lerp(m.rot0, m.rotRest, settle) + m.rotSwirlAmp * spiralEnvelope * Math.sin(spiralAngle);
+        const rotX = lerp(m.rotXStart, 0, settle);
+        const rotY = lerp(m.rotYStart, 0, settle);
+
+        const scale = 1 + (m.peak - 1) * (1 - settle) ** m.decayPower;
+        const speed = Math.hypot(s.vx, s.vy) + Math.abs(m.spiralSpeed) * spiralRadius;
+        const blur = Math.min(8, speed * 0.065) * (1 - smoothstep(0.9, 1, progress));
+        const saturate = lerp(1.25, 1, settle);
+        const opacity = Math.min(1, localT / 0.18);
+
+        node.style.opacity = String(opacity);
+        node.style.filter = blur > 0.02 ? `blur(${blur.toFixed(2)}px) saturate(${saturate.toFixed(3)})` : '';
+        node.style.transform =
+          `translate(-50%, -50%) translate(${drawX.toFixed(3)}vw, ${drawY.toFixed(3)}vh) ` +
+          `rotate(${rot.toFixed(2)}deg) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) ` +
+          `scale(${scale.toFixed(4)})`;
+      });
+
+      raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [playing, motions]);
 
   useEffect(() => {
     if (!playing) return;
@@ -343,21 +444,22 @@ export default function IntroSequence({ children }: { children: React.ReactNode 
             return (
               <div
                 key={`${seed}-${photo.src}`}
-                className="intro-photo-slot is-glide pointer-events-none absolute left-1/2 top-1/2"
+                ref={(el) => {
+                  photoRefs.current[i] = el;
+                }}
+                className="intro-photo-slot pointer-events-none absolute left-1/2 top-1/2"
                 style={{
                   zIndex: m.z,
-                  animationDelay: `${m.delay}s`,
-                  animationDuration: `${m.duration}s`,
-                  ...m.vars,
-                  ['--rest-x' as string]: m.restX,
-                  ['--rest-y' as string]: m.restY,
-                  ['--rot-rest' as string]: `${m.rotRest}deg`,
-                } as React.CSSProperties}
+                  opacity: 0,
+                  transform:
+                    `translate(-50%, -50%) translate(${m.p0.x}vw, ${m.p0.y}vh) ` +
+                    `rotate(${m.rot0}deg) rotateX(${m.rotXStart}deg) rotateY(${m.rotYStart}deg) scale(${m.peak})`,
+                }}
               >
                 <div
                   className="intro-photo-bob"
                   style={{
-                    animationDelay: `${m.delay + 0.4}s`,
+                    animationDelay: `${m.delay + m.settleDuration}s`,
                     animationDuration: m.floatDuration,
                     ['--float-x' as string]: m.floatX,
                     ['--float-y' as string]: m.floatY,
