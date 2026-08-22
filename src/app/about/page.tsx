@@ -5,16 +5,39 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const carouselImages = [
-  { src: '/AnishKalraNature.jpg',    alt: 'Anish Kalra in nature' },
-  { src: '/AnishKalraPointing.png',  alt: 'Anish Kalra pointing' },
+  { src: '/AnishKalraNature.jpg', alt: 'Anish Kalra laughing on a mountain overlook', position: '50% 28%' },
+  { src: '/Cascades1.jpg', alt: 'Anish Kalra hiking in the North Cascades', position: '45% 35%' },
+  { src: '/Cascades2.jpg', alt: 'Anish Kalra sitting on a rocky peak in the North Cascades', position: '28% 50%' },
+  { src: '/Cascades3.jpg', alt: 'Anish Kalra doing a tree pose on a Cascades trail', position: '50% 32%' },
+  { src: '/Cascades4.jpg', alt: 'Anish Kalra on a snowy ridge in the North Cascades', position: '72% 58%' },
+  { src: '/Cascades5.jpg', alt: 'Anish Kalra in the North Cascades', position: '50% 72%' },
+  { src: '/Cascades6.jpg', alt: 'Anish Kalra by an alpine lake in the North Cascades', position: '22% 52%' },
+  { src: '/Cascades7.jpg', alt: 'Anish Kalra above an alpine lake in the North Cascades', position: '78% 78%' },
+  { src: '/Rainier1.jpg', alt: 'Anish Kalra at Mount Rainier in a Texas Longhorns shirt', position: '50% 62%' },
+  { src: '/Rainier2.jpg', alt: 'Anish Kalra sitting below Mount Rainier', position: '50% 70%' },
+  { src: '/Rainier3.jpg', alt: 'Anish Kalra near Mount Rainier', position: '50% 60%' },
+  { src: '/Rainier4.jpg', alt: 'Anish Kalra near Mount Rainier', position: '50% 50%' },
+  { src: '/Rainier5.jpg', alt: 'Anish Kalra standing below Mount Rainier', position: '50% 74%' },
+  { src: '/Rainier6.jpg', alt: 'Anish Kalra in a wildflower meadow near Mount Rainier', position: '50% 76%' },
+  { src: '/Si1.jpg', alt: 'Anish Kalra sitting on a fallen log at Mount Si', position: '50% 55%' },
+  { src: '/Si2.jpg', alt: 'Anish Kalra hiking at Mount Si', position: '50% 58%' },
+  { src: '/Si3.jpg', alt: 'Anish Kalra at Mount Si', position: '58% 60%' },
+  { src: '/Si4.jpg', alt: 'Anish Kalra at a Mount Si viewpoint', position: '50% 62%' },
+  { src: '/Si5.jpg', alt: 'Anish Kalra at Mount Si', position: '50% 58%' },
+  { src: '/Si6.jpg', alt: 'Anish Kalra at Mount Si', position: '50% 50%' },
+  { src: '/Snow1.jpg', alt: 'Anish Kalra by a mountain lake', position: '70% 55%' },
+  { src: '/Snow2.jpg', alt: 'Anish Kalra sitting by a mountain lake', position: '26% 55%' },
 ];
+
+const slideCount = carouselImages.length;
 
 export default function AboutPage() {
   const [current, setCurrent] = useState(0);
+  const slide = ((current % slideCount) + slideCount) % slideCount;
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % carouselImages.length);
+      setCurrent((prev) => (prev + 1) % slideCount);
     }, 3500);
     return () => clearInterval(timer);
   }, []);
@@ -84,27 +107,27 @@ export default function AboutPage() {
           {/* Photo Carousel */}
           <div className="lg:col-span-1">
             <div className="bg-gray-800/70 backdrop-blur-md rounded-lg border border-gray-700/70 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-gray-600/70 relative overflow-hidden aspect-square w-full lg:aspect-auto lg:h-full">
-              {carouselImages.map((img, idx) => (
-                <img
-                  key={img.src}
-                  src={img.src}
-                  alt={img.alt}
-                  className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-700 ${
-                    idx === current ? 'opacity-100' : 'opacity-0'
-                  } ${idx === 0 ? 'max-lg:opacity-100' : 'max-lg:hidden'}`}
-                />
-              ))}
-              {/* Dot indicators */}
-              <div className="absolute bottom-3 left-0 right-0 hidden justify-center gap-2 z-10 lg:flex">
-                {carouselImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrent(idx)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      idx === current ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/70'
+              {carouselImages.map((img, idx) => {
+                const isActive = idx === slide;
+                const isNeighbor =
+                  idx === (slide + 1) % slideCount || idx === (slide - 1 + slideCount) % slideCount;
+                if (!isActive && !isNeighbor) return null;
+                return (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    style={{ objectPosition: img.position }}
+                    className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-700 ${
+                      isActive ? 'opacity-100' : 'opacity-0'
                     }`}
                   />
-                ))}
+                );
+              })}
+              <div className="absolute bottom-3 left-0 right-0 flex justify-center z-10">
+                <span className="rounded-full bg-black/50 px-2.5 py-1 text-xs text-white/90 tabular-nums">
+                  {slide + 1} / {slideCount}
+                </span>
               </div>
             </div>
           </div>
