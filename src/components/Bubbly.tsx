@@ -16,7 +16,7 @@ import { requestScheduleMeeting } from '@/lib/scheduleRequest';
 const PAGE_INFO: Record<string, string> = {
   '/': 'This is where you can chat with Anish, just type in the message bar below. Double click me to book a meeting with Anish.',
   '/experience': "This is where you can see Anish's work experience.",
-  '/projects': "This is where you can see Anish's projects and publications.",
+  '/projects': "This is where you can see Anish's projects.",
   '/skills': "This is where you can see Anish's skills.",
   '/leadership': "This is where you can see Anish's leadership and awards.",
   '/about': "This is where you can see Anish's background and contact info.",
