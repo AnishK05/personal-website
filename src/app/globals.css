@@ -363,3 +363,195 @@
     animation: none;
   }
 }
+
+/* Bubbly, the little roaming AI helper — just a floating circle. */
+.bubbly-sphere {
+  background: radial-gradient(
+    circle at 30% 26%,
+    rgba(255, 255, 255, 0.95),
+    rgba(214, 247, 255, 0.65) 32%,
+    rgba(140, 225, 255, 0.4) 62%,
+    rgba(90, 200, 240, 0.28) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 6px 18px rgba(15, 35, 55, 0.35),
+    inset 0 0 14px rgba(255, 255, 255, 0.45),
+    inset 0 -6px 10px rgba(80, 190, 235, 0.25);
+  backdrop-filter: blur(1.5px) saturate(1.3);
+  -webkit-backdrop-filter: blur(1.5px) saturate(1.3);
+}
+
+.bubbly-bob {
+  animation: bubbly-bob 3.6s ease-in-out infinite;
+}
+
+/* Blink applies to the whole eye (socket + pupil); the pupil separately
+   glances around inside the socket on its own, longer cycle. */
+.bubbly-eye {
+  animation: bubbly-blink 4.6s ease-in-out infinite;
+}
+
+.bubbly-eye-left {
+  transform-origin: 21px 23px;
+}
+
+.bubbly-eye-right {
+  transform-origin: 35px 23px;
+}
+
+.bubbly-pupil {
+  animation: bubbly-gaze 7s ease-in-out infinite;
+}
+
+/* Rocket booster for the "lock in" speed burst. The mount pivots (via a
+   JS-driven rotate in Bubbly.tsx's swim loop) to trail behind whichever way
+   Bubbly is actually moving; the flame itself, drawn pointing "outward" in
+   the mount's local +x, just handles its own ignite/flicker in CSS. */
+.bubbly-booster-mount {
+  left: 28px;
+  top: 28px;
+}
+
+.bubbly-booster-flame {
+  position: absolute;
+  left: 22px;
+  top: -7px;
+  width: 22px;
+  height: 14px;
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  opacity: 0;
+  clip-path: polygon(0% 12%, 100% 50%, 0% 88%);
+  background: linear-gradient(90deg, #fff3c4 0%, #ffb347 35%, #ff7a30 68%, rgba(255, 122, 48, 0) 100%);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.bubbly-booster-flame-active {
+  opacity: 1;
+  animation: bubbly-booster-flicker 0.15s ease-in-out infinite alternate;
+}
+
+.bubbly-speech {
+  background: linear-gradient(135deg, rgba(210, 244, 255, 0.95), rgba(163, 224, 253, 0.92));
+  border: 1px solid rgba(125, 211, 252, 0.6);
+  color: #0c3a52;
+}
+
+.bubbly-bubble {
+  background: radial-gradient(
+    circle at 32% 28%,
+    rgba(255, 255, 255, 0.95),
+    rgba(190, 235, 255, 0.5) 55%,
+    rgba(140, 215, 250, 0.2) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 4px rgba(150, 225, 255, 0.5);
+  animation-name: bubbly-rise;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.bubbly-pop {
+  animation: bubbly-pop 0.22s ease-out forwards;
+}
+
+@keyframes bubbly-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes bubbly-rise {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--bubbly-dx), var(--bubbly-dy)) scale(1);
+  }
+}
+
+@keyframes bubbly-pop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes bubbly-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+/* The eyes glance around every so often — a few held gaze directions
+   rather than a continuous drift. */
+@keyframes bubbly-gaze {
+  0%,
+  8% {
+    transform: translate(0, 0);
+  }
+  14%,
+  22% {
+    transform: translate(1.7px, -1px);
+  }
+  28%,
+  36% {
+    transform: translate(-1.8px, 0.6px);
+  }
+  42%,
+  62% {
+    transform: translate(0, 0);
+  }
+  68%,
+  76% {
+    transform: translate(1.4px, 1.4px);
+  }
+  82%,
+  90% {
+    transform: translate(-1.4px, -1.2px);
+  }
+  96%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bubbly-booster-flicker {
+  0% {
+    transform: scaleX(0.78) scaleY(0.85);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scaleX(1.2) scaleY(1.15);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubbly-bob,
+  .bubbly-bubble,
+  .bubbly-pop,
+  .bubbly-eye,
+  .bubbly-pupil {
+    animation: none;
+  }
+}

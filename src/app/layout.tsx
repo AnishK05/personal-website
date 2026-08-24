@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LiquidEther from "../components/LiquidEther";
+import Bubbly from "../components/Bubbly";
+import { BubblyProvider } from "../components/BubblyContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,9 +76,12 @@ export default function RootLayout({
         </div>
         
         {/* Content */}
-        <div className="relative z-10">
-          {children}
-        </div>
+        <BubblyProvider>
+          <div className="relative z-10">
+            {children}
+          </div>
+          <Bubbly />
+        </BubblyProvider>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useRouter } from 'next/navigation';
+import { SCHEDULE_REQUEST_EVENT, SCHEDULE_REQUEST_MESSAGE } from '@/lib/scheduleRequest';
 
 interface Message {
   id: string;
@@ -206,8 +207,9 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     setSchedulingError('');
   };
 
-  const handleSendMessage = async () => {
-    if (!inputValue.trim() || isLoading) return;
+  const handleSendMessage = async (overrideText?: string) => {
+    const text = (overrideText ?? inputValue).trim();
+    if (!text || isLoading) return;
 
     // If user sends a new message mid-scheduling flow, cancel it
     if (schedulingStep !== 'idle' && schedulingStep !== 'confirmed') {
@@ -216,7 +218,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
 
     const userMessage: Message = {
       id: Date.now().toString(),
-      content: inputValue,
+      content: text,
       isUser: true,
       timestamp: new Date(),
     };
@@ -235,7 +237,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: inputValue, history }),
+        body: JSON.stringify({ message: text, history }),
       });
 
       const data = await response.json();
@@ -288,6 +290,21 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       setIsLoading(false);
     }
   };
+
+  // Bubbly hands off double-click "schedule a meeting" requests here instead
+  // of running its own scheduling flow. A ref keeps the listener reading the
+  // latest handleSendMessage (and its current isLoading) without going
+  // stale between renders — that's what keeps a rapid double-click from
+  // firing two overlapping sends: handleSendMessage already no-ops while a
+  // prior request is still in flight.
+  const handleSendMessageRef = useRef(handleSendMessage);
+  handleSendMessageRef.current = handleSendMessage;
+
+  useEffect(() => {
+    const onScheduleRequest = () => handleSendMessageRef.current(SCHEDULE_REQUEST_MESSAGE);
+    window.addEventListener(SCHEDULE_REQUEST_EVENT, onScheduleRequest);
+    return () => window.removeEventListener(SCHEDULE_REQUEST_EVENT, onScheduleRequest);
+  }, []);
 
   const handleQuickAction = (path: string) => {
     router.push(path);
@@ -399,7 +416,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               />
               <div className="flex items-center gap-2">
                 <Button
-                  onClick={handleSendMessage}
+                  onClick={() => handleSendMessage()}
                   disabled={!inputValue.trim() || isLoading}
                   className="bg-gray-600/80 hover:bg-gray-700/80 text-white px-6 rounded-xl transition-colors backdrop-blur-sm"
                 >
@@ -684,7 +701,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
             />
             <div className="flex items-center gap-2">
               <Button
-                onClick={handleSendMessage}
+                onClick={() => handleSendMessage()}
                 disabled={!inputValue.trim() || isLoading}
                 className="bg-gray-600/80 hover:bg-gray-700/80 text-white px-6 rounded-xl transition-colors backdrop-blur-sm"
               >

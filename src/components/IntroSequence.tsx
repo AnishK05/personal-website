@@ -3,6 +3,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { naturePhotos } from '@/lib/photos';
+import { useSetIntroActive } from '@/components/BubblyContext';
 
 const STORAGE_KEY = 'anish-intro-seen';
 type Phase = 'boot' | 'photos' | 'text' | 'exiting' | 'done';
@@ -220,6 +221,12 @@ export default function IntroSequence({ children }: { children: React.ReactNode 
 
   const playing = phase === 'photos' || phase === 'text';
   const showOverlay = playing || phase === 'exiting';
+
+  const setIntroActive = useSetIntroActive();
+  useEffect(() => {
+    setIntroActive(showOverlay);
+    return () => setIntroActive(false);
+  }, [showOverlay, setIntroActive]);
 
   const motions = useMemo(
     () => naturePhotos.map((photo, i) => photoRig(photo, i, seed, compact)),
