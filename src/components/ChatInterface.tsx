@@ -331,10 +331,10 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       <div className="flex flex-col h-full">
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pb-safe-bottom">
           <h1 className="text-2xl font-semibold text-gray-100 mb-2">
-            Hi, I&apos;m Anish! <span className="inline-block animate-[wave_1s_ease-in-out_infinite]">👋</span>
+            Hi there, I&apos;m Anish! <span className="inline-block animate-[wave_1s_ease-in-out_infinite]">👋</span>
           </h1>
           <p className="text-gray-400 mb-8 max-w-md">
-            I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software engineering, agentic AI, AI/ML, and robotics. Feel free to chat with me about my experiences, projects, skills, or anything else!
+            Glad you found your way here, thanks for stumbling along! I&apos;m a Computer science student at UT Austin. Currently working on scalable backend systems, agentic AI, and owning products from infra to UI. Feel free to check out my experiences, projects, or anything else. Also, say hi to bubbly!!
           </p>
 
           {/* Social Media Links */}
@@ -385,7 +385,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               <div className="space-y-2 text-xs text-gray-400">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
-                  <span>SDE Intern @ Amazon</span>
+                  <span>prev @ Amazon</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>

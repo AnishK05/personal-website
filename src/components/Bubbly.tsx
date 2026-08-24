@@ -22,6 +22,8 @@ const PAGE_INFO: Record<string, string> = {
   '/about': "This is where you can see Anish's background and contact info.",
 };
 
+const IDLE_PROMPTS = ['click me!', "Hi, I'm bubbly!"] as const;
+
 const SPHERE = 56;
 const RADIUS = SPHERE / 2;
 
@@ -47,7 +49,8 @@ export default function Bubbly() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const boosterMountRef = useRef<HTMLDivElement | null>(null);
   const [ready, setReady] = useState(false);
-  const [prompt, setPrompt] = useState<'none' | 'clickme' | 'message'>('none');
+  const [prompt, setPrompt] = useState<'none' | 'idle' | 'message'>('none');
+  const [idleText, setIdleText] = useState<(typeof IDLE_PROMPTS)[number]>('click me!');
   const [bubbles, setBubbles] = useState<BubbleParticle[]>([]);
   const [boosting, setBoosting] = useState(false);
 
@@ -262,23 +265,25 @@ export default function Bubbly() {
     };
   }, [message, spawnBubble]);
 
-  // Every so often, invite a click — unless a message is already showing.
+  // Every so often, say hello or invite a click — unless a message is already showing.
   useEffect(() => {
     if (!message) return;
     let cycleTimer = 0;
     let hideTimer = 0;
 
-    const scheduleClickMe = () => {
+    const scheduleIdlePrompt = () => {
       cycleTimer = window.setTimeout(() => {
-        setPrompt((current) => (current === 'none' ? 'clickme' : current));
+        const next = IDLE_PROMPTS[Math.floor(Math.random() * IDLE_PROMPTS.length)];
+        setIdleText(next);
+        setPrompt((current) => (current === 'none' ? 'idle' : current));
         hideTimer = window.setTimeout(() => {
-          setPrompt((current) => (current === 'clickme' ? 'none' : current));
-          scheduleClickMe();
+          setPrompt((current) => (current === 'idle' ? 'none' : current));
+          scheduleIdlePrompt();
         }, 4200);
       }, 14000 + Math.random() * 12000);
     };
 
-    scheduleClickMe();
+    scheduleIdlePrompt();
     return () => {
       window.clearTimeout(cycleTimer);
       window.clearTimeout(hideTimer);
@@ -318,12 +323,12 @@ export default function Bubbly() {
         className={`fixed left-0 top-0 z-[45] h-14 w-14 transition-opacity duration-500 ${ready ? 'opacity-100' : 'opacity-0'}`}
         style={{ willChange: 'transform' }}
       >
-        {(prompt === 'clickme' || prompt === 'message') && (
+        {(prompt === 'idle' || prompt === 'message') && (
           <div
-            key={prompt === 'message' ? message : 'clickme'}
+            key={prompt === 'message' ? message : idleText}
             className="bubbly-pop bubbly-speech pointer-events-none absolute left-1/2 bottom-full mb-1 w-max max-w-[190px] -translate-x-1/2 rounded-2xl px-3 py-2 text-center text-xs font-medium shadow-lg backdrop-blur-sm"
           >
-            {prompt === 'clickme' ? 'click me!' : message}
+            {prompt === 'idle' ? idleText : message}
           </div>
         )}
 
