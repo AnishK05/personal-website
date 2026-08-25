@@ -17,7 +17,7 @@ export function isExperienceView(value: string | null | undefined): value is Exp
 }
 
 export function parseExperienceView(
-  value: string | string[] | undefined
+  value: string | string[] | null | undefined
 ): ExperienceView {
   const raw = Array.isArray(value) ? value[0] : value;
   return isExperienceView(raw) ? raw : DEFAULT_EXPERIENCE_VIEW;
