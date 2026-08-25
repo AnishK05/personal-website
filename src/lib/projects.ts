@@ -68,7 +68,7 @@ export const projects: Project[] = [
     start: { year: 2026, month: 8 },
     end: { year: 2026, month: 8 },
     description:
-      'Engineered a vectorized, single-node OLAP engine in Go querying Parquet via Apache Arrow, with predicate pushdown, column pruning, and row-group skipping, sustaining 100M+ rows/query at 10x a row-at-a-time baseline.',
+      'Architected a vectorized, single-node OLAP engine in Go querying Parquet via Apache Arrow, with predicate pushdown, column pruning, and row-group skipping, sustaining 100M+ rows/query at 10x a row-at-a-time baseline.',
     skills: ['Go', 'Apache Arrow', 'Apache Parquet'],
     links: [{ label: 'See More', href: 'https://github.com/AnishK05/prism-columnar-analytics-engine' }],
   },
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     start: { year: 2025, month: 9 },
     end: { year: 2025, month: 12 },
     description:
-      'Built a Dockerized robotics control system that gives an AI agent full control of a robotic arm: the agent generates, validates, and executes low-level Python motion policies in a sandboxed ROS layer, using only minimal motion APIs (no skill library or demos) so it can handle unseen tasks in one continuous loop.',
+      'Developed a Dockerized robotics control system that gives an AI agent full control of a robotic arm: the agent generates, validates, and executes low-level Python motion policies in a sandboxed ROS layer, using only minimal motion APIs (no skill library or demos) so it can handle unseen tasks in one continuous loop.',
     skills: ['Agentic AI', 'Python', 'Robot Operating System (ROS)', 'Docker'],
     links: [
       { label: 'See More', href: 'https://github.com/AnishK05/code-as-control' },
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     start: { year: 2025, month: 9 },
     end: { year: 2025, month: 9 },
     description:
-      'This site! Built using Next.js and Tailwind CSS. It features an AI clone of me that you can chat with to learn more about my background and work. You can also ask "me" to schedule a time for a video chat, and "I" will handle the rest!',
+      'This site! Next.js and Tailwind CSS, featuring an AI clone of me that you can chat with to learn more about my background and work. You can also ask "me" to schedule a time for a video chat, and "I" will handle the rest!',
     skills: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Agentic AI'],
     links: [{ label: 'See More', href: 'https://github.com/AnishK05/personal-website' }],
   },
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     start: { year: 2025, month: 7 },
     end: { year: 2025, month: 7 },
     description:
-      'Built an AI agent that automates lead generation by using LLM tool-calling to identify Instagram client profiles, extract emails, and run targeted outreach campaigns, achieving 2x higher conversion rates compared to industry averages.',
+      'Automated lead generation with an AI agent that uses LLM tool-calling to identify Instagram client profiles, extract emails, and run targeted outreach campaigns, achieving 2x higher conversion rates compared to industry averages.',
     skills: ['Next.js', 'TypeScript', 'Node.js', 'Agentic AI', 'Tool Calling', 'Tailwind CSS'],
     links: [
       {
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     start: { year: 2026, month: 3 },
     end: { year: 2026, month: 3 },
     description:
-      "Rebuilt the org's website in Next.js. Replaced a fragmented Google Suite workflow with an internal portal for applications, reviews, attendance, and numerous org-wide logistics.",
+      "Revamped the org's website in Next.js. Replaced a fragmented Google Suite workflow with an internal portal for applications, reviews, attendance, and numerous org-wide logistics.",
     skills: ['Next.js', 'TypeScript', 'AWS', 'PostgreSQL'],
     links: [
       { label: 'See Website', href: 'https://txconvergent.org' },
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     start: { year: 2024, month: 8 },
     end: { year: 2024, month: 8 },
     description:
-      'Engineered an NBA analytics platform tracking 700+ players with 16,000+ stats, featuring advanced filters and ML-powered game predictions.',
+      'Launched an NBA analytics platform tracking 700+ players with 16,000+ stats, featuring advanced filters and ML-powered game predictions.',
     skills: ['React.js', 'Java Spring Boot', 'Python', 'Machine Learning'],
     links: [
       { label: 'See More', href: 'https://github.com/AnishK05/StatSwish' },
@@ -208,7 +208,7 @@ export const projects: Project[] = [
     start: { year: 2024, month: 9 },
     end: { year: 2024, month: 12 },
     description:
-      'Developed a mobile app that helps tourists and new residents find and navigate safer walking routes via custom real-time safety alerts.',
+      'Designed a mobile app that helps tourists and new residents find and navigate safer walking routes via custom real-time safety alerts.',
     skills: ['React Native', 'TypeScript', 'Google Maps API'],
     links: [{ label: 'See More', href: 'https://github.com/AnishK05/SafeStep' }],
     associated: true,
@@ -230,7 +230,7 @@ export const projects: Project[] = [
     dateRange: 'Sep 2025',
     start: { year: 2025, month: 9 },
     end: { year: 2025, month: 9 },
-    description: 'Built a simple official website for the UT Racquetball team because my friend asked me to (it is fully vibe-coded in a single prompt, lol).',
+    description: 'Put together a simple official website for the UT Racquetball team because my friend asked me to (it is fully vibe-coded in a single prompt, lol).',
     skills: ['Next.js', 'TypeScript', 'Vibe Coding'],
     links: [
       { label: 'See More', href: 'https://github.com/AnishK05/ut-racquetball-website' },

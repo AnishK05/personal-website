@@ -78,9 +78,9 @@ Guinness World Record: Co-author of largest book ever published (11 ft, 496 lbs)
 $25k in pitch competition winnings, and $250,000 in data/cloud credits
 
 Technical Skills:
-- Languages: Python, Java, TypeScript, JavaScript, Golang, SQL, Swift, C, HTML, SCSS, CSS, MATLAB  
-- Frameworks & Libraries: Next.js, React.js, React Native, FastAPI, Flask, Spring Boot, Node.js, Kafka Django REST, ROS, Tailwind CSS, jQuery, Jupyter, Google OAuth 2.0
-- Database and Cloud: PostgreSQL, Redis, Supabase, Amazon Web Services (AWS), Firebase, Google Cloud Platform (GCP), Vercel
-- AI + Analytics: Google Gemini & OpenAI APIs, Claude, Retrieval Augmented Generation (RAG), Model Context, Protocol (MCP), Chain of Thought, Voice-First AI Systems, PostHog, Google Analytics
-- Machine Learning: TensorFlow, Keras, OpenCV, Scikit Learn, NLTK, Selenium, Beautiful Soup, NumPy, Pandas
-- Development Tools: Git, Docker, Linux, Postman, Ubuntu
+- Languages: Python, Java, TypeScript, JavaScript, Go, SQL, Swift, C, HTML/CSS
+- Frameworks & Libraries: Next.js, React.js, React Native, FastAPI, Flask, Spring Boot, Node.js, Tailwind CSS, Robot Operating System (ROS)
+- Data and Infra: AWS Lambda, Amazon EC2, Amazon S3, Amazon CloudFront, Amazon CloudWatch, Amazon SQS, Amazon SNS, Amazon Aurora, API Gateways, Infrastructure as code (IaC), gRPC, Apache Kafka, Redis, PostgreSQL, Docker, Kubernetes, Prometheus, Apache Arrow, Apache Parquet
+- Database & Cloud: Amazon Web Services (AWS), Google Cloud Platform (GCP), Supabase, Firebase, Vercel
+- AI & ML: Agentic AI, Retrieval Augmented Generation (RAG), Tool Calling, Model Context Protocol (MCP), TensorFlow, Keras, OpenCV, Computer Vision, NumPy, Pandas
+- Development Tools: Git, Linux, CI/CD, Postman, Posthog

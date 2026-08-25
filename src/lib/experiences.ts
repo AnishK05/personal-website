@@ -26,14 +26,11 @@ export type GroupedExperience = {
 
 export type Experience = SingleExperience | GroupedExperience;
 
-const STORY_COMING_SOON = ['Story coming soon!'];
-
 /** Fill all views with the same copy, optionally overriding specific views. */
 function copy(defaultItems: string[], overrides?: Partial<CopyByView>): CopyByView {
   return {
     technical: overrides?.technical ?? defaultItems,
     balanced: overrides?.balanced ?? defaultItems,
-    'story-time': overrides?.['story-time'] ?? STORY_COMING_SOON,
   };
 }
 
@@ -41,7 +38,6 @@ function copySkills(defaultItems: string[]): CopyByView {
   return {
     technical: defaultItems,
     balanced: defaultItems,
-    'story-time': [],
   };
 }
 
@@ -54,10 +50,10 @@ export const experiences: Experience[] = [
     location: 'Seattle, WA',
     bullets: copy(
       [
-        'Designed and built 2 payment widgets across 20+ Amazon Business Prime pages, eliminating 30s checkout delays for customers with hundreds of saved payment methods; cutting latency by 70%',
-        'Redesigned payment lookups from sequential per-method API calls to one batched query against an Elasticsearch-backed service',
-        'Designed a federated architecture (SSR, BFF Lambdas, API gateway, CDK) for independent, zero-downtime team deploys',
-        'Built an agent-to-agent pipeline flagging failing integration tests, adopted by 3 teams, cutting time to prod 30%',
+        'Shipped 2 payment widgets across 20+ Amazon Business Prime pages, eliminating 30s checkout delays for customers with hundreds of saved payment methods; cutting latency by 70%',
+        'Consolidated payment lookups from sequential per-method API calls to one batched query against an Elasticsearch-backed service',
+        'Architected a federated architecture (SSR, BFF Lambdas, API gateway, CDK) for independent, zero-downtime team deploys',
+        'Automated an agent-to-agent pipeline flagging failing integration tests, adopted by 3 teams, cutting time to prod 30%',
       ],
       {
         balanced: [
@@ -147,7 +143,7 @@ export const experiences: Experience[] = [
         dateRange: 'Feb 2026 - Apr 2026',
         bullets: copy(
           [
-            "Led an 8-member technical team in building REFIND's core product, a CRM analytics suite for in-person brand activations",
+            "Drove an 8-member technical team in building REFIND's core product, a CRM analytics suite for in-person brand activations",
             "Architected and shipped the product's entire codebase within a 7-week startup sprint",
           ],
           {
@@ -166,7 +162,7 @@ export const experiences: Experience[] = [
           [
             "Rebuilt Hornslink, UT's official student org platform, from scratch using React Native and Flask for 50,000+ students",
             'Added a Redis caching layer tuned for a 20:1 read/write ratio, cutting p95 query latency from 400ms to 90ms',
-            'Directed a 12-member technical team across system architecture, database design, and scalability engineering',
+            'Coordinated a 12-member technical team across system architecture, database design, and scalability engineering',
           ],
           {
             balanced: [
@@ -257,8 +253,8 @@ export const experiences: Experience[] = [
     location: 'New York, NY',
     bullets: copy(
       [
-        'Engineered Python + React systems transforming drone imagery into interactive 3D inspection models for site managers',
-        'Designed AWS Lambda/S3 pipelines processing 5M+ drone images per client for large-scale infrastructure analysis',
+        'Transformed drone imagery into interactive 3D inspection models for site managers using Python + React systems',
+        'Scaled AWS Lambda/S3 pipelines to process 5M+ drone images per client for large-scale infrastructure analysis',
       ],
       {
         balanced: [

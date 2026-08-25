@@ -1,6 +1,6 @@
 export const EXPERIENCE_VIEW_PARAM = 'view';
 
-export const EXPERIENCE_VIEWS = ['technical', 'balanced', 'story-time'] as const;
+export const EXPERIENCE_VIEWS = ['technical', 'balanced'] as const;
 
 export type ExperienceView = (typeof EXPERIENCE_VIEWS)[number];
 
@@ -9,7 +9,6 @@ export const DEFAULT_EXPERIENCE_VIEW: ExperienceView = 'technical';
 export const EXPERIENCE_VIEW_OPTIONS: { id: ExperienceView; label: string }[] = [
   { id: 'technical', label: 'Technical' },
   { id: 'balanced', label: 'Balanced' },
-  { id: 'story-time', label: 'Story Time' },
 ];
 
 export function isExperienceView(value: string | null | undefined): value is ExperienceView {

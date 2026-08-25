@@ -165,18 +165,23 @@ export default function AboutPage() {
                   <p className="text-gray-200 font-semibold">The University of Texas at Austin</p>
                   <span className="text-gray-400 text-sm">Aug 2024 – May 2028</span>
                 </div>
-                <p className="text-gray-300 text-sm mb-3">Bachelor of Science - Computer Science</p>
+                <p className="text-gray-300 text-sm mb-3">Bachelor of Science - BS, Computer Science</p>
                 <p className="text-gray-400 text-sm mb-2">
                   <span className="text-gray-300 font-medium">Activities: </span>
-                  Texas Convergent, TA for CS 109 (Think Lab), Comedy and Improv, IM Basketball
+                  Texas Convergent, TA for CS109 (Fall 2025, Fall 2026), Comedy and Improv, IM Basketball
                 </p>
                 <p className="text-gray-400 text-sm mb-2 font-medium">Relevant Coursework</p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    'Software Engineering', 'Cloud Computing', 'Operating Systems', 'Machine Learning',
-                    'Robotics', 'Data Warehousing', 'Computer Architecture', 'Advanced Algorithms',
-                    'Data Structures & Algorithms', 'AI in Storytelling', 'Discrete Math',
-                    'Linear Algebra', 'Probability & Statistics', 'Multivariable Calculus',
+                    'Advanced Algorithms',
+                    'Data Structures and Algorithms',
+                    'Computer Architecture',
+                    'Operating Systems',
+                    'Data Warehousing',
+                    'Robot Learning',
+                    'Cloud Computing',
+                    'Software Engineering',
+                    'AI in Storytelling',
                   ].map((course) => (
                     <span key={course} className="bg-gray-700/70 text-gray-300 px-3 py-1 rounded-full text-xs border border-gray-600/70 backdrop-blur-sm">
                       {course}
@@ -190,7 +195,7 @@ export default function AboutPage() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
                   <p className="text-gray-200 font-semibold">The University of Texas at Austin</p>
                 </div>
-                <p className="text-gray-300 text-sm mb-3">Minor - Business</p>
+                <p className="text-gray-300 text-sm mb-3">Minor, Business</p>
                 <p className="text-gray-400 text-sm mb-2 font-medium">Relevant Coursework</p>
                 <div className="flex flex-wrap gap-2">
                   {[
@@ -213,7 +218,7 @@ export default function AboutPage() {
                 <p className="text-gray-300 text-sm mb-3">Class Rank: 7/976</p>
                 <p className="text-gray-400 text-sm mb-2">
                   <span className="text-gray-300 font-medium">Activities: </span>
-                  20 AP/IB Classes, Regeneron International Science and Engineering Fair, Science &amp; Research Club (Founder and President), Texas Thespians (State Officer), Theatre (Officer), Technology Student Association (Officer), IB Program
+                  Science Fair (TXSEF and ISEF), Texas Thespians (State Officer), Theatre (Officer), Technology Student Association (Officer), 20 AP/IB Classes, IB Program
                 </p>
               </div>
 
