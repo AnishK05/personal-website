@@ -502,9 +502,7 @@ export default function IntroSequence({ children }: { children: React.ReactNode 
                 <span className="inline-block animate-[wave_1s_ease-in-out_infinite]">👋</span>
               </h1>
               <p className="mt-3 max-w-md text-sm text-gray-300 sm:text-base">
-                I&apos;m a Computer Science student at UT Austin. I&apos;m interested in software
-                engineering, agentic AI, AI/ML, and robotics. Feel free to chat with me about my
-                experiences, projects, skills, or anything else!
+                Glad you found your way here, thanks for stumbling along! I&apos;m a Computer science student at UT Austin. Currently working on scalable backend systems, agentic AI, and owning products from infra to UI. Feel free to check out my experiences, projects, or anything else. Also, say hi to bubbly!!
               </p>
             </div>
           </div>

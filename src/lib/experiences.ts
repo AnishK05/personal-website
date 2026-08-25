@@ -212,7 +212,6 @@ export const experiences: Experience[] = [
           'Gave an AI agent full control over a robotic arm... surely nothing could go wrong, right?',
           'Hand it a plain English command, and the agent writes, checks, and runs the code; fully autonomous',
           '"Trace a figure eight" → the arm does it',
-          'https://github.com/AnishK05/code-as-control',
         ],
       }
     ),
