@@ -31,7 +31,7 @@ export default function LeadershipPage() {
                 title: 'President',
                 dateRange: 'May 2026 - Present',
                 bullets: [
-                  "Lead Texas Convergent, UT Austin's largest CS and entrepreneurship organization with 200+ members and 40+ officers",
+                  "Lead Texas Convergent, UT Austin's largest CS and entrepreneurship organization with 150+ members and 50+ officers",
                 ],
               },
               {

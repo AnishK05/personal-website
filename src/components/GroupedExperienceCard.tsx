@@ -1,5 +1,7 @@
 'use client';
 
+import ExperienceBulletText from '@/components/ExperienceBulletText';
+
 export interface ExperienceRole {
   title: string;
   dateRange: string;
@@ -63,7 +65,7 @@ export default function GroupedExperienceCard({
                 {role.bullets.map((bullet, bIdx) => (
                   <li key={bIdx} className="flex items-start">
                     <span className="text-gray-500 mr-2 mt-0.5">•</span>
-                    <span>{bullet}</span>
+                    <ExperienceBulletText text={bullet} />
                   </li>
                 ))}
               </ul>
