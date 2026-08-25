@@ -549,6 +549,9 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                         ))}
                       </div>
                     )}
+                    <p className="text-xs text-gray-500">
+                      If none of these times work for you, just ask. For example: &ldquo;you have something for Thursday?&rdquo;
+                    </p>
                     <button
                       onClick={resetScheduling}
                       className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
