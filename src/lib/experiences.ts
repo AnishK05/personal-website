@@ -92,7 +92,7 @@ export const experiences: Experience[] = [
       {
         balanced: [
           'Owned end-to-end development of a production Go service, developing core+collector infra to handle alarms and paging for 1,000+ engineers',
-          "Helped resolve a SEV-1 Terraform outage (still not sure I should've been on that call)",
+          "Helped resolve a SEV-1 Terraform outage (still not sure I should've been in that meeting)",
           'Under HashiCorp org',
         ],
       }
@@ -132,7 +132,7 @@ export const experiences: Experience[] = [
             balanced: [
               'Oversaw all technical initiatives for Texas Convergent',
               'Modernized a 3-year-old curriculum + revamped the entire website',
-              'Our google suite got too messy, so shipped an internal portal now used org-wide to handle applications, reviews, attendance, and everything in between',
+              'Our google suite got too messy, so shipped an internal portal now used org-wide to handle applications, forms, attendance, and everything in between',
             ],
           }
         ),
@@ -206,7 +206,7 @@ export const experiences: Experience[] = [
       {
         balanced: [
           'Gave an AI agent full control over a robotic arm... surely nothing could go wrong, right?',
-          'Hand it a plain English command, and the agent writes, checks, and runs the code; fully autonomous',
+          'Hand it a plain English command, and the agent writes, validates, and executes the code; fully autonomous',
           '"Trace a figure eight" → the arm does it',
         ],
       }

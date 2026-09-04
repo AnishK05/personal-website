@@ -16,7 +16,7 @@ Right now I am:
 - President of Texas Convergent, UT Austin's largest CS and entrepreneurship organization
 - Taking Data Warehousing and Cloud Computing
 - Building side projects in scalable backend infrastructure
-- An Undergraduate Course Assistant for CS 109 (Think Lab)
+- A Teaching Assistant (TA) for CS 109 (Think Lab)
 
 I am a Computer Science major with a Business minor at UT Austin (Aug 2024 – May 2028). I care about software engineering, agentic AI / AI/ML, robotics, and owning products from infra to UI.
 
@@ -95,7 +95,7 @@ Technical:
 
 Balanced:
 - Owned end-to-end development of a production Go service, developing core+collector infra to handle alarms and paging for 1,000+ engineers
-- Helped resolve a SEV-1 Terraform outage (still not sure I should've been on that call)
+- Helped resolve a SEV-1 Terraform outage (still not sure I should've been in that meeting)
 - Under HashiCorp org
 
 Skills: Go, JavaScript, Amazon SQS, Amazon SNS, CI/CD
@@ -134,7 +134,7 @@ Technical:
 Balanced:
 - Oversaw all technical initiatives for Texas Convergent
 - Modernized a 3-year-old curriculum + revamped the entire website
-- Our google suite got too messy, so shipped an internal portal now used org-wide to handle applications, reviews, attendance, and everything in between
+- Our google suite got too messy, so shipped an internal portal now used org-wide to handle applications, forms, attendance, and everything in between
 
 Skills: Next.js, TypeScript, Amazon Web Services (AWS), PostgreSQL, Agentic AI
 
@@ -202,7 +202,7 @@ Technical:
 
 Balanced:
 - Gave an AI agent full control over a robotic arm... surely nothing could go wrong, right?
-- Hand it a plain English command, and the agent writes, checks, and runs the code; fully autonomous
+- Hand it a plain English command, and the agent writes, validates, and executes the code; fully autonomous
 - "Trace a figure eight" → the arm does it
 
 Skills: Agentic AI, Python, Robot Operating System (ROS), Docker
@@ -276,7 +276,7 @@ Texas Convergent leadership (President, Engineering Chair, Forge / Build Teams) 
 
 ----------------------------------------
 University of Texas at Austin
-Undergraduate Course Assistant — CS 109 (Think Lab)
+Teaching Assistant (TA) — CS 109 (Think Lab)
 August 2025 – Present | Austin, TX
 ----------------------------------------
 
