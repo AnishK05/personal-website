@@ -47,7 +47,7 @@ export default function LeadershipPage() {
               <span className="text-gray-400 text-sm">August 2025 – Present</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <p className="text-gray-300 font-medium">Undergraduate Course Assistant — CS 109 (Think Lab)</p>
+              <p className="text-gray-300 font-medium">Teaching Assistant (TA) — CS 109 (Think Lab)</p>
               <span className="text-gray-400 text-sm">Austin, TX</span>
             </div>
             <ul className="text-gray-400 mb-4 space-y-1">
