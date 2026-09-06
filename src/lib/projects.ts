@@ -75,12 +75,13 @@ export const projects: Project[] = [
   {
     id: 'flux',
     title: 'Flux: LLM Inference Engine',
-    dateRange: 'Aug 2026',
-    start: { year: 2026, month: 8 },
-    end: { year: 2026, month: 8 },
-    description: 'In progress.',
-    skills: [],
-    links: [],
+    dateRange: 'Sep 2026',
+    start: { year: 2026, month: 9 },
+    end: { year: 2026, month: 9 },
+    description:
+      'Built a production-style LLM inference server in Python and FastAPI with continuous batching, KV-cache reuse, and request queuing, sustaining 200+ concurrent requests while cutting p99 latency 45% and lifting throughput 3x.',
+    skills: ['Python', 'PyTorch', 'FastAPI', 'Redis', 'Docker'],
+    links: [{ label: 'See More', href: 'https://github.com/AnishK05/flux-llm-inference-engine' }],
   },
   {
     id: 'code-as-control',
