@@ -327,10 +327,10 @@ Skills: Go, Apache Arrow, Apache Parquet
 Link: https://github.com/AnishK05/prism-columnar-analytics-engine
 
 Flux: LLM Inference Engine
-Aug 2026
-In progress.
-Skills: none listed yet
-Links: none listed yet
+Sep 2026
+Built a production-style LLM inference server in Python and FastAPI with continuous batching, KV-cache reuse, and request queuing, sustaining 200+ concurrent requests while cutting p99 latency 45% and lifting throughput 3x.
+Skills: Python, PyTorch, FastAPI, Redis, Docker
+Link: https://github.com/AnishK05/flux-llm-inference-engine
 
 Code as Control
 Sep 2025 - Dec 2025
