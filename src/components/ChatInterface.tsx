@@ -20,7 +20,11 @@ interface TimeSlot {
   label: string;
 }
 
-type SchedulingStep = 'idle' | 'selecting_slot' | 'awaiting_email' | 'awaiting_description' | 'booking' | 'confirmed';
+type SchedulingStep = 'idle' | 'selecting_slot' | 'awaiting_email' | 'awaiting_description' | 'booking' | 'confirmed' | 'credentials_expired';
+
+type AlertStatus = 'idle' | 'sending' | 'sent' | 'failed';
+
+const CALENDAR_AUTH_EXPIRED = 'CALENDAR_AUTH_EXPIRED';
 
 interface ChatInterfaceProps {
   onQuickAction?: (action: string) => void;
@@ -43,6 +47,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
   const [slotsLoading, setSlotsLoading] = useState(false);
   const [meetLink, setMeetLink] = useState<string | null>(null);
   const [schedulingError, setSchedulingError] = useState('');
+  const [alertStatus, setAlertStatus] = useState<AlertStatus>('idle');
 
   // Schedule nudge state
   const [nudgeDismissed, setNudgeDismissed] = useState(false);
@@ -112,6 +117,10 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     try {
       const res = await fetch('/api/calendar/availability');
       const data = await res.json();
+      if (data.code === CALENDAR_AUTH_EXPIRED) {
+        setSchedulingStep('credentials_expired');
+        return;
+      }
       if (!res.ok) throw new Error(data.error || 'Failed to fetch slots');
       setAvailableSlots(data.slots ?? []);
       setSchedulingStep('selecting_slot');
@@ -131,6 +140,10 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       const datesParam = dates.join(',');
       const res = await fetch(`/api/calendar/availability/custom?dates=${encodeURIComponent(datesParam)}`);
       const data = await res.json();
+      if (data.code === CALENDAR_AUTH_EXPIRED) {
+        setSchedulingStep('credentials_expired');
+        return;
+      }
       if (!res.ok) throw new Error(data.error || 'Failed to fetch slots');
       setAvailableSlots(data.slots ?? []);
       setSchedulingStep('selecting_slot');
@@ -175,6 +188,10 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
         }),
       });
       const data = await res.json();
+      if (data.code === CALENDAR_AUTH_EXPIRED) {
+        setSchedulingStep('credentials_expired');
+        return;
+      }
       if (!res.ok) throw new Error(data.error || 'Failed to book meeting');
 
       setMeetLink(data.meetLink ?? null);
@@ -194,6 +211,24 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
       const message = err instanceof Error ? err.message : 'Failed to book meeting';
       setSchedulingError(message);
       setSchedulingStep('awaiting_description');
+    }
+  };
+
+  const handleAlertOwner = async () => {
+    if (alertStatus === 'sending' || alertStatus === 'sent') return;
+    setAlertStatus('sending');
+    try {
+      const res = await fetch('/api/calendar/alert', { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to send alert');
+      if (data.alreadyFixed) {
+        setAlertStatus('idle');
+        fetchAvailableSlots();
+        return;
+      }
+      setAlertStatus('sent');
+    } catch {
+      setAlertStatus('failed');
     }
   };
 
@@ -321,6 +356,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
     setMessages([]);
     setInputValue('');
     resetScheduling();
+    setAlertStatus('idle');
   };
 
 
@@ -642,6 +678,46 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
                   </div>
                 </div>
               </div>
+            ) : schedulingStep === 'credentials_expired' ? (
+              <div className="flex justify-start px-4 pb-2">
+                <div className="flex items-start gap-3 max-w-[85%]">
+                  <Avatar className="w-8 h-8 flex-shrink-0">
+                    <AvatarFallback className="bg-gray-700/80 text-white backdrop-blur-sm">A</AvatarFallback>
+                  </Avatar>
+                  <div className="px-4 py-3 rounded-2xl bg-gray-700/80 backdrop-blur-sm space-y-2">
+                    {alertStatus === 'sent' ? (
+                      <p className="text-sm text-gray-200">
+                        Got the alert, thanks for the heads up! I&apos;ll get it fixed in either the next 10-15 mins or max 3-4 hours. Check back then and we&apos;ll get something on the calendar.
+                      </p>
+                    ) : (
+                      <p className="text-sm text-gray-200">
+                        oops, it looks like my credentials have expired and I forgot to refresh them. that&apos;s on me chief.{' '}
+                        <button
+                          onClick={handleAlertOwner}
+                          disabled={alertStatus === 'sending'}
+                          className="font-medium text-blue-300 underline underline-offset-2 hover:text-blue-200 transition-colors disabled:opacity-50"
+                        >
+                          {alertStatus === 'sending' ? 'alerting...' : 'click here'}
+                        </button>{' '}
+                        to alert me and I&apos;ll get it fixed in either the next 10-15 mins or max 3-4 hours.
+                      </p>
+                    )}
+                    {alertStatus === 'failed' && (
+                      <p className="text-xs text-red-400">
+                        Couldn&apos;t send the alert. Try again, or ping me on{' '}
+                        <a
+                          href="https://www.linkedin.com/in/kalra-anish/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline hover:text-red-300"
+                        >
+                          LinkedIn
+                        </a>.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
             ) : schedulingStep === 'booking' ? (
               <div className="flex justify-start px-4 pb-2">
                 <div className="flex items-start gap-3 max-w-[85%]">
@@ -697,7 +773,7 @@ export default function ChatInterface({ onQuickAction }: ChatInterfaceProps) {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder={schedulingStep !== 'idle' && schedulingStep !== 'confirmed' ? 'Type to cancel scheduling...' : 'Ask me anything about myself...'}
+              placeholder={schedulingStep !== 'idle' && schedulingStep !== 'confirmed' && schedulingStep !== 'credentials_expired' ? 'Type to cancel scheduling...' : 'Ask me anything about myself...'}
               className="flex-1 bg-gray-800/70 border-gray-600/70 text-gray-100 placeholder-gray-400 focus:border-gray-500 focus:ring-gray-500/20 rounded-xl backdrop-blur-sm"
               disabled={isLoading}
               ref={inputRef}

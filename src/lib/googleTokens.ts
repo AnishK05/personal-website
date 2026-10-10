@@ -34,9 +34,32 @@ export function readTokens(): TokenData | null {
   }
 }
 
+export const CALENDAR_AUTH_EXPIRED = 'CALENDAR_AUTH_EXPIRED';
+
+export class CalendarAuthError extends Error {}
+
+// Distinguishes "the stored Google credentials are dead" from transient
+// failures, so the UI can ask the visitor to alert Anish instead of retrying.
+export function isCalendarAuthError(error: unknown): boolean {
+  if (error instanceof CalendarAuthError) return true;
+  const err = error as {
+    message?: string;
+    status?: number;
+    response?: { status?: number; data?: { error?: string } };
+  } | null;
+  const status = err?.response?.status ?? err?.status;
+  const oauthError = err?.response?.data?.error;
+  return (
+    status === 401 ||
+    oauthError === 'invalid_grant' ||
+    oauthError === 'unauthorized_client' ||
+    err?.message === 'invalid_grant'
+  );
+}
+
 export async function getAuthenticatedClient() {
   const tokens = readTokens();
-  if (!tokens) throw new Error('No tokens found. Please authenticate via /private.');
+  if (!tokens) throw new CalendarAuthError('No tokens found. Please authenticate via /private.');
 
   const oauth2Client = createOAuthClient();
   oauth2Client.setCredentials(tokens);

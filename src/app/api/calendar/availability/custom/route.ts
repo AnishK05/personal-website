@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import { getAuthenticatedClient } from '@/lib/googleTokens';
+import {
+  CALENDAR_AUTH_EXPIRED,
+  getAuthenticatedClient,
+  isCalendarAuthError,
+} from '@/lib/googleTokens';
 import {
   CALENDAR_TIME_ZONE,
   SLOT_DURATION_MS,
@@ -87,6 +91,12 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ slots });
   } catch (error) {
     console.error('Custom availability error:', error);
+    if (isCalendarAuthError(error)) {
+      return NextResponse.json(
+        { error: 'Calendar credentials have expired.', code: CALENDAR_AUTH_EXPIRED },
+        { status: 503 }
+      );
+    }
     return NextResponse.json(
       { error: 'Failed to fetch availability. Calendar may not be connected.' },
       { status: 500 }
