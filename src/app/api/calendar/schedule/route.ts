@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import { getAuthenticatedClient } from '@/lib/googleTokens';
+import {
+  CALENDAR_AUTH_EXPIRED,
+  getAuthenticatedClient,
+  isCalendarAuthError,
+} from '@/lib/googleTokens';
 import { CALENDAR_TIME_ZONE } from '@/lib/calendarConfig';
 
 export async function POST(request: NextRequest) {
@@ -85,6 +89,12 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error('Calendar schedule error:', error);
+    if (isCalendarAuthError(error)) {
+      return NextResponse.json(
+        { error: 'Calendar credentials have expired.', code: CALENDAR_AUTH_EXPIRED },
+        { status: 503 }
+      );
+    }
     return NextResponse.json(
       { error: 'Failed to schedule meeting. Please try again.' },
       { status: 500 }
